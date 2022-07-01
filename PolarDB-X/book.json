@@ -1,0 +1,24 @@
+{
+  "title": "PolarDB-X",
+  "plugins":[
+  	"hide-element",
+  	"back-to-top-button",
+  	"code",
+  	"expandable-chapters-small",
+  	"page-toc-button",
+  	"-sharing",
+  	"-font-settings",
+  	"-search",
+  	"-lunr",
+  	"auto-scroll-table@git+https://github.com/ideamean/gitbook-plugin-auto-scroll-table.git","splitter"
+  ],
+  "pluginsConfig":{
+	  "page-toc-button":{
+	    "maxTocDepth":2,
+	    "minTocSize":2
+	  },
+	  "hide-element": {
+        "elements": [".toggle-dropdown",".gitbook-link"]
+    }
+  }
+}

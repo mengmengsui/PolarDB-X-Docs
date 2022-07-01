@@ -1,0 +1,4035 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>错误码 · PolarDB-X</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-page-toc-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-auto-scroll-table/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../../online-lab/OnlineLab01.html" />
+    
+    
+    <link rel="prev" href="../../best-practice/topics/htap-practice.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    关于PolarDB-X
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="../../Introduction.html">
+            
+                <a href="../../Introduction.html">
+            
+                    
+                    PolarDB-X简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="../../architecture.html">
+            
+                <a href="../../architecture.html">
+            
+                    
+                    产品架构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3" data-path="../../features/topics/core-features.html">
+            
+                <a href="../../features/topics/core-features.html">
+            
+                    
+                    核心特性
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.3.1" data-path="../../features/topics/HA-and-Disaster-Recovery.html">
+            
+                <a href="../../features/topics/HA-and-Disaster-Recovery.html">
+            
+                    
+                    高可用和容灾
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3.2" data-path="../../features/topics/distributed-transaction.html">
+            
+                <a href="../../features/topics/distributed-transaction.html">
+            
+                    
+                    分布式事务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3.3" data-path="../../features/topics/Horizontal-Scaling.html">
+            
+                <a href="../../features/topics/Horizontal-Scaling.html">
+            
+                    
+                    水平扩展
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3.4" data-path="../../features/topics/gsi.html">
+            
+                <a href="../../features/topics/gsi.html">
+            
+                    
+                    全局二级索引
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3.5" data-path="../../features/topics/HTAP.html">
+            
+                <a href="../../features/topics/HTAP.html">
+            
+                    
+                    混合负载HTAP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3.6" data-path="../../features/topics/global-binlog.html">
+            
+                <a href="../../features/topics/global-binlog.html">
+            
+                    
+                    全局变更日志CDC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3.7" data-path="../../features/topics/MySQL-Compatibility.html">
+            
+                <a href="../../features/topics/MySQL-Compatibility.html">
+            
+                    
+                    MySQL生态兼容
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../quickstart/topics/Quick-Start.html">
+            
+                <a href="../../quickstart/topics/Quick-Start.html">
+            
+                    
+                    快速入门
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../../quickstart/topics/quickstart.html">
+            
+                <a href="../../quickstart/topics/quickstart.html">
+            
+                    
+                    通过PXD部署本地实例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../../quickstart/topics/quickstart-pxd-cluster.html">
+            
+                <a href="../../quickstart/topics/quickstart-pxd-cluster.html">
+            
+                    
+                    通过PXD部署集群
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../../quickstart/topics/quickstart-k8s.html">
+            
+                <a href="../../quickstart/topics/quickstart-k8s.html">
+            
+                    
+                    通过Kubernetes部署集群
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../../quickstart/topics/quickstart-development.html">
+            
+                <a href="../../quickstart/topics/quickstart-development.html">
+            
+                    
+                    通过编译源码安装部署
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="connect-to-polardb-x.html">
+            
+                <a href="connect-to-polardb-x.html">
+            
+                    
+                    连接数据库
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../user-guide/topics/user-guide.html">
+            
+                <a href="../../user-guide/topics/user-guide.html">
+            
+                    
+                    用户指南
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../../maintance/topics/account-and-permission.html">
+            
+                <a href="../../maintance/topics/account-and-permission.html">
+            
+                    
+                    账号与权限
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.1" data-path="../../maintance/topics/account.html">
+            
+                <a href="../../maintance/topics/account.html">
+            
+                    
+                    账号管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2" data-path="../../maintance/topics/role.html">
+            
+                <a href="../../maintance/topics/role.html">
+            
+                    
+                    角色管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.3" data-path="../../maintance/topics/triple-authority-introduction.html">
+            
+                <a href="../../maintance/topics/triple-authority-introduction.html">
+            
+                    
+                    三权分立
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../../maintance/topics/data-import-and-export.html">
+            
+                <a href="../../maintance/topics/data-import-and-export.html">
+            
+                    
+                    数据导入和导出
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.2.1" data-path="../../maintance/topics/mysqldump.html">
+            
+                <a href="../../maintance/topics/mysqldump.html">
+            
+                    
+                    使用 mysqldump 导入和导出数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.2" data-path="../../maintance/topics/import-by-coding.html">
+            
+                <a href="../../maintance/topics/import-by-coding.html">
+            
+                    
+                    使用程序导入数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.3" data-path="../../maintance/topics/batch-tool-maintenance.html">
+            
+                <a href="../../maintance/topics/batch-tool-maintenance.html">
+            
+                    
+                    使用 Batch Tool 工具导入和导出数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.4" data-path="../../maintance/topics/subscribe.html">
+            
+                <a href="../../maintance/topics/subscribe.html">
+            
+                    
+                    PolarDB-X CDC数据订阅
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.2.4.1" data-path="../../maintance/topics/subscribe-flink.html">
+            
+                <a href="../../maintance/topics/subscribe-flink.html">
+            
+                    
+                    使用Flink订阅PolarDB-X
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.4.2" data-path="../../maintance/topics/subscribe-kafka.html">
+            
+                <a href="../../maintance/topics/subscribe-kafka.html">
+            
+                    
+                    使用Kafka订阅PolarDB-X
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.4.3" data-path="../../maintance/topics/subscribe-elasticsearch.html">
+            
+                <a href="../../maintance/topics/subscribe-elasticsearch.html">
+            
+                    
+                    使用Elasticsearch订阅PolarDB-X
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../../maintance/topics/monitor.html">
+            
+                <a href="../../maintance/topics/monitor.html">
+            
+                    
+                    数据库监控
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../../maintance/topics/variables-setting.html">
+            
+                <a href="../../maintance/topics/variables-setting.html">
+            
+                    
+                    参数设置
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.4.1" data-path="../../maintance/topics/cn-variables.html">
+            
+                <a href="../../maintance/topics/cn-variables.html">
+            
+                    
+                    计算节点参数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.2" data-path="../../maintance/topics/dn-variables.html">
+            
+                <a href="../../maintance/topics/dn-variables.html">
+            
+                    
+                    存储节点参数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.3" data-path="../../maintance/topics/set-parameters.html">
+            
+                <a href="../../maintance/topics/set-parameters.html">
+            
+                    
+                    参数设置
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="developer-guide.html">
+            
+                <a href="developer-guide.html">
+            
+                    
+                    开发指南
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="sql-overview.html">
+            
+                <a href="sql-overview.html">
+            
+                    
+                    SQL概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="limitation.html">
+            
+                <a href="limitation.html">
+            
+                    
+                    开发限制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="metadata.html">
+            
+                <a href="metadata.html">
+            
+                    
+                    元数据库和数据字典
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="data-type.html">
+            
+                <a href="data-type.html">
+            
+                    
+                    数据类型
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.4.1" data-path="numeric.html">
+            
+                <a href="numeric.html">
+            
+                    
+                    数值类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4.2" data-path="string.html">
+            
+                <a href="string.html">
+            
+                    
+                    字符串类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4.3" data-path="collation.html">
+            
+                <a href="collation.html">
+            
+                    
+                    Collation类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4.4" data-path="datetime.html">
+            
+                <a href="datetime.html">
+            
+                    
+                    日期和时间类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4.5" data-path="json.html">
+            
+                <a href="json.html">
+            
+                    
+                    JSON类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="operator.html">
+            
+                <a href="operator.html">
+            
+                    
+                    运算符
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.5.1" data-path="logical.html">
+            
+                <a href="logical.html">
+            
+                    
+                    逻辑运算符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5.2" data-path="arithmetic.html">
+            
+                <a href="arithmetic.html">
+            
+                    
+                    算术运算符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5.3" data-path="comparison.html">
+            
+                <a href="comparison.html">
+            
+                    
+                    比较运算符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5.4" data-path="bit.html">
+            
+                <a href="bit.html">
+            
+                    
+                    位运算符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5.5" data-path="assign.html">
+            
+                <a href="assign.html">
+            
+                    
+                    赋值运算符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5.6" data-path="priority.html">
+            
+                <a href="priority.html">
+            
+                    
+                    运算符优先级
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="functions.html">
+            
+                <a href="functions.html">
+            
+                    
+                    函数
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.6.1" data-path="sharding-functions.html">
+            
+                <a href="sharding-functions.html">
+            
+                    
+                    拆分函数
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.6.1.1" data-path="hash.html">
+            
+                <a href="hash.html">
+            
+                    
+                    HASH
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.1.2" data-path="str-hash.html">
+            
+                <a href="str-hash.html">
+            
+                    
+                    STR_HASH
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.1.3" data-path="uni-hash.html">
+            
+                <a href="uni-hash.html">
+            
+                    
+                    UNI_HASH
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.1.4" data-path="range-hash.html">
+            
+                <a href="range-hash.html">
+            
+                    
+                    RANGE_HASH
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.1.5" data-path="right-shift.html">
+            
+                <a href="right-shift.html">
+            
+                    
+                    RIGHT_SHIFT
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.1.6" data-path="mm.html">
+            
+                <a href="mm.html">
+            
+                    
+                    MM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.1.7" data-path="dd.html">
+            
+                <a href="dd.html">
+            
+                    
+                    DD
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.1.8" data-path="yyyydd.html">
+            
+                <a href="yyyydd.html">
+            
+                    
+                    YYYYDD
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.1.9" data-path="week.html">
+            
+                <a href="week.html">
+            
+                    
+                    WEEK
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.1.10" data-path="mmdd.html">
+            
+                <a href="mmdd.html">
+            
+                    
+                    MMDD
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.1.11" data-path="yyyymm.html">
+            
+                <a href="yyyymm.html">
+            
+                    
+                    YYYYMM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.1.12" data-path="yyyyweek.html">
+            
+                <a href="yyyyweek.html">
+            
+                    
+                    YYYYWEEK
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.2" data-path="datetime-functions.html">
+            
+                <a href="datetime-functions.html">
+            
+                    
+                    日期时间函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.3" data-path="string-function.html">
+            
+                <a href="string-function.html">
+            
+                    
+                    字符串函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.4" data-path="transformation.html">
+            
+                <a href="transformation.html">
+            
+                    
+                    转换函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.5" data-path="agg.html">
+            
+                <a href="agg.html">
+            
+                    
+                    聚合函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.6" data-path="math.html">
+            
+                <a href="math.html">
+            
+                    
+                    数学函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.7" data-path="comparison-function.html">
+            
+                <a href="comparison-function.html">
+            
+                    
+                    比较函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.8" data-path="bit-function.html">
+            
+                <a href="bit-function.html">
+            
+                    
+                    位函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.9" data-path="control-function.html">
+            
+                <a href="control-function.html">
+            
+                    
+                    流程控制函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.10" data-path="information.html">
+            
+                <a href="information.html">
+            
+                    
+                    信息函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.11" data-path="encryption-and-compression.html">
+            
+                <a href="encryption-and-compression.html">
+            
+                    
+                    加密和压缩函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.12" data-path="window.html">
+            
+                <a href="window.html">
+            
+                    
+                    窗口函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.13" data-path="json-function.html">
+            
+                <a href="json-function.html">
+            
+                    
+                    JSON函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.14" data-path="other-function.html">
+            
+                <a href="other-function.html">
+            
+                    
+                    其他函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="ddl.html">
+            
+                <a href="ddl.html">
+            
+                    
+                    DDL语句
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.7.1" data-path="sharding-syntax.html">
+            
+                <a href="sharding-syntax.html">
+            
+                    
+                    分库分表语法
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.7.1.1" data-path="create-database.html">
+            
+                <a href="create-database.html">
+            
+                    
+                    CREATE DATABASE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7.1.2" data-path="drop-database.html">
+            
+                <a href="drop-database.html">
+            
+                    
+                    DROP DATABASE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7.1.3" data-path="create-table.html">
+            
+                <a href="create-table.html">
+            
+                    
+                    CREATE TABLE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7.1.4" data-path="drop-table.html">
+            
+                <a href="drop-table.html">
+            
+                    
+                    DROP TABLE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7.1.5" data-path="alter-table.html">
+            
+                <a href="alter-table.html">
+            
+                    
+                    ALTER TABLE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7.1.6" data-path="truncate-table.html">
+            
+                <a href="truncate-table.html">
+            
+                    
+                    TRUNCATE TABLE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7.1.7" data-path="rename-table.html">
+            
+                <a href="rename-table.html">
+            
+                    
+                    RENAME TABLE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7.1.8" data-path="create-index.html">
+            
+                <a href="create-index.html">
+            
+                    
+                    CREATE INDEX
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7.1.9" data-path="drop-index.html">
+            
+                <a href="drop-index.html">
+            
+                    
+                    DROP INDEX
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7.1.10" data-path="create-view.html">
+            
+                <a href="create-view.html">
+            
+                    
+                    CREATE VIEW
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7.1.11" data-path="drop-view.html">
+            
+                <a href="drop-view.html">
+            
+                    
+                    DROP VIEW
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7.2" data-path="partition-syntax.html">
+            
+                <a href="partition-syntax.html">
+            
+                    
+                    分区表语法
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.7.2.1" data-path="create-database2.html">
+            
+                <a href="create-database2.html">
+            
+                    
+                    CREATE DATABASE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7.2.2" data-path="drop-database2.html">
+            
+                <a href="drop-database2.html">
+            
+                    
+                    DROP DATABASE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7.2.3" data-path="create-tablegroup.html">
+            
+                <a href="create-tablegroup.html">
+            
+                    
+                    CREATE TABLEGROUP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7.2.4" data-path="drop-tablegroup.html">
+            
+                <a href="drop-tablegroup.html">
+            
+                    
+                    DROP TABLEGROUP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7.2.5" data-path="alter-tablegroup.html">
+            
+                <a href="alter-tablegroup.html">
+            
+                    
+                    ALTER TABLEGROUP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7.2.6" data-path="create-table2.html">
+            
+                <a href="create-table2.html">
+            
+                    
+                    CREATE TABLE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7.2.7" data-path="drop-table2.html">
+            
+                <a href="drop-table2.html">
+            
+                    
+                    DROP TABLE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7.2.8" data-path="alter-table2.html">
+            
+                <a href="alter-table2.html">
+            
+                    
+                    ALTER TABLE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7.2.9" data-path="truncate-table.html">
+            
+                <a href="truncate-table.html">
+            
+                    
+                    TRUNCATE TABLE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7.2.10" data-path="rename-table.html">
+            
+                <a href="rename-table.html">
+            
+                    
+                    RENAME TABLE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7.2.11" data-path="create-index2.html">
+            
+                <a href="create-index2.html">
+            
+                    
+                    CREATE INDEX
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7.2.12" data-path="drop-index.html">
+            
+                <a href="drop-index.html">
+            
+                    
+                    DROP INDEX
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7.2.13" data-path="create-view.html">
+            
+                <a href="create-view.html">
+            
+                    
+                    CREATE VIEW
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7.2.14" data-path="drop-view.html">
+            
+                <a href="drop-view.html">
+            
+                    
+                    DROP VIEW
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="dml.html">
+            
+                <a href="dml.html">
+            
+                    
+                    DML语句
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.8.1" data-path="insert.html">
+            
+                <a href="insert.html">
+            
+                    
+                    INSERT
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8.2" data-path="replace.html">
+            
+                <a href="replace.html">
+            
+                    
+                    REPLACE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8.3" data-path="update.html">
+            
+                <a href="update.html">
+            
+                    
+                    UPDATE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8.4" data-path="delete.html">
+            
+                <a href="delete.html">
+            
+                    
+                    DELETE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8.5" data-path="source.html">
+            
+                <a href="source.html">
+            
+                    
+                    SOURCE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8.6" data-path="export.html">
+            
+                <a href="export.html">
+            
+                    
+                    EXPORT
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8.7" data-path="load-data.html">
+            
+                <a href="load-data.html">
+            
+                    
+                    LOAD DATA
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="dql.html">
+            
+                <a href="dql.html">
+            
+                    
+                    DQL语句
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.9.1" data-path="select.html">
+            
+                <a href="select.html">
+            
+                    
+                    SELECT
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9.2" data-path="subquery.html">
+            
+                <a href="subquery.html">
+            
+                    
+                    子查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9.3" data-path="extension.html">
+            
+                <a href="extension.html">
+            
+                    
+                    Grouping Sets、Rollup和Cube扩展
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10" data-path="tcl.html">
+            
+                <a href="tcl.html">
+            
+                    
+                    TCL语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11" data-path="dal.html">
+            
+                <a href="dal.html">
+            
+                    
+                    DAL语句
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.11.1" data-path="ddl-management.html">
+            
+                <a href="ddl-management.html">
+            
+                    
+                    DDL管理语句
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.11.1.1" data-path="show-ddl.html">
+            
+                <a href="show-ddl.html">
+            
+                    
+                    SHOW DDL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11.1.2" data-path="show-ddl-result.html">
+            
+                <a href="show-ddl-result.html">
+            
+                    
+                    SHOW DDL RESULT
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11.1.3" data-path="cancel-ddl.html">
+            
+                <a href="cancel-ddl.html">
+            
+                    
+                    CANCEL DDL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11.1.4" data-path="pause-ddl.html">
+            
+                <a href="pause-ddl.html">
+            
+                    
+                    PAUSE DDL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11.1.5" data-path="continue-ddl.html">
+            
+                <a href="continue-ddl.html">
+            
+                    
+                    CONTINUE DDL
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11.2" data-path="show.html">
+            
+                <a href="show.html">
+            
+                    
+                    SHOW
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.11.2.1" data-path="show-help.html">
+            
+                <a href="show-help.html">
+            
+                    
+                    SHOW HELP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11.2.2" data-path="show-topology.html">
+            
+                <a href="show-topology.html">
+            
+                    
+                    规则和拓扑查询语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11.2.3" data-path="slow-query.html">
+            
+                <a href="slow-query.html">
+            
+                    
+                    慢SQL相关
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11.2.4" data-path="statistics-query.html">
+            
+                <a href="statistics-query.html">
+            
+                    
+                    统计信息查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11.2.5" data-path="show-processlist.html">
+            
+                <a href="show-processlist.html">
+            
+                    
+                    SHOW PROCESSLIST
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11.2.6" data-path="show-global-index.html">
+            
+                <a href="show-global-index.html">
+            
+                    
+                    SHOW GLOBAL INDEX
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11.2.7" data-path="show-index.html">
+            
+                <a href="show-index.html">
+            
+                    
+                    SHOW INDEX
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11.2.8" data-path="show-meta-lock.html">
+            
+                <a href="show-meta-lock.html">
+            
+                    
+                    SHOW METADATA LOCK
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11.2.9" data-path="show-tablegroup.html">
+            
+                <a href="show-tablegroup.html">
+            
+                    
+                    SHOW TABLEGROUP
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11.3" data-path="set.html">
+            
+                <a href="set.html">
+            
+                    
+                    SET
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.11.3.1" data-path="set-parameters-devguide.html">
+            
+                <a href="set-parameters-devguide.html">
+            
+                    
+                    SET语句变量设置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11.3.2" data-path="set-character-set.html">
+            
+                <a href="set-character-set.html">
+            
+                    
+                    SET CHARACTER SET
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11.3.3" data-path="set-names.html">
+            
+                <a href="set-names.html">
+            
+                    
+                    SET NAMES
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11.4" data-path="check-table.html">
+            
+                <a href="check-table.html">
+            
+                    
+                    CHECK TABLE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11.5" data-path="check-global-index.html">
+            
+                <a href="check-global-index.html">
+            
+                    
+                    CHECK GLOBAL INDEX
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11.6" data-path="kill.html">
+            
+                <a href="kill.html">
+            
+                    
+                    KILL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11.7" data-path="use.html">
+            
+                <a href="use.html">
+            
+                    
+                    USE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11.8" data-path="explain.html">
+            
+                <a href="explain.html">
+            
+                    
+                    EXPLAIN
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11.9" data-path="sql-concurrency-control-devguide.html">
+            
+                <a href="sql-concurrency-control-devguide.html">
+            
+                    
+                    SQL限流
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.12" data-path="prepared.html">
+            
+                <a href="prepared.html">
+            
+                    
+                    Prepared语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.13" data-path="permissions.html">
+            
+                <a href="permissions.html">
+            
+                    
+                    权限管理
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.13.1" data-path="account-devguide.html">
+            
+                <a href="account-devguide.html">
+            
+                    
+                    账号权限管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.13.2" data-path="role-devguide.html">
+            
+                <a href="role-devguide.html">
+            
+                    
+                    角色权限管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.13.3" data-path="triple-authority.html">
+            
+                <a href="triple-authority.html">
+            
+                    
+                    三权分立下的权限管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.14" data-path="replication-devguide.html">
+            
+                <a href="replication-devguide.html">
+            
+                    
+                    Replication
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.15" data-path="sequence.html">
+            
+                <a href="sequence.html">
+            
+                    
+                    Sequence
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.15.1" data-path="overview.html">
+            
+                <a href="overview.html">
+            
+                    
+                    概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.15.2" data-path="sequence-limitation.html">
+            
+                <a href="sequence-limitation.html">
+            
+                    
+                    使用限制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.15.3" data-path="explict-usage.html">
+            
+                <a href="explict-usage.html">
+            
+                    
+                    显式用法
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.15.3.1" data-path="create-sequence.html">
+            
+                <a href="create-sequence.html">
+            
+                    
+                    创建Sequence
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.15.3.2" data-path="alter-sequence.html">
+            
+                <a href="alter-sequence.html">
+            
+                    
+                    修改Sequence
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.15.3.3" data-path="query-sequence.html">
+            
+                <a href="query-sequence.html">
+            
+                    
+                    查询与获取Sequence
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.15.3.4" data-path="drop-sequence.html">
+            
+                <a href="drop-sequence.html">
+            
+                    
+                    删除Sequence
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.15.4" data-path="implict-usage.html">
+            
+                <a href="implict-usage.html">
+            
+                    
+                    隐式用法
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.15.4.1" data-path="sequence-in-create-table.html">
+            
+                <a href="sequence-in-create-table.html">
+            
+                    
+                    CREATE TABLE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.15.4.2" data-path="sequence-in-alter-table.html">
+            
+                <a href="sequence-in-alter-table.html">
+            
+                    
+                    ALTER TABLE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.15.4.3" data-path="query-table-and-sequence.html">
+            
+                <a href="query-table-and-sequence.html">
+            
+                    
+                    查看表信息及相关Sequence类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.16" data-path="variables.html">
+            
+                <a href="variables.html">
+            
+                    
+                    变量
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.16.1" data-path="cn-variables-devguide.html">
+            
+                <a href="cn-variables-devguide.html">
+            
+                    
+                    计算层变量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.16.2" data-path="dn-variables-devguide.html">
+            
+                <a href="dn-variables-devguide.html">
+            
+                    
+                    存储层变量
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.17" data-path="transparent-shard.html">
+            
+                <a href="transparent-shard.html">
+            
+                    
+                    透明分布式
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.17.1" data-path="sharding-by-pk.html">
+            
+                <a href="sharding-by-pk.html">
+            
+                    
+                    主键拆分
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.17.2" data-path="clustered-index.html">
+            
+                <a href="clustered-index.html">
+            
+                    
+                    聚簇索引
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.17.3" data-path="alter-sharding-rule.html">
+            
+                <a href="alter-sharding-rule.html">
+            
+                    
+                    变更表类型及拆分规则（分库分表）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.17.4" data-path="alter-partition.html">
+            
+                <a href="alter-partition.html">
+            
+                    
+                    变更表类型及分区策略（分区表）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.18" data-path="faq.html">
+            
+                <a href="faq.html">
+            
+                    
+                    常见问题
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.18.1" data-path="ddl-faq.html">
+            
+                <a href="ddl-faq.html">
+            
+                    
+                    DDL常见问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.18.2" data-path="gsi-faq.html">
+            
+                <a href="gsi-faq.html">
+            
+                    
+                    如何使用全局二级索引
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.18.3" data-path="hint-faq.html">
+            
+                <a href="hint-faq.html">
+            
+                    
+                    如何使用HINT
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.18.4" data-path="sql-timeout.html">
+            
+                <a href="sql-timeout.html">
+            
+                    
+                    如何自定义SQL超时时间
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.18.5" data-path="execute-sql-on-shard.html">
+            
+                <a href="execute-sql-on-shard.html">
+            
+                    
+                    指定分库执行SQL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.18.6" data-path="scan.html">
+            
+                <a href="scan.html">
+            
+                    
+                    扫描全部/部分分库分表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.18.7" data-path="index-hint.html">
+            
+                <a href="index-hint.html">
+            
+                    
+                    INDEX HINT
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../sql-tunning/topics/sql-tuning-guide.html">
+            
+                <a href="../../sql-tunning/topics/sql-tuning-guide.html">
+            
+                    
+                    SQL调优指南
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../../sql-tunning/topics/concepts.html">
+            
+                <a href="../../sql-tunning/topics/concepts.html">
+            
+                    
+                    调优基本概念
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../../sql-tunning/topics/sql-plan.html">
+            
+                <a href="../../sql-tunning/topics/sql-plan.html">
+            
+                    
+                    执行计划介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../../sql-tunning/topics/sql-tunning-advanced.html">
+            
+                <a href="../../sql-tunning/topics/sql-tunning-advanced.html">
+            
+                    
+                    SQL调优进阶
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.3.1" data-path="../../sql-tunning/topics/cbo.html">
+            
+                <a href="../../sql-tunning/topics/cbo.html">
+            
+                    
+                    查询优化器介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3.2" data-path="../../sql-tunning/topics/query-rewriting.html">
+            
+                <a href="../../sql-tunning/topics/query-rewriting.html">
+            
+                    
+                    查询改写与下推
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3.3" data-path="../../sql-tunning/topics/executor.html">
+            
+                <a href="../../sql-tunning/topics/executor.html">
+            
+                    
+                    查询执行器介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3.4" data-path="../../sql-tunning/topics/join-optimizing.html">
+            
+                <a href="../../sql-tunning/topics/join-optimizing.html">
+            
+                    
+                    JOIN优化和执行
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3.5" data-path="../../sql-tunning/topics/subquery-optimizing.html">
+            
+                <a href="../../sql-tunning/topics/subquery-optimizing.html">
+            
+                    
+                    子查询优化和执行
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3.6" data-path="../../sql-tunning/topics/agg-optimizing.html">
+            
+                <a href="../../sql-tunning/topics/agg-optimizing.html">
+            
+                    
+                    聚合优化和执行
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3.7" data-path="../../sql-tunning/topics/sort-optimizing.html">
+            
+                <a href="../../sql-tunning/topics/sort-optimizing.html">
+            
+                    
+                    排序优化和执行
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../../sql-tunning/topics/sql-advisor.html">
+            
+                <a href="../../sql-tunning/topics/sql-advisor.html">
+            
+                    
+                    索引推荐
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../../sql-tunning/topics/spm.html">
+            
+                <a href="../../sql-tunning/topics/spm.html">
+            
+                    
+                    执行计划管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="../../sql-tunning/topics/tunning-methodology.html">
+            
+                <a href="../../sql-tunning/topics/tunning-methodology.html">
+            
+                    
+                    调优方法论
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../../best-practice/topics/best-practices.html">
+            
+                <a href="../../best-practice/topics/best-practices.html">
+            
+                    
+                    最佳实践
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../../best-practice/topics/connection-pool.html">
+            
+                <a href="../../best-practice/topics/connection-pool.html">
+            
+                    
+                    如何选择应用端链接池
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../../best-practice/topics/problem-solving.html">
+            
+                <a href="../../best-practice/topics/problem-solving.html">
+            
+                    
+                    如何快速定位及解决数据库问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../../best-practice/topics/ddl-exception.html">
+            
+                <a href="../../best-practice/topics/ddl-exception.html">
+            
+                    
+                    如何正确处理DDL异常
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../../best-practice/topics/slow-query-tuning.html">
+            
+                <a href="../../best-practice/topics/slow-query-tuning.html">
+            
+                    
+                    如何分析及优化慢SQL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../../best-practice/topics/slow-query-control.html">
+            
+                <a href="../../best-practice/topics/slow-query-control.html">
+            
+                    
+                    如何限流慢SQL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="../../best-practice/topics/async-drop-table.html">
+            
+                <a href="../../best-practice/topics/async-drop-table.html">
+            
+                    
+                    如何异步删除大表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.7" data-path="../../best-practice/topics/update-hot-data.html">
+            
+                <a href="../../best-practice/topics/update-hot-data.html">
+            
+                    
+                    如何支持热点更新场景
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.8" data-path="../../best-practice/topics/data-distribution-rebalance.html">
+            
+                <a href="../../best-practice/topics/data-distribution-rebalance.html">
+            
+                    
+                    如何分析数据分布不均衡
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.9" data-path="../../best-practice/topics/efficiency-in.html">
+            
+                <a href="../../best-practice/topics/efficiency-in.html">
+            
+                    
+                    如何高效使用IN查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.10" data-path="../../best-practice/topics/batch-insert.html">
+            
+                <a href="../../best-practice/topics/batch-insert.html">
+            
+                    
+                    如何优化Batch Insert
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.11" data-path="../../best-practice/topics/data-import-export.html">
+            
+                <a href="../../best-practice/topics/data-import-export.html">
+            
+                    
+                    如何优化数据导入导出
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.12" data-path="../../best-practice/topics/data-etl.html">
+            
+                <a href="../../best-practice/topics/data-etl.html">
+            
+                    
+                    如何优化数据全量抽取
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.13" data-path="../../best-practice/topics/blob.html">
+            
+                <a href="../../best-practice/topics/blob.html">
+            
+                    
+                    如何使用Blob对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.14" data-path="../../best-practice/topics/high-concurrency-scenarios.html">
+            
+                <a href="../../best-practice/topics/high-concurrency-scenarios.html">
+            
+                    
+                    偏高并发场景的实践和优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.15" data-path="../../best-practice/topics/analytical-scenarios.html">
+            
+                <a href="../../best-practice/topics/analytical-scenarios.html">
+            
+                    
+                    偏分析场景的实践和优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.16" data-path="../../best-practice/topics/htap-practice.html">
+            
+                <a href="../../best-practice/topics/htap-practice.html">
+            
+                    
+                    混合负载HTAP的实践和优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.7" data-path="error-code.html">
+            
+                <a href="error-code.html">
+            
+                    
+                    错误码
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../../online-lab/OnlineLab01.html">
+            
+                <a href="../../online-lab/OnlineLab01.html">
+            
+                    
+                    在线实验体验
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../../Contributing/Contribute-to-Community.html">
+            
+                <a href="../../Contributing/Contribute-to-Community.html">
+            
+                    
+                    社区贡献
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1" data-path="../../Contributing/Code-of-Conduct.html">
+            
+                <a href="../../Contributing/Code-of-Conduct.html">
+            
+                    
+                    贡献者盟约行为守则
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2" data-path="../../Contributing/How-to-Contribute.html">
+            
+                <a href="../../Contributing/How-to-Contribute.html">
+            
+                    
+                    如何贡献
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.3" data-path="../../Contributing/Style.html">
+            
+                <a href="../../Contributing/Style.html">
+            
+                    
+                    编码风格
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4" data-path="../../Contributing/Contact-Us.html">
+            
+                <a href="../../Contributing/Contact-Us.html">
+            
+                    
+                    联系我们
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../../Contributing/Software-License.html">
+            
+                <a href="../../Contributing/Software-License.html">
+            
+                    
+                    软件许可说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="../../Contributing/Acknowledgments.html">
+            
+                <a href="../../Contributing/Acknowledgments.html">
+            
+                    
+                    致谢
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" >
+            
+                <a target="_blank" href="https://polardbx.com">
+            
+                    
+                    官网首页
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >错误码</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x9519;&#x8BEF;&#x7801;-">&#x9519;&#x8BEF;&#x7801; </h1>
+<p>&#x672C;&#x6587;&#x6863;&#x5217;&#x51FA;&#x4E86;PolarDB-X&#x8FD4;&#x56DE;&#x7684;&#x5E38;&#x89C1;&#x9519;&#x8BEF;&#x7801;&#x53CA;&#x89E3;&#x51B3;&#x65B9;&#x6CD5;&#x3002;</p>
+<h2 id="pxc-1305-errunknownsavepoint">PXC-1305 ERR_UNKNOWN_SAVEPOINT</h2>
+<ul>
+<li><p>&#x63CF;&#x8FF0;&#xFF1A;&#x6307;&#x5B9A;&#x540D;&#x79F0;&#x7684;SAVEPOINT&#x4E0D;&#x5B58;&#x5728;&#x3002;</p>
+</li>
+<li><p>&#x793A;&#x4F8B;&#xFF1A;<code>ERR-CODE: [PXC-1305][ERR_UNKNOWN_SAVEPOINT] SAVEPOINT ***** does not exist</code></p>
+</li>
+<li><p>&#x8BF4;&#x660E;&#xFF1A;&#x5728;PolarDB-X&#x4E0A;&#x6267;&#x884C;<code>ROLLBACK TO SAVEPOINT</code>&#x6216;&#x8005;<code>RELEASE SAVEPOINT</code>&#x547D;&#x4EE4;&#x65F6;&#xFF0C;&#x5982;&#x679C;&#x6307;&#x5B9A;&#x7684;SAVEPOINT&#x540D;&#x79F0;&#x4E0D;&#x5B58;&#x5728;&#xFF0C;&#x4F1A;&#x63D0;&#x793A;PXC-1305&#x9519;&#x8BEF;&#x3002;</p>
+<p>&#x5EFA;&#x8BAE;&#x68C0;&#x67E5;SAVEPOINT&#x547D;&#x4EE4;&#x8FD4;&#x56DE;&#x7684;&#x540D;&#x79F0;&#x662F;&#x5426;&#x548C;&#x4F7F;&#x7528;&#x7684;&#x540D;&#x79F0;&#x4E00;&#x81F4;&#x3002;</p>
+</li>
+</ul>
+<h2 id="pxc-1094-errunknownthreadid">PXC-1094 ERR_UNKNOWN_THREAD_ID</h2>
+<ul>
+<li><p>&#x63CF;&#x8FF0;&#xFF1A;KILL&#x547D;&#x4EE4;&#x6307;&#x5B9A;&#x7684;&#x4F1A;&#x8BDD;ID&#x4E0D;&#x5B58;&#x5728;&#x3002;</p>
+</li>
+<li><p>&#x793A;&#x4F8B;&#xFF1A;<code>ERR-CODE: [PXC-1094][ERR_UNKNOWN_THREAD_ID] Unknown thread id: *****</code></p>
+</li>
+<li><p>&#x8BF4;&#x660E;&#xFF1A;&#x5728;PolarDB-X&#x4E0A;&#x6267;&#x884C;<code>KILL</code>&#x547D;&#x4EE4;&#x53D6;&#x6D88;&#x6267;&#x884C;&#x7684;SQL&#x8BED;&#x53E5;&#x65F6;&#xFF0C;&#x5982;&#x679C;&#x6307;&#x5B9A;&#x7684;&#x4F1A;&#x8BDD;ID&#x4E0D;&#x5B58;&#x5728;&#xFF0C;&#x6216;&#x8005;&#x5BF9;&#x5E94;&#x7684;SQL&#x8BED;&#x53E5;&#x5DF2;&#x7ECF;&#x7ED3;&#x675F;&#x6267;&#x884C;&#xFF0C;&#x4F1A;&#x63D0;&#x793A;PXC-1094&#x9519;&#x8BEF;&#x3002;</p>
+<p>&#x5EFA;&#x8BAE;&#x4F7F;&#x7528;<code>SHOW PROCESSLIST</code>&#x547D;&#x4EE4;&#x67E5;&#x770B;&#x6B63;&#x5728;&#x6267;&#x884C;&#x7684;SQL&#x8BED;&#x53E5;&#x4F1A;&#x8BDD;ID&#xFF0C;&#x5E76;&#x53EA;&#x9488;&#x5BF9;&#x8FD4;&#x56DE;&#x7684;ID&#x6267;&#x884C;<code>KILL</code>&#x547D;&#x4EE4;&#x3002;</p>
+</li>
+</ul>
+<h2 id="pxc-4006-errtablenotexist-">PXC-4006 ERR_TABLE_NOT_EXIST </h2>
+<ul>
+<li><p>&#x63CF;&#x8FF0;&#xFF1A;PolarDB-X&#x6570;&#x636E;&#x8868;&#x4E0D;&#x5B58;&#x5728;&#x3002;</p>
+</li>
+<li><p>&#x793A;&#x4F8B;&#xFF1A;<code>ERR-CODE: [PXC-4006][ERR_TABLE_NOT_EXIST] Table &apos;*****&apos; doesn&apos;t exist.</code></p>
+</li>
+<li><p>&#x8BF4;&#x660E;&#xFF1A;&#x8BE5;&#x9519;&#x8BEF;&#x7801;&#x8868;&#x793A;PolarDB-X&#x6570;&#x636E;&#x8868;&#x4E0D;&#x5B58;&#x5728;&#xFF0C;&#x6216;&#x8005;&#x7531;&#x4E8E;&#x672A;&#x77E5;&#x539F;&#x56E0;&#xFF0C;PolarDB-X&#x65E0;&#x6CD5;&#x52A0;&#x8F7D;&#x6570;&#x636E;&#x8868;&#x7684;&#x5143;&#x6570;&#x636E;&#x4FE1;&#x606F;&#x3002;</p>
+</li>
+</ul>
+<h2 id="pxc-4007-errcannotfetchtablemeta-">PXC-4007 ERR_CANNOT_FETCH_TABLE_META </h2>
+<ul>
+<li><p>&#x63CF;&#x8FF0;&#xFF1A;PolarDB-X&#x65E0;&#x6CD5;&#x52A0;&#x8F7D;&#x6570;&#x636E;&#x8868;&#x7684;&#x5143;&#x6570;&#x636E;&#x4FE1;&#x606F;&#x3002;</p>
+</li>
+<li><p>&#x793A;&#x4F8B;&#xFF1A;<code>ERR-CODE: [PXC-4007][ERR_CANNOT_FETCH_TABLE_META] Table &apos;*****&apos; metadata cannot be fetched because Table &apos;*****.*****&apos; doesn&apos;t exist.</code></p>
+</li>
+<li><p>&#x8BF4;&#x660E;&#xFF1A;&#x8BE5;&#x9519;&#x8BEF;&#x7801;&#x8868;&#x793A;PolarDB-X&#x5C1D;&#x8BD5;&#x8BFB;&#x53D6;&#x6570;&#x636E;&#x8868;&#x7684;&#x5143;&#x6570;&#x636E;&#x4FE1;&#x606F;&#x5931;&#x8D25;&#x3002;&#x53EF;&#x80FD;&#x7684;&#x9519;&#x8BEF;&#x539F;&#x56E0;&#x5982;&#x4E0B;&#xFF1A;</p>
+<ul>
+<li><p>&#x6570;&#x636E;&#x8868;&#x672A;&#x521B;&#x5EFA;&#x3002;</p>
+</li>
+<li><p>&#x7EF4;&#x62A4;&#x7684;&#x5143;&#x6570;&#x636E;&#x5E93;&#x4FE1;&#x606F;&#x4E0D;&#x4E00;&#x81F4;&#x3002;</p>
+</li>
+<li><p>&#x8868;&#x88AB;&#x5220;&#x9664;&#x6216;&#x8005;&#x6539;&#x540D;&#x3002;</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>  &#x51FA;&#x73B0;&#x8BE5;&#x9519;&#x8BEF;&#x65F6;&#xFF0C;&#x9996;&#x5148;&#x68C0;&#x67E5;&#x8868;&#x540D;&#x662F;&#x5426;&#x5B58;&#x5728;&#xFF0C;&#x6216;&#x8005;&#x6267;&#x884C;<code>check table</code> &#x547D;&#x4EE4;&#x786E;&#x8BA4;PolarDB-X&#x7EF4;&#x62A4;&#x7684;&#x5143;&#x6570;&#x636E;&#x5E93;&#x4FE1;&#x606F;&#x662F;&#x5426;&#x4E00;&#x81F4;&#x3002;&#x5982;&#x679C;&#x786E;&#x5B9A;&#x8868;&#x88AB;&#x4EBA;&#x4E3A;&#x5220;&#x9664;&#x6216;&#x6539;&#x540D;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;PolarDB-X&#x63D0;&#x4F9B;&#x7684;&#x6570;&#x636E;&#x6062;&#x590D;&#x529F;&#x80FD;&#x4FEE;&#x590D;&#x3002;&#x5982;&#x679C;&#x4ECD;&#x65E0;&#x6CD5;&#x4FEE;&#x590D;&#xFF0C;&#x8BF7;&#x8054;&#x7CFB;&#x6280;&#x672F;&#x652F;&#x6301;&#x3002;</p>
+<h2 id="pxc-4018-errinvalidddlparams-">PXC-4018 ERR_INVALID_DDL_PARAMS </h2>
+<ul>
+<li><p>&#x63CF;&#x8FF0;&#xFF1A;PolarDB-X&#x6267;&#x884C;DDL&#x8FC7;&#x7A0B;&#x5931;&#x8D25;&#x3002;</p>
+</li>
+<li><p>&#x793A;&#x4F8B;&#xFF1A;<code>ERR-CODE: [PXC-4018][ERR_INVALID_DDL_PARAMS] invalid &apos;*****&apos;.</code></p>
+</li>
+<li><p>&#x8BF4;&#x660E;&#xFF1A;&#x8BE5;&#x9519;&#x8BEF;&#x8868;&#x793A;&#x7528;&#x6237;&#x6267;&#x884C;DDL&#x7684;&#x53C2;&#x6570;&#x6709;&#x9519;&#x8BEF;&#xFF0C;&#x8BF7;&#x68C0;&#x67E5;&#x53C2;&#x6570;&#x6B63;&#x786E;&#x6027;&#x3002;&#x5982;&#x679C;&#x786E;&#x8BA4;&#x53C2;&#x6570;&#x6B63;&#x786E;&#xFF0C;&#x8BF7;&#x8054;&#x7CFB;&#x6280;&#x672F;&#x652F;&#x6301;&#x3002;</p>
+</li>
+</ul>
+<h2 id="pxc-4100-erratomnotavalilable-">PXC-4100 ERR_ATOM_NOT_AVALILABLE </h2>
+<ul>
+<li><p>&#x63CF;&#x8FF0;&#xFF1A;PolarDB-X&#x540E;&#x7AEF;&#x6570;&#x636E;&#x8282;&#x70B9;&#x6682;&#x65F6;&#x4E0D;&#x53EF;&#x7528;&#x3002;</p>
+</li>
+<li><p>&#x793A;&#x4F8B;&#xFF1A;<code>ERR-CODE: [PXC-4100][ERR_ATOM_NOT_AVALILABLE] Atom : ***** isNotAvailable</code></p>
+</li>
+<li><p>&#x8BF4;&#x660E;&#xFF1A;&#x5982;&#x679C;PolarDB-X&#x63A2;&#x6D4B;&#x5230;&#x540E;&#x7AEF;&#x67D0;&#x4E2A;&#x6570;&#x636E;&#x8282;&#x70B9;&#x72B6;&#x6001;&#x5F02;&#x5E38;&#xFF0C;&#x4F1A;&#x4E34;&#x65F6;&#x963B;&#x6B62;&#x8BBF;&#x95EE;&#x8BE5;&#x5B9E;&#x4F8B;&#x5E76;&#x63D0;&#x793A;PXC-4100&#x9519;&#x8BEF;&#x3002;</p>
+<p>&#x5F53;&#x9047;&#x5230;&#x8BE5;&#x9519;&#x8BEF;&#xFF0C;&#x8BF7;&#x68C0;&#x67E5;PolarDB-X&#x540E;&#x7AEF;&#x6240;&#x6709;&#x6570;&#x636E;&#x8282;&#x70B9;&#x662F;&#x5426;&#x5F02;&#x5E38;&#x3002;&#x5F53;&#x540E;&#x7AEF;&#x6570;&#x636E;&#x8282;&#x70B9;&#x4ECE;&#x5F02;&#x5E38;&#x72B6;&#x6001;&#x6062;&#x590D;&#x540E;&#xFF0C;PolarDB-X&#x5C06;&#x81EA;&#x52A8;&#x89E3;&#x9664;&#x4E0D;&#x53EF;&#x7528;&#x72B6;&#x6001;&#xFF0C;&#x6062;&#x590D;&#x5E94;&#x7528;&#x6B63;&#x5E38;&#x8BBF;&#x95EE;&#x3002;</p>
+</li>
+</ul>
+<h2 id="pxc-4101-erratomgetconnectionfailedunknownreason-">PXC-4101 ERR_ATOM_GET_CONNECTION_FAILED_UNKNOWN_REASON </h2>
+<ul>
+<li><p>&#x63CF;&#x8FF0;&#xFF1A;PolarDB-X&#x8BA1;&#x7B97;&#x8282;&#x70B9;&#x548C;&#x6570;&#x636E;&#x8282;&#x70B9;&#x8FDE;&#x63A5;&#x83B7;&#x53D6;&#x5931;&#x8D25;&#x3002;</p>
+</li>
+<li><p>&#x793A;&#x4F8B;&#xFF1A;<code>ERR-CODE: [PXC-4101][ERR_ATOM_GET_CONNECTION_FAILED_UNKNOWN_REASON] Get connection for db &apos;*****&apos; from pool failed. AppName:*****, Env:*****, UnitName:null. Message from pool: wait millis 5000, active 0, maxActive 5. You should look for the following logs which contains the real reason.</code></p>
+</li>
+<li><p>&#x8BF4;&#x660E;&#xFF1A;PolarDB-X&#x5728;&#x5904;&#x7406;&#x8BF7;&#x6C42;&#x65F6;&#x4F1A;&#x5411;&#x6570;&#x636E;&#x8282;&#x70B9;&#x5F02;&#x6B65;&#x521B;&#x5EFA;&#x8FDE;&#x63A5;&#x3002;&#x5982;&#x679C;&#x65E0;&#x6CD5;&#x5728;&#x7B49;&#x5F85;&#x65F6;&#x95F4;&#x5185;&#x5B8C;&#x6210;&#x6570;&#x636E;&#x8282;&#x70B9;&#x8FDE;&#x63A5;&#x521B;&#x5EFA;&#xFF0C;&#x800C;&#x5F02;&#x6B65;&#x4EFB;&#x52A1;&#x53C8;&#x5C1A;&#x672A;&#x8FD4;&#x56DE;&#x9519;&#x8BEF;&#x539F;&#x56E0;&#xFF0C;PolarDB-X&#x4F1A;&#x5411;&#x5E94;&#x7528;&#x8FD4;&#x56DE;PXC-4101&#x9519;&#x8BEF;&#x3002;</p>
+<p>&#x8BE5;&#x9519;&#x8BEF;&#x901A;&#x5E38;&#x662F;&#x7531;&#x540E;&#x7AEF;&#x6570;&#x636E;&#x8282;&#x70B9;&#x5F02;&#x5E38;&#x5BFC;&#x81F4;&#x7684;&#x3002;&#x5982;&#x679C;&#x6392;&#x9664;&#x6570;&#x636E;&#x8282;&#x70B9;&#x95EE;&#x9898;&#x540E;&#x4ECD;&#x7136;&#x51FA;&#x73B0;&#x8BE5;&#x9519;&#x8BEF;&#xFF0C;&#x8BF7;&#x8054;&#x7CFB;&#x6280;&#x672F;&#x652F;&#x6301;&#x3002;</p>
+</li>
+</ul>
+<h2 id="pxc-4102-erratomgetconnectionfailedknownreason-">PXC-4102 ERR_ATOM_GET_CONNECTION_FAILED_KNOWN_REASON </h2>
+<ul>
+<li><p>&#x63CF;&#x8FF0;&#xFF1A;&#x5DF2;&#x77E5;&#x539F;&#x56E0;&#x7684;PolarDB-X&#x540E;&#x7AEF;&#x8FDE;&#x63A5;&#x83B7;&#x53D6;&#x5931;&#x8D25;&#x3002;</p>
+</li>
+<li><p>&#x793A;&#x4F8B;&#xFF1A;<code>ERR-CODE: [PXC-4102][ERR_ATOM_GET_CONNECTION_FAILED_KNOWN_REASON] Get connection for db &apos;*****&apos; failed because wait millis 5000, active 0, maxActive 5</code></p>
+</li>
+<li><p>&#x8BF4;&#x660E;&#xFF1A;PolarDB-X&#x8BA1;&#x7B97;&#x8282;&#x70B9;&#x83B7;&#x53D6;&#x6570;&#x636E;&#x8282;&#x70B9;&#x8FDE;&#x63A5;&#x65F6;&#x51FA;&#x9519;&#xFF0C;&#x9519;&#x8BEF;&#x539F;&#x56E0;&#x5DF2;&#x7ECF;&#x5728;ERR-CODE&#x6D88;&#x606F;&#x4E2D;&#x7ED9;&#x51FA;&#x3002;&#x5E38;&#x89C1;PolarDB-X&#x6570;&#x636E;&#x8282;&#x70B9;&#x8FDE;&#x63A5;&#x5931;&#x8D25;&#x7684;&#x539F;&#x56E0;&#x5982;&#x4E0B;&#xFF1A;</p>
+<ul>
+<li><p>&#x540E;&#x7AEF;&#x6570;&#x636E;&#x8282;&#x70B9;&#x8FDE;&#x63A5;&#x6570;&#x5DF2;&#x6EE1;</p>
+</li>
+<li><p>&#x8BA1;&#x7B97;&#x8282;&#x70B9;&#x5230;&#x6570;&#x636E;&#x8282;&#x70B9;&#x7684;&#x8FDE;&#x63A5;&#x8D85;&#x65F6;</p>
+</li>
+<li><p>&#x6570;&#x636E;&#x8282;&#x70B9;&#x62D2;&#x7EDD;&#x8FDE;&#x63A5;</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>  &#x5982;&#x679C;&#x6392;&#x9664;&#x540E;&#x7AEF;&#x6570;&#x636E;&#x8282;&#x70B9;&#x95EE;&#x9898;&#x540E;&#x4ECD;&#x7136;&#x51FA;&#x73B0;&#x8BE5;&#x9519;&#x8BEF;&#xFF0C;&#x8BF7;&#x8054;&#x7CFB;&#x6280;&#x672F;&#x652F;&#x6301;&#x3002;</p>
+<h2 id="pxc-4103-erratomconnectionpoolfull-">PXC-4103 ERR_ATOM_CONNECTION_POOL_FULL </h2>
+<ul>
+<li><p>&#x63CF;&#x8FF0;&#xFF1A;PolarDB-X&#x540E;&#x7AEF;&#x6570;&#x636E;&#x8282;&#x70B9;&#x8FDE;&#x63A5;&#x6C60;&#x5DF2;&#x6EE1;&#x3002;</p>
+</li>
+<li><p>&#x793A;&#x4F8B;&#xFF1A;<code>ERR-CODE: [PXC-4103][ERR_ATOM_CONNECTION_POOL_FULL] Pool of DB &apos;*****&apos; is full. Message from pool: wait millis 5000, active 5, maxActive 5. AppName:*****, Env:*****, UnitName:null.</code></p>
+</li>
+<li><p>&#x8BF4;&#x660E;&#xFF1A;&#x8BE5;&#x9519;&#x8BEF;&#x8868;&#x793A;PolarDB-X&#x540E;&#x7AEF;&#x8FDE;&#x63A5;&#x6C60;&#x5DF2;&#x6EE1;&#x3002;&#x5BFC;&#x81F4;PXC-4103&#x9519;&#x8BEF;&#x7684;&#x5E38;&#x89C1;&#x539F;&#x56E0;&#x5982;&#x4E0B;&#xFF1A;</p>
+<ul>
+<li><p>&#x5E94;&#x7528;SQL&#x8BED;&#x53E5;&#x6267;&#x884C;&#x6BD4;&#x8F83;&#x6162;&#xFF0C;&#x5360;&#x7528;&#x5355;&#x4E2A;&#x8FDE;&#x63A5;&#x7684;&#x65F6;&#x95F4;&#x8FC7;&#x957F;&#xFF0C;&#x5BFC;&#x81F4;&#x8FDE;&#x63A5;&#x6570;&#x4E0D;&#x591F;&#xFF1B;</p>
+</li>
+<li><p>&#x5E94;&#x7528;&#x7AEF;&#x6CA1;&#x6709;&#x5173;&#x95ED;&#x6570;&#x636E;&#x5E93;&#x8FDE;&#x63A5;&#xFF0C;&#x5BFC;&#x81F4;&#x8FDE;&#x63A5;&#x6CC4;&#x9732;&#xFF1B;</p>
+</li>
+<li><p>&#x6709;&#x5F88;&#x591A;&#x8DE8;&#x5E93;&#x67E5;&#x8BE2;&#xFF08;&#x4F8B;&#x5982;&#x805A;&#x5408;&#x7EDF;&#x8BA1;&#x7C7B;&#x67E5;&#x8BE2;&#xFF0C;&#x672A;&#x5E26;&#x5206;&#x5E93;&#x6761;&#x4EF6;&#x7684;&#x67E5;&#x8BE2;&#xFF09;&#x540C;&#x65F6;&#x6267;&#x884C;&#xFF0C;&#x5360;&#x7528;&#x5927;&#x91CF;&#x8FDE;&#x63A5;&#x3002;</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>  &#x89E3;&#x51B3;&#x65B9;&#x6CD5;&#x5EFA;&#x8BAE;&#x5982;&#x4E0B;&#xFF1A;</p>
+<ul>
+<li><p>&#x5C3D;&#x91CF;&#x4F7F;&#x7528;&#x6846;&#x67B6;&#x8BBF;&#x95EE;&#x6570;&#x636E;&#x5E93;&#xFF0C;&#x5982;Spring JDBC&#x3001;MyBatis&#x7B49;&#xFF1B;</p>
+</li>
+<li><p>&#x6309;&#x6027;&#x80FD;&#x5206;&#x6790;&#x62A5;&#x544A;&#x4E0E;DBA&#x5EFA;&#x8BAE;&#x4F18;&#x5316;&#x4E1A;&#x52A1;SQL&#x8BED;&#x53E5;&#xFF1B;</p>
+</li>
+<li><p>&#x4F7F;&#x7528;PolarDB-X&#x8BFB;&#x5199;&#x5206;&#x79BB;&#x5C06;&#x8DE8;&#x5E93;&#x67E5;&#x8BE2;&#x8F6C;&#x53D1;&#x81F3;&#x8BFB;&#x5E93;&#x5904;&#x7406;&#xFF1B;</p>
+</li>
+<li><p>&#x5347;&#x7EA7;&#x66F4;&#x9AD8;&#x89C4;&#x683C;&#x7684;PolarDB-X&#xFF0C;&#x63D0;&#x5347;&#x540E;&#x7AEF;&#x5904;&#x7406;&#x80FD;&#x529B;&#xFF1B;</p>
+</li>
+<li><p>&#x8054;&#x7CFB;&#x6280;&#x672F;&#x652F;&#x6301;&#x8C03;&#x6574;PolarDB-X&#x540E;&#x7AEF;&#x8FDE;&#x63A5;&#x6570;&#x3002;</p>
+</li>
+</ul>
+<h2 id="pxc-4104-erratomcreateconnectiontooslow-">PXC-4104 ERR_ATOM_CREATE_CONNECTION_TOO_SLOW </h2>
+<ul>
+<li><p>&#x63CF;&#x8FF0;&#xFF1A;PolarDB-X&#x540E;&#x7AEF;&#x6570;&#x636E;&#x8282;&#x70B9;&#x8FDE;&#x63A5;&#x521B;&#x5EFA;&#x592A;&#x6162;&#x3002;</p>
+</li>
+<li><p>&#x793A;&#x4F8B;&#xFF1A;<code>ERR-CODE: [PXC-4104][ERR_ATOM_CREATE_CONNECTION_TOO_SLOW] Get connection for db &apos;*****&apos; from pool timeout. AppName:*****, Env:*****, UnitName:null. Message from pool: wait millis 5000, active 3, maxActive 5.</code></p>
+</li>
+<li><p>&#x8BF4;&#x660E;&#xFF1A;PolarDB-X&#x5411;&#x540E;&#x7AEF;&#x6570;&#x636E;&#x8282;&#x70B9;&#x5F02;&#x6B65;&#x521B;&#x5EFA;&#x8FDE;&#x63A5;&#x65F6;&#xFF0C;&#x5982;&#x679C;&#x5728;&#x77ED;&#x65F6;&#x95F4;&#x521B;&#x5EFA;&#x5927;&#x91CF;&#x8FDE;&#x63A5;&#xFF0C;&#x6216;&#x8005;&#x6570;&#x636E;&#x8282;&#x70B9;&#x5EFA;&#x7ACB;&#x8FDE;&#x63A5;&#x901F;&#x5EA6;&#x592A;&#x6162;&#xFF0C;&#x4F1A;&#x51FA;&#x73B0;&#x7B49;&#x5F85;&#x8D85;&#x65F6;&#x3002;&#x8BE5;&#x95EE;&#x9898;&#x901A;&#x5E38;&#x662F;&#x7531;&#x4E8E;&#x540E;&#x7AEF;&#x6570;&#x636E;&#x8282;&#x70B9;&#x538B;&#x529B;&#x8FC7;&#x5927;&#x6216;&#x5F02;&#x5E38;&#x5BFC;&#x81F4;&#x7684;&#xFF0C;&#x5EFA;&#x8BAE;&#x4F7F;&#x7528;PolarDB-X&#x8BFB;&#x5199;&#x5206;&#x79BB;&#xFF0C;&#x6216;&#x8005;&#x5347;&#x7EA7;&#x66F4;&#x9AD8;&#x89C4;&#x683C;&#xFF0C;&#x51CF;&#x8F7B;&#x540E;&#x7AEF;&#x5904;&#x7406;&#x538B;&#x529B;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x6392;&#x9664;&#x540E;&#x7AEF;&#x6570;&#x636E;&#x8282;&#x70B9;&#x95EE;&#x9898;&#x540E;&#x4ECD;&#x7136;&#x51FA;&#x73B0;&#x8BE5;&#x9519;&#x8BEF;&#xFF0C;&#x8BF7;&#x8054;&#x7CFB;&#x6280;&#x672F;&#x652F;&#x6301;&#x3002;&#x5982;&#x679C;&#x95EE;&#x9898;&#x662F;&#x7531;&#x77ED;&#x65F6;&#x95F4;&#x521B;&#x5EFA;&#x5927;&#x91CF;&#x8FDE;&#x63A5;&#x5BFC;&#x81F4;&#xFF0C;&#x5EFA;&#x8BAE;&#x8054;&#x7CFB;&#x6280;&#x672F;&#x652F;&#x6301;&#x8C03;&#x6574;PolarDB-X&#x6700;&#x5C0F;&#x8FDE;&#x63A5;&#x6570;&#x3002;</p>
+</li>
+</ul>
+<h2 id="pxc-4105-erratomaccessdenied-">PXC-4105 ERR_ATOM_ACCESS_DENIED </h2>
+<ul>
+<li><p>&#x63CF;&#x8FF0;&#xFF1A;PolarDB-X&#x540E;&#x7AEF;&#x6570;&#x636E;&#x8282;&#x70B9;&#x62D2;&#x7EDD;&#x521B;&#x5EFA;&#x8FDE;&#x63A5;&#x3002;</p>
+</li>
+<li><p>&#x793A;&#x4F8B;&#xFF1A;<code>ERR-CODE: [PXC-4105][ERR_ATOM_ACCESS_DENIED] DB &apos;*****&apos; Access denied for user &apos;*****&apos;@&apos;*****&apos;. AppName:*****, Env:*****, UnitName:null. Please contact DBA to check.</code></p>
+</li>
+<li><p>&#x8BF4;&#x660E;&#xFF1A;&#x8BE5;&#x9519;&#x8BEF;&#x8868;&#x660E;PolarDB-X&#x901A;&#x8FC7;&#x7528;&#x6237;&#x540D;&#x548C;&#x5BC6;&#x7801;&#x8FDE;&#x63A5;&#x6570;&#x636E;&#x8282;&#x70B9;&#x65F6;&#x88AB;&#x62D2;&#x7EDD;&#x8BBF;&#x95EE;&#xFF0C;&#x8BF7;&#x8054;&#x7CFB;&#x6280;&#x672F;&#x652F;&#x6301;&#x3002;</p>
+</li>
+</ul>
+<h2 id="pxc-4106-erratomdbdown-">PXC-4106 ERR_ATOM_DB_DOWN </h2>
+<ul>
+<li><p>&#x63CF;&#x8FF0;&#xFF1A;PolarDB-X&#x540E;&#x7AEF;&#x6570;&#x636E;&#x8282;&#x70B9;&#x65E0;&#x6CD5;&#x8FDE;&#x63A5;&#x3002;</p>
+</li>
+<li><p>&#x793A;&#x4F8B;&#xFF1A;<code>ERR-CODE: [PXC-4106][ERR_ATOM_DB_DOWN] DB &apos;*****&apos; cannot be connected. AppName:*****, Env:*****, UnitName:null. It seems a very real possibility that this DB IS DOWN. Please contact DBA to check.</code></p>
+</li>
+<li><p>&#x8BF4;&#x660E;&#xFF1A;&#x8BE5;&#x9519;&#x8BEF;&#x8868;&#x660E;PolarDB-X&#x5411;&#x540E;&#x7AEF;&#x6570;&#x636E;&#x8282;&#x70B9;&#x521B;&#x5EFA;&#x8FDE;&#x63A5;&#x8D85;&#x65F6;&#x6216;&#x8005;&#x6CA1;&#x6709;&#x54CD;&#x5E94;&#x3002;&#x9047;&#x5230;&#x8BE5;&#x9519;&#x8BEF;&#x7684;&#x901A;&#x5E38;&#x539F;&#x56E0;&#x662F;&#x6570;&#x636E;&#x8282;&#x70B9;&#x6545;&#x969C;&#xFF0C;&#x8BF7;&#x8054;&#x7CFB;&#x6280;&#x672F;&#x652F;&#x6301;&#x3002;</p>
+</li>
+</ul>
+<h2 id="pxc-4108-errvariablecannotsettonullfornow-">PXC-4108 ERR_VARIABLE_CAN_NOT_SET_TO_NULL_FOR_NOW </h2>
+<ul>
+<li><p>&#x63CF;&#x8FF0;&#xFF1A;&#x53D8;&#x91CF;&#xFF08;variable&#xFF09;&#x4E0D;&#x5141;&#x8BB8;&#x88AB;&#x8BBE;&#x7F6E;&#x4E3A;NULL&#x3002;</p>
+</li>
+<li><p>&#x793A;&#x4F8B;&#xFF1A;<code>ERR-CODE: [PXC-4108][ERR_VARIABLE_CAN_NOT_SET_TO_NULL_FOR_NOW] System variable ***** can&apos;&apos;t set to null for now;</code></p>
+</li>
+<li><p>&#x8BF4;&#x660E;&#xFF1A;&#x6709;&#x4E9B;&#x6570;&#x636E;&#x8282;&#x70B9;&#x53D8;&#x91CF;&#xFF08;variable&#xFF09;&#x4E0D;&#x5141;&#x8BB8;&#x7528;<code>SET var = x</code>&#x8BED;&#x53E5;&#x8BBE;&#x7F6E;&#x6210;NULL&#x503C;&#x3002;&#x9047;&#x5230;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#xFF0C;PolarDB-X&#x4F1A;&#x63D0;&#x793A;PXC-4108&#x9519;&#x8BEF;&#x3002;</p>
+</li>
+</ul>
+<h2 id="pxc-4200-errgroupnotavalilable-">PXC-4200 ERR_GROUP_NOT_AVALILABLE </h2>
+<ul>
+<li><p>&#x63CF;&#x8FF0;&#xFF1A;PolarDB-X&#x4E0B;&#x7684;&#x67D0;&#x4E2A;&#x6570;&#x636E;&#x8282;&#x70B9;&#x6682;&#x65F6;&#x4E0D;&#x53EF;&#x7528;&#x3002;</p>
+</li>
+<li><p>&#x793A;&#x4F8B;&#xFF1A;<code>ERR-CODE: [PXC-4200][ERR_GROUP_NOT_AVALILABLE] The TDDL Group ***** is running in fail-fast status, caused by this SQL:***** which threw a fatal exception as *****.</code></p>
+</li>
+<li><p>&#x8BF4;&#x660E;&#xFF1A;&#x5F53;&#x5206;&#x5E93;&#x5305;&#x542B;&#x7684;&#x6570;&#x636E;&#x8282;&#x70B9;&#x51FA;&#x73B0;&#x8BBF;&#x95EE;&#x5F02;&#x5E38;&#xFF0C;&#x5E76;&#x4E14;&#x5206;&#x5E93;&#x4E0B;&#x6CA1;&#x6709;&#x5176;&#x4ED6;&#x53EF;&#x7528;&#x6570;&#x636E;&#x8282;&#x70B9;&#x65F6;&#xFF0C;PolarDB-X&#x4F1A;&#x5C06;&#x5206;&#x5E93;&#x7F6E;&#x4E8E;fail-fast&#x72B6;&#x6001;&#x5E76;&#x63D0;&#x793A;PXC-4200&#x9519;&#x8BEF;&#x3002;</p>
+<p>&#x901A;&#x5E38;&#x8BE5;&#x9519;&#x8BEF;&#x662F;&#x7531;&#x4E8E;&#x6570;&#x636E;&#x8282;&#x70B9;&#x6545;&#x969C;&#x5BFC;&#x81F4;&#x7684;&#x3002;&#x8BF7;&#x6839;&#x636E;&#x5305;&#x542B;&#x7684;&#x6570;&#x636E;&#x8282;&#x70B9;&#x5F02;&#x5E38;&#x4FE1;&#x606F;&#x5B9A;&#x4F4D;&#x548C;&#x89E3;&#x51B3;&#x95EE;&#x9898;&#x3002;&#x5F53;&#x6545;&#x969C;&#x6570;&#x636E;&#x8282;&#x70B9;&#x6062;&#x590D;&#x540E;&#xFF0C;PolarDB-X&#x5C06;&#x81EA;&#x52A8;&#x53D6;&#x6D88;fail-fast&#x72B6;&#x6001;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x6570;&#x636E;&#x8282;&#x70B9;&#x6545;&#x969C;&#x89E3;&#x51B3;&#x540E;&#x4ECD;&#x7136;&#x51FA;&#x73B0;PXC-4200&#x9519;&#x8BEF;&#xFF0C;&#x8BF7;&#x8054;&#x7CFB;&#x6280;&#x672F;&#x652F;&#x6301;&#x3002;</p>
+</li>
+</ul>
+<h2 id="pxc-4201-errgroupnoatomavalilable-">PXC-4201 ERR_GROUP_NO_ATOM_AVALILABLE </h2>
+<ul>
+<li><p>&#x63CF;&#x8FF0;&#xFF1A;PolarDB-X&#x5206;&#x5E93;&#x5185;&#x6682;&#x65F6;&#x6CA1;&#x6709;&#x53EF;&#x7528;&#x6570;&#x636E;&#x8282;&#x70B9;&#x3002;</p>
+</li>
+<li><p>&#x793A;&#x4F8B;&#xFF1A;<code>ERR-CODE: [PXC-4201][ERR_GROUP_NO_ATOM_AVALILABLE] All weights of DBs in Group &apos;*****&apos; is 0. Weights is: *****.</code></p>
+</li>
+<li><p>&#x8BF4;&#x660E;&#xFF1A;&#x5F53;&#x5206;&#x5E93;&#x5305;&#x542B;&#x7684;&#x6570;&#x636E;&#x8282;&#x70B9;&#x5168;&#x90FD;&#x4E0D;&#x53EF;&#x7528;&#xFF0C;&#x6216;&#x8005;&#x5904;&#x4E8E;fail-fast&#x72B6;&#x6001;&#x65F6;&#xFF0C;PolarDB-X&#x4F1A;&#x63D0;&#x793A;PXC-4201&#x9519;&#x8BEF;&#x3002;</p>
+<p>&#x901A;&#x5E38;&#x8BE5;&#x9519;&#x8BEF;&#x662F;&#x7531;&#x4E8E;&#x6570;&#x636E;&#x8282;&#x70B9;&#x6545;&#x969C;&#x5BFC;&#x81F4;&#x7684;&#x3002;&#x8BF7;&#x68C0;&#x67E5;&#x540E;&#x7AEF;&#x6570;&#x636E;&#x8282;&#x70B9;&#x72B6;&#x6001;&#x4EE5;&#x5B9A;&#x4F4D;&#x548C;&#x89E3;&#x51B3;&#x95EE;&#x9898;&#x3002;&#x5982;&#x679C;&#x6545;&#x969C;&#x89E3;&#x51B3;&#x540E;&#x4ECD;&#x7136;&#x51FA;&#x73B0;PXC-4201&#x9519;&#x8BEF;&#xFF0C;&#x8BF7;&#x8054;&#x7CFB;&#x6280;&#x672F;&#x652F;&#x6301;&#x3002;</p>
+</li>
+</ul>
+<h2 id="pxc-4202-errsqlquerytimeout-">PXC-4202 ERR_SQL_QUERY_TIMEOUT </h2>
+<ul>
+<li><p>&#x63CF;&#x8FF0;&#xFF1A;PolarDB-X&#x67E5;&#x8BE2;&#x8D85;&#x65F6;&#x3002;</p>
+</li>
+<li><p>&#x793A;&#x4F8B;&#xFF1A;<code>ERR-CODE: [PXC-4202][ERR_SQL_QUERY_TIMEOUT] Slow query leads to a timeout exception, please contact DBA to check slow sql. SocketTimout:*** ms, Atom:*****, Group:*****, AppName:*****, Env:*****, UnitName:null.</code></p>
+</li>
+<li><p>&#x8BF4;&#x660E;&#xFF1A;&#x8BE5;&#x9519;&#x8BEF;&#x8868;&#x793A;SQL&#x8BED;&#x53E5;&#x5728;&#x540E;&#x7AEF;&#x6570;&#x636E;&#x8282;&#x70B9;&#x4E0A;&#x7684;&#x6267;&#x884C;&#x65F6;&#x95F4;&#x8D85;&#x8FC7;PolarDB-X&#x8BBE;&#x7F6E;&#x7684;socketTimeout&#x53C2;&#x6570;&#x9650;&#x5236;&#x3002;&#x9ED8;&#x8BA4;&#x7684;PolarDB-X&#x8D85;&#x65F6;&#xFF08;socketTimeout&#xFF09;&#x65F6;&#x95F4;&#x8BBE;&#x7F6E;&#x662F;900&#x79D2;&#x3002;</p>
+<p>&#x5EFA;&#x8BAE;&#x4F18;&#x5316;SQL&#x8BED;&#x53E5;&#xFF0C;&#x4EE5;&#x53CA;&#x5728;&#x540E;&#x7AEF;&#x6570;&#x636E;&#x8282;&#x70B9;&#x4E0A;&#x521B;&#x5EFA;&#x9002;&#x5408;&#x7684;&#x7D22;&#x5F15;&#x4EE5;&#x63D0;&#x5347;SQL&#x8BED;&#x53E5;&#x7684;&#x6267;&#x884C;&#x6027;&#x80FD;&#x3002;&#x5982;&#x679C;&#x4F18;&#x5316;&#x540E;&#x7684;SQL&#x8BED;&#x53E5;&#x4ECD;&#x7136;&#x8F83;&#x6162;&#xFF0C;&#x53EF;&#x4EE5;&#x53C2;&#x89C1;&#x5982;&#x4E0B;Hint&#x8BED;&#x6CD5;&#x4E34;&#x65F6;&#x8BBE;&#x7F6E;PolarDB-X&#x7684;&#x8D85;&#x65F6;&#x65F6;&#x95F4;&#xFF1A;<code>/*TDDL:SOCKET_TIMEOUT=900000*/ SELECT * FROM dual;</code>&#xFF0C;&#x5176;&#x4E2D;SOCKET_TIMEOUT&#x8BBE;&#x7F6E;&#x7684;&#x5355;&#x4F4D;&#x662F;&#x6BEB;&#x79D2;&#x3002;&#x5173;&#x4E8E;PolarDB-X&#x7684;Hint&#x7528;&#x6CD5;&#xFF0C;&#x8BE6;&#x60C5;&#x8BF7;&#x53C2;&#x89C1;<a href="https://help.aliyun.com/document_detail/51246.htm" target="_blank">&#x81EA;&#x5B9A;&#x4E49;SQL&#x8D85;&#x65F6;&#x65F6;&#x95F4;</a> &#x3002;&#x5982;&#x679C;&#x9700;&#x8981;&#x6C38;&#x4E45;&#x8C03;&#x6574;PolarDB-X&#x8D85;&#x65F6;&#x8BBE;&#x7F6E;&#xFF0C;&#x8BF7;&#x8054;&#x7CFB;&#x6280;&#x672F;&#x652F;&#x6301;&#x3002;</p>
+</li>
+</ul>
+<h2 id="pxc-4203-errsqlquerymergetimeout-">PXC-4203 ERR_SQL_QUERY_MERGE_TIMEOUT </h2>
+<ul>
+<li><p>&#x63CF;&#x8FF0;&#xFF1A;PolarDB-X&#x5206;&#x5E03;&#x5F0F;&#x67E5;&#x8BE2;&#x8D85;&#x65F6;&#x3002;</p>
+</li>
+<li><p>&#x793A;&#x4F8B;&#xFF1A;<code>ERR-CODE: [PXC-4203][ERR_SQL_QUERY_MERGE_TIMEOUT] Slow sql query leads to a timeout exception during merging results, please optimize the slow sql. The the default timeout is *** ms. DB is *****</code></p>
+</li>
+<li><p>&#x8BF4;&#x660E;&#xFF1A;PolarDB-X&#x6267;&#x884C;&#x5206;&#x5E03;&#x5F0F;&#x67E5;&#x8BE2;&#x8D85;&#x65F6;&#xFF0C;&#x9ED8;&#x8BA4;&#x7684;&#x8D85;&#x65F6;&#x8BBE;&#x7F6E;&#x662F;900&#x79D2;&#x3002;&#x4EA7;&#x751F;PXC-4203&#x9519;&#x8BEF;&#x8868;&#x793A;SQL&#x8BED;&#x53E5;&#x626B;&#x63CF;&#x4E86;&#x591A;&#x4E2A;&#x5206;&#x5E93;&#x7684;&#x6570;&#x636E;&#x5E76;&#x4E14;&#x6267;&#x884C;&#x65F6;&#x95F4;&#x8D85;&#x8FC7;900&#x79D2;&#x3002;</p>
+<p>&#x5EFA;&#x8BAE;&#x8FDB;&#x884C;&#x5982;&#x4E0B;&#x4F18;&#x5316;&#xFF1A;</p>
+<ul>
+<li><p>&#x5728;WHERE&#x6761;&#x4EF6;&#x4E2D;&#x6DFB;&#x52A0;&#x5206;&#x5E93;&#x952E;&#xFF08;Sharding key&#xFF09;&#x6761;&#x4EF6;&#xFF0C;&#x5C06;SQL&#x8BED;&#x53E5;&#x4F18;&#x5316;&#x6210;&#x5355;&#x5E93;&#x6267;&#x884C;&#xFF1B;</p>
+</li>
+<li><p>&#x68C0;&#x67E5;&#x662F;&#x5426;&#x53EF;&#x4EE5;&#x5728;&#x540E;&#x7AEF;&#x6570;&#x636E;&#x8282;&#x70B9;&#x4E0A;&#x521B;&#x5EFA;&#x9002;&#x5408;&#x7684;&#x7D22;&#x5F15;&#xFF0C;&#x63D0;&#x5347;&#x626B;&#x63CF;&#x5404;&#x4E2A;&#x5206;&#x5E93;&#x6570;&#x636E;&#x7684;&#x6027;&#x80FD;&#xFF1B;</p>
+</li>
+<li><p>&#x8BBE;&#x6CD5;&#x6D88;&#x9664;&#x5206;&#x5E03;&#x5F0F;&#x67E5;&#x8BE2;&#x4E2D;&#x7684;&#x8DE8;&#x5E93;JOIN&#xFF0C;&#x6570;&#x636E;&#x91CD;&#x6392;&#x5E8F;&#x7B49;&#x8017;&#x65F6;&#x64CD;&#x4F5C;&#xFF0C;&#x964D;&#x4F4E;PolarDB-X&#x6570;&#x636E;&#x5408;&#x5E76;&#x9636;&#x6BB5;&#x7684;&#x6D88;&#x8017;&#x3002;</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>  &#x5982;&#x679C;&#x4F18;&#x5316;&#x540E;&#x7684;SQL&#x8BED;&#x53E5;&#x4ECD;&#x7136;&#x8F83;&#x6162;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5982;&#x4E0B;Hint&#x8BED;&#x6CD5;&#x4E34;&#x65F6;&#x8BBE;&#x7F6E;PolarDB-X&#x7684;&#x8D85;&#x65F6;&#x65F6;&#x95F4;&#xFF1A;<code>/*TDDL:SOCKET_TIMEOUT=900000*/ SELECT * FROM dual;</code>&#xFF0C;&#x5176;&#x4E2D;SOCKET_TIMEOUT&#x8BBE;&#x7F6E;&#x7684;&#x5355;&#x4F4D;&#x662F;&#x6BEB;&#x79D2;&#x3002;&#x5173;&#x4E8E;PolarDB-X&#x7684;Hint&#x7528;&#x6CD5;&#xFF0C;&#x8BE6;&#x60C5;&#x8BF7;&#x53C2;&#x89C1;<a href="https://help.aliyun.com/document_detail/51246.htm" target="_blank">&#x81EA;&#x5B9A;&#x4E49;SQL&#x8D85;&#x65F6;&#x65F6;&#x95F4;&#x3002;</a></p>
+<h2 id="pxc-4400-errsequence-">PXC-4400 ERR_SEQUENCE </h2>
+<ul>
+<li><p>&#x63CF;&#x8FF0;&#xFF1A;&#x5904;&#x7406;Sequence&#xFF08;&#x5168;&#x5C40;&#x552F;&#x4E00;&#x5E8F;&#x5217;&#xFF09;&#x5931;&#x8D25;&#x3002;</p>
+</li>
+<li><p>&#x793A;&#x4F8B;&#xFF1A;<code>ERR-CODE: [PXC-4400][ERR_SEQUENCE] Sequence : All dataSource faild to get value!</code></p>
+</li>
+<li><p>&#x8BF4;&#x660E;&#xFF1A;&#x5904;&#x7406;Sequence&#x51FA;&#x9519;&#xFF0C;&#x9519;&#x8BEF;&#x4FE1;&#x606F;&#x5728;<code>Sequence :</code>&#x4E2D;&#x7ED9;&#x51FA;&#x3002;&#x5BFC;&#x81F4;PXC-4400&#x7684;&#x5E38;&#x89C1;&#x539F;&#x56E0;&#x662F;&#x6570;&#x636E;&#x8282;&#x70B9;&#x6545;&#x969C;&#xFF0C;&#x65E0;&#x6CD5;&#x8BBF;&#x95EE;Sequence&#x6709;&#x5173;&#x7684;&#x6570;&#x636E;&#x8868;&#x3002;</p>
+<p>&#x5EFA;&#x8BAE;&#x5148;&#x68C0;&#x67E5;&#x540E;&#x7AEF;&#x6570;&#x636E;&#x8282;&#x70B9;&#x72B6;&#x6001;&#x3002;&#x5982;&#x679C;&#x6392;&#x9664;&#x6570;&#x636E;&#x8282;&#x70B9;&#x6545;&#x969C;&#x540E;&#x4ECD;&#x7136;&#x53D1;&#x751F;&#x9519;&#x8BEF;&#xFF0C;&#x8BF7;&#x8054;&#x7CFB;&#x6280;&#x672F;&#x652F;&#x6301;&#x3002;</p>
+</li>
+</ul>
+<h2 id="pxc-4401-errmisssequence-">PXC-4401 ERR_MISS_SEQUENCE </h2>
+<ul>
+<li><p>&#x63CF;&#x8FF0;&#xFF1A;Sequence&#x4E0D;&#x5B58;&#x5728;&#x3002;</p>
+</li>
+<li><p>&#x793A;&#x4F8B;&#xFF1A;<code>ERR-CODE: [PXC-4401][ERR_MISS_SEQUENCE] Sequence &apos;*****&apos; is not found</code></p>
+</li>
+<li><p>&#x8BF4;&#x660E;&#xFF1A;&#x547D;&#x4EE4;&#x4E2D;&#x4F7F;&#x7528;&#x7684;Sequence&#x540D;&#x79F0;&#x4E0D;&#x5B58;&#x5728;&#x3002;&#x5EFA;&#x8BAE;&#x7528;<code>SHOW SEQUENCES</code>&#x547D;&#x4EE4;&#x68C0;&#x67E5;PolarDB-X&#x4E2D;&#x6240;&#x6709;&#x5DF2;&#x521B;&#x5EFA;&#x7684;Sequence&#x540D;&#x79F0;&#xFF0C;&#x5E76;&#x4E14;&#x9009;&#x62E9;&#x6B63;&#x786E;&#x7684;Sequence&#x4F7F;&#x7528;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x4F7F;&#x7528;&#x7684;Sequence&#x5C1A;&#x4E0D;&#x5B58;&#x5728;&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x5982;&#x4E0B;&#x8BED;&#x53E5;&#x521B;&#x5EFA;&#xFF1A;</p>
+<pre><code class="lang-sql"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">SEQUENCE</span> &lt;<span class="hljs-keyword">sequence</span> <span class="hljs-keyword">name</span>&gt; [ <span class="hljs-keyword">START</span> <span class="hljs-keyword">WITH</span> &lt;<span class="hljs-built_in">numeric</span> <span class="hljs-keyword">value</span>&gt; ] 
+[ <span class="hljs-keyword">INCREMENT</span> <span class="hljs-keyword">BY</span> &lt;<span class="hljs-built_in">numeric</span> <span class="hljs-keyword">value</span>&gt; ] [ MAXVALUE &lt;<span class="hljs-built_in">numeric</span> <span class="hljs-keyword">value</span>&gt; ] 
+[ <span class="hljs-keyword">CYCLE</span> | <span class="hljs-keyword">NOCYCLE</span> ]<span class="hljs-string">`
+</span></code></pre>
+</li>
+</ul>
+<p>  &#x5982;&#x679C;&#x4F7F;&#x7528;&#x7684;Sequence&#x5DF2;&#x7ECF;&#x5B58;&#x5728;&#xFF0C;&#x4F46;&#x662F;&#x4ECD;&#x7136;&#x63D0;&#x793A;PXC-4401&#x9519;&#x8BEF;&#xFF0C;&#x8BF7;&#x8054;&#x7CFB;&#x6280;&#x672F;&#x652F;&#x6301;&#x3002;&#x5173;&#x4E8E;PolarDB-X&#x7684;Sequence&#x7528;&#x6CD5;&#xFF0C;&#x8BE6;&#x60C5;&#x8BF7;&#x53C2;&#x89C1;<a href="https://help.aliyun.com/document_detail/29675.htm" target="_blank">PolarDB-X Sequence&#x4ECB;&#x7ECD;</a> &#x3002;</p>
+<h2 id="pxc-4403-errmisssequencetableondefaultdb-">PXC-4403 ERR_MISS_SEQUENCE_TABLE_ON_DEFAULT_DB </h2>
+<ul>
+<li><p>&#x63CF;&#x8FF0;&#xFF1A;Sequence&#x4F7F;&#x7528;&#x7684;&#x6570;&#x636E;&#x8868;&#x4E0D;&#x5B58;&#x5728;&#x3002;</p>
+</li>
+<li><p>&#x793A;&#x4F8B;&#xFF1A;<code>ERR-CODE: [PXC-4403][ERR_MISS_SEQUENCE_TABLE_ON_DEFAULT_DB] Sequence table is not in default db.</code></p>
+</li>
+<li><p>&#x8BF4;&#x660E;&#xFF1A;&#x65E0;&#x6CD5;&#x5728;PolarDB-X&#x540E;&#x7AEF;&#x7684;&#x6570;&#x636E;&#x5E93;&#x91CC;&#x8BBF;&#x95EE;&#x540D;&#x79F0;&#x53EB;sequence&#x6216;&#x8005;sequence_opt&#x7684;&#x6570;&#x636E;&#x8868;&#xFF0C;&#x8BF7;&#x8054;&#x7CFB;&#x6280;&#x672F;&#x652F;&#x6301;&#x3002;</p>
+</li>
+</ul>
+<h2 id="pxc-4404-errsequencetablemeta-">PXC-4404 ERR_SEQUENCE_TABLE_META </h2>
+<ul>
+<li><p>&#x63CF;&#x8FF0;&#xFF1A;Sequence&#x6570;&#x636E;&#x8868;&#x7ED3;&#x6784;&#x9519;&#x8BEF;&#x3002;</p>
+</li>
+<li><p>&#x793A;&#x4F8B;&#xFF1A;<code>ERR-CODE: [PXC-4404][ERR_SEQUENCE_TABLE_META] the meta of sequence table is error, some columns missed</code></p>
+</li>
+<li><p>&#x8BF4;&#x660E;&#xFF1A;Sequence&#x76F8;&#x5173;&#x6570;&#x636E;&#x8868;&#xFF08;&#x5982;sequence&#x6216;sequence_opt&#xFF09;&#x4E2D;&#x7F3A;&#x5C11;&#x76F8;&#x5E94;&#x7684;&#x5B57;&#x6BB5;&#xFF0C;&#x8BF7;&#x8054;&#x7CFB;&#x6280;&#x672F;&#x652F;&#x6301;&#x3002;</p>
+</li>
+</ul>
+<h2 id="pxc-4405-errinitsequencefromdb-">PXC-4405 ERR_INIT_SEQUENCE_FROM_DB </h2>
+<ul>
+<li><p>&#x63CF;&#x8FF0;&#xFF1A;&#x521D;&#x59CB;&#x5316;Sequence&#x9519;&#x8BEF;&#x3002;</p>
+</li>
+<li><p>&#x793A;&#x4F8B;&#xFF1A;<code>ERR-CODE: [PXC-4405][ERR_INIT_SEQUENCE_FROM_DB] init sequence manager error: *****</code></p>
+</li>
+<li><p>&#x8BF4;&#x660E;&#xFF1A;&#x521D;&#x59CB;&#x5316;&#x9700;&#x8981;&#x8BBF;&#x95EE;&#x7684;Sequence&#x65F6;&#x51FA;&#x9519;&#xFF0C;&#x9519;&#x8BEF;&#x4FE1;&#x606F;&#x5728;init sequence manager error:&#x540E;&#x7ED9;&#x51FA;&#x3002;&#x5EFA;&#x8BAE;&#x5148;&#x68C0;&#x67E5;PolarDB-X&#x540E;&#x7AEF;&#x6570;&#x636E;&#x8282;&#x70B9;&#x72B6;&#x6001;&#x3002;&#x5982;&#x679C;&#x6392;&#x9664;&#x6570;&#x636E;&#x8282;&#x70B9;&#x6545;&#x969C;&#x540E;&#x4ECD;&#x7136;&#x63D0;&#x793A;PXC-4405&#x9519;&#x8BEF;&#xFF0C;&#x8BF7;&#x8054;&#x7CFB;&#x6280;&#x672F;&#x652F;&#x6301;&#x3002;</p>
+</li>
+</ul>
+<h2 id="pxc-4407-errotherwhenbuildsequence-">PXC-4407 ERR_OTHER_WHEN_BUILD_SEQUENCE </h2>
+<ul>
+<li><p>&#x63CF;&#x8FF0;&#xFF1A;&#x8BBF;&#x95EE;Sequence&#x6570;&#x636E;&#x8868;&#x51FA;&#x9519;&#x3002;</p>
+</li>
+<li><p>&#x793A;&#x4F8B;&#xFF1A;<code>ERR-CODE: [PXC-4407][ERR_OTHER_WHEN_BUILD_SEQUENCE] error when build sequence: *****</code></p>
+</li>
+<li><p>&#x8BF4;&#x660E;&#xFF1A;&#x5728;&#x8BBF;&#x95EE;Sequence&#x76F8;&#x5173;&#x6570;&#x636E;&#x8868;&#xFF08;&#x5982;sequence&#x6216;sequence_opt&#xFF09;&#x65F6;&#x53D1;&#x751F;&#x9519;&#x8BEF;&#x3002;&#x9519;&#x8BEF;&#x4FE1;&#x606F;&#x5728;error when build sequence:&#x540E;&#x7ED9;&#x51FA;&#x3002;&#x5EFA;&#x8BAE;&#x5148;&#x68C0;&#x67E5;PolarDB-X&#x540E;&#x7AEF;&#x6570;&#x636E;&#x8282;&#x70B9;&#x72B6;&#x6001;&#x3002;&#x5982;&#x679C;&#x6392;&#x9664;&#x6570;&#x636E;&#x8282;&#x70B9;&#x6545;&#x969C;&#x540E;&#x4ECD;&#x7136;&#x63D0;&#x793A;PXC-4407&#x9519;&#x8BEF;&#xFF0C;&#x8BF7;&#x8054;&#x7CFB;&#x6280;&#x672F;&#x652F;&#x6301;&#x3002;</p>
+</li>
+</ul>
+<h2 id="pxc-4408-errsequencenextvalue-">PXC-4408 ERR_SEQUENCE_NEXT_VALUE </h2>
+<ul>
+<li><p>&#x63CF;&#x8FF0;&#xFF1A;&#x83B7;&#x53D6;Sequence&#x503C;&#x51FA;&#x9519;&#x3002;</p>
+</li>
+<li><p>&#x793A;&#x4F8B;&#xFF1A;<code>ERR-CODE: [PXC-4408][ERR_SEQUENCE_NEXT_VALUE] error when get sequence&apos;s next value, sequence is: *****, error: *****</code></p>
+</li>
+<li><p>&#x8BF4;&#x660E;&#xFF1A;&#x4F7F;&#x7528;PolarDB-X&#x81EA;&#x589E;&#x4E3B;&#x952E;&#xFF0C;&#x6216;&#x8005;&#x4F7F;&#x7528;<code>&lt;sequence name&gt;.NEXTVAL</code>&#x8BED;&#x6CD5;&#x624B;&#x5DE5;&#x83B7;&#x53D6;&#x5168;&#x5C40;&#x552F;&#x4E00;ID&#x65F6;&#x53D1;&#x751F;&#x9519;&#x8BEF;&#x3002;&#x9519;&#x8BEF;&#x539F;&#x56E0;&#x5728;error:&#x63D0;&#x793A;&#x540E;&#x7ED9;&#x51FA;&#x3002;</p>
+<p>&#x4EA7;&#x751F;PXC-4408&#x9519;&#x8BEF;&#x7684;&#x539F;&#x56E0;&#x662F;&#x540E;&#x7AEF;&#x6570;&#x636E;&#x8282;&#x70B9;&#x6545;&#x969C;&#x3002;&#x5EFA;&#x8BAE;&#x5148;&#x68C0;&#x67E5;PolarDB-X&#x540E;&#x7AEF;&#x6570;&#x636E;&#x8282;&#x70B9;&#x72B6;&#x6001;&#x548C;&#x8BBF;&#x95EE;&#x538B;&#x529B;&#x3002;&#x5982;&#x679C;&#x6392;&#x9664;&#x6570;&#x636E;&#x8282;&#x70B9;&#x6545;&#x969C;&#x540E;&#x4ECD;&#x7136;&#x63D0;&#x793A;PXC-4408&#x9519;&#x8BEF;&#xFF0C;&#x8BF7;&#x8054;&#x7CFB;&#x6280;&#x672F;&#x652F;&#x6301;&#x3002;</p>
+</li>
+</ul>
+<h2 id="pxc-4500-errparser-">PXC-4500 ERR_PARSER </h2>
+<ul>
+<li><p>&#x63CF;&#x8FF0;&#xFF1A;&#x89E3;&#x6790;SQL&#x8BED;&#x53E5;&#x5931;&#x8D25;&#x3002;</p>
+</li>
+<li><p>&#x793A;&#x4F8B;&#xFF1A;<code>ERR-CODE: [PXC-4500][ERR_PARSER] not support statement: &apos;*****&apos;</code></p>
+</li>
+<li><p>&#x8BF4;&#x660E;&#xFF1A;PolarDB-X&#x652F;&#x6301;&#x7B26;&#x5408;SQL-92&#x6807;&#x51C6;&#x7684;SQL&#x8BED;&#x6CD5;&#xFF0C;&#x4EE5;&#x53CA;MySQL&#x652F;&#x6301;&#x7684;&#x8BED;&#x6CD5;&#x6269;&#x5C55;&#x4E0E;&#x51FD;&#x6570;&#x3002;&#x8BF7;&#x68C0;&#x67E5;&#x6267;&#x884C;&#x7684;SQL&#x8BED;&#x53E5;&#x662F;&#x5426;&#x7B26;&#x5408;PolarDB-X&#x517C;&#x5BB9;&#x7684;SQL&#x6807;&#x51C6;&#x53CA;MySQL&#x89C4;&#x8303;&#x3002;</p>
+<p>&#x5173;&#x4E8E;SQL&#x6807;&#x51C6;&#x8BED;&#x6CD5;&#xFF0C;&#x8BF7;&#x53C2;&#x89C1;<a href="https://www.w3schools.com/sql/" target="_blank">SQL&#x6807;&#x51C6;&#x8BED;&#x6CD5;</a> &#x3002;&#x5173;&#x4E8E;SQL&#x517C;&#x5BB9;&#x6027;&#xFF0C;&#x8BF7;&#x53C2;&#x89C1;<a href="https://help.aliyun.com/document_detail/71252.htm" target="_blank">SQL&#x517C;&#x5BB9;&#x6027;</a> &#x3002;&#x5173;&#x4E8E;MySQL 5.6 SQL&#x8BED;&#x6CD5;&#xFF0C;&#x8BF7;&#x53C2;&#x89C1;<a href="https://dev.mysql.com/doc/refman/5.6/en/sql-syntax.html" target="_blank">MySQL 5.6 SQL&#x8BED;&#x6CD5;</a> &#x3002;&#x5982;&#x679C;&#x60A8;&#x7684;SQL&#x8BED;&#x53E5;&#x7B26;&#x5408;&#x4E0A;&#x8FF0;&#x8BED;&#x6CD5;&#x89C4;&#x5219;&#x4ECD;&#x7136;&#x63D0;&#x793A;PXC-4500&#x9519;&#x8BEF;&#xFF0C;&#x8BF7;&#x8054;&#x7CFB;&#x6280;&#x672F;&#x652F;&#x6301;&#x3002;</p>
+</li>
+</ul>
+<h2 id="pxc-4501-erroptimizer-">PXC-4501 ERR_OPTIMIZER </h2>
+<ul>
+<li><p>&#x63CF;&#x8FF0;&#xFF1A;&#x4F18;&#x5316;&#x5668;&#x8F6C;&#x6362;SQL&#x8BED;&#x53E5;&#x5931;&#x8D25;&#x3002;</p>
+</li>
+<li><p>&#x793A;&#x4F8B;&#xFF1A;<code>ERR-CODE: [PXC-4501][ERR_OPTIMIZER] optimize error by: Unknown column &apos;*****&apos; in &apos;order clause&apos;</code></p>
+</li>
+<li><p>&#x8BF4;&#x660E;&#xFF1A;PolarDB-X&#x4F18;&#x5316;&#x5668;&#x7684;&#x5DE5;&#x4F5C;&#x662F;&#x8F6C;&#x6362;SQL&#x8BED;&#x53E5;&#x5230;&#x5185;&#x90E8;&#x8BED;&#x6CD5;&#x6811;&#x3002;&#x5982;&#x679C;SQL&#x8BED;&#x53E5;&#x4E2D;&#x51FA;&#x73B0;&#x903B;&#x8F91;&#x9519;&#x8BEF;&#xFF0C;&#x4F18;&#x5316;&#x5668;&#x8F6C;&#x6362;&#x5C31;&#x4F1A;&#x5931;&#x8D25;&#xFF0C;&#x4EA7;&#x751F;PXC-4501&#x9519;&#x8BEF;&#x3002;</p>
+<p>&#x5EFA;&#x8BAE;&#x6309;&#x7167;optimize error by:&#x540E;&#x7684;&#x63D0;&#x793A;&#x68C0;&#x67E5;&#x548C;&#x8C03;&#x6574;&#x60A8;&#x7684;SQL&#x8BED;&#x53E5;&#x3002;&#x5982;&#x679C;&#x8C03;&#x6574;SQL&#x8BED;&#x53E5;&#x540E;&#x4ECD;&#x7136;&#x63D0;&#x793A;PXC-4501&#x9519;&#x8BEF;&#xFF0C;&#x8BF7;&#x8054;&#x7CFB;&#x6280;&#x672F;&#x652F;&#x6301;&#x3002;</p>
+</li>
+</ul>
+<h2 id="pxc-4502-erroptimizermissorderfunctioninselect-">PXC-4502 ERR_OPTIMIZER_MISS_ORDER_FUNCTION_IN_SELECT </h2>
+<ul>
+<li><p>&#x63CF;&#x8FF0;&#xFF1A;ORDER BY&#x5305;&#x542B;&#x7684;&#x51FD;&#x6570;&#x5217;&#x5728;SELECT&#x5B50;&#x53E5;&#x4E2D;&#x4E0D;&#x5B58;&#x5728;&#x3002;</p>
+</li>
+<li><p>&#x793A;&#x4F8B;&#xFF1A;<code>ERR-CODE: [PXC-4502][ERR_OPTIMIZER_MISS_ORDER_FUNCTION_IN_SELECT] Syntax Error: orderBy/GroupBy Column ***** is not existed in select clause</code></p>
+</li>
+<li><p>&#x8BF4;&#x660E;&#xFF1A;&#x5F53;SQL&#x8BED;&#x53E5;&#x4E2D;&#x7684;ORDER BY&#x5B50;&#x53E5;&#x5305;&#x542B;&#x51FD;&#x6570;&#x5217;&#xFF08;&#x4F8B;&#x5982;RAND()&#xFF09;&#x65F6;&#xFF0C;PolarDB-X&#x8981;&#x6C42;&#x540C;&#x6837;&#x7684;&#x51FD;&#x6570;&#x5217;&#x5FC5;&#x987B;&#x4E5F;&#x5728;SELECT&#x5B50;&#x53E5;&#x4E2D;&#x51FA;&#x73B0;&#xFF0C;&#x5426;&#x5219;&#x63D0;&#x793A;PXC-4502&#x9519;&#x8BEF;&#x3002;</p>
+<p>&#x5EFA;&#x8BAE;&#x5728;SELECT&#x5B50;&#x53E5;&#x4E2D;&#x6DFB;&#x52A0;&#x76F8;&#x5E94;&#x7684;&#x51FD;&#x6570;&#x5217;&#x3002;</p>
+</li>
+</ul>
+<h2 id="pxc-4504-erroptimizerselfcrossjoin-">PXC-4504 ERR_OPTIMIZER_SELF_CROSS_JOIN </h2>
+<ul>
+<li><p>&#x63CF;&#x8FF0;&#xFF1A;&#x76F8;&#x540C;&#x8868;JOIN&#x7684;&#x6761;&#x4EF6;&#x4E0D;&#x8DB3;&#x3002;</p>
+</li>
+<li><p>&#x793A;&#x4F8B;&#xFF1A;<code>ERR-CODE: [PXC-4504][ERR_OPTIMIZER_SELF_CROSS_JOIN] self cross join case, add shard column filter on right table</code></p>
+</li>
+<li><p>&#x8BF4;&#x660E;&#xFF1A;PolarDB-X&#x5728;&#x6267;&#x884C;&#x76F8;&#x540C;&#x8868;&#x7684;JOIN&#x65F6;&#xFF0C;&#x5982;&#x679C;WHERE&#x5B50;&#x53E5;&#x53EA;&#x5305;&#x542B;&#x5176;&#x4E2D;&#x4E00;&#x5F20;&#x5DE6;&#x8868;&#xFF08;&#x6216;&#x53F3;&#x8868;&#xFF09;&#x7684;&#x62C6;&#x5206;&#x5B57;&#x6BB5;&#xFF08;sharding column&#xFF09;&#x6761;&#x4EF6;&#xFF0C;&#x4F1A;&#x63D0;&#x793A;PXC-4504&#x9519;&#x8BEF;&#x3002;</p>
+<p>&#x5EFA;&#x8BAE;&#x8C03;&#x6574;SQL&#x8BED;&#x53E5;&#xFF0C;&#x5728;WHERE&#x5B50;&#x53E5;&#x4E2D;&#x8865;&#x5168;JOIN&#x5DE6;&#x8868;&#xFF08;&#x6216;&#x53F3;&#x8868;&#xFF09;&#x7684;&#x62C6;&#x5206;&#x5B57;&#x6BB5;&#x6761;&#x4EF6;&#x3002;</p>
+</li>
+</ul>
+<h2 id="pxc-4506-errmodifyshardcolumn-">PXC-4506 ERR_MODIFY_SHARD_COLUMN </h2>
+<ul>
+<li><p>&#x63CF;&#x8FF0;&#xFF1A;&#x7981;&#x6B62;&#x66F4;&#x65B0;&#x62C6;&#x5206;&#x952E;&#x3002;</p>
+</li>
+<li><p>&#x793A;&#x4F8B;&#xFF1A;<code>ERR-CODE: [PXC-4506][ERR_MODIFY_SHARD_COLUMN] Column &apos;*****&apos; is a sharding key of table &apos;*****&apos;, which is forbidden to be modified.</code></p>
+</li>
+<li><p>&#x8BF4;&#x660E;&#xFF1A;&#x8FD9;&#x662F;&#x7981;&#x6B62;&#x4FEE;&#x6539;&#x62C6;&#x5206;&#x952E;&#xFF08;sharding key&#xFF09;&#x7684;&#x5F02;&#x5E38;&#xFF0C;PolarDB-X&#x76EE;&#x524D;&#x9759;&#x6B62;&#x4FEE;&#x590D;&#x5305;&#x542B;GSI&#x7684;&#x8868;&#x7684;&#x5206;&#x533A;&#x952E;&#x3002;</p>
+<p>&#x5EFA;&#x8BAE;&#x5C06;&#x5BF9;&#x5E94;UPDATE&#x8BED;&#x53E5;&#x4FEE;&#x6539;&#x4E3A;&#x76F8;&#x540C;&#x6548;&#x679C;&#x7684;INSERT+DELETE&#x8BED;&#x53E5;&#x3002;</p>
+</li>
+</ul>
+<h2 id="pxc-4508-erroptimizernotallowedsortmergejoin-">PXC-4508 ERR_OPTIMIZER_NOT_ALLOWED_SORT_MERGE_JOIN </h2>
+<ul>
+<li><p>&#x63CF;&#x8FF0;&#xFF1A;&#x65E0;&#x6CD5;&#x6267;&#x884C;&#x5408;&#x5E76;&#x6392;&#x5E8F;JOIN&#x3002;</p>
+</li>
+<li><p>&#x793A;&#x4F8B;&#xFF1A;<code>ERR-CODE: [PXC-4508][ERR_OPTIMIZER_NOT_ALLOWED_SORT_MERGE_JOIN] sort merge join is not allowed when missing equivalent filter</code></p>
+</li>
+<li><p>&#x8BF4;&#x660E;&#xFF1A;&#x5982;&#x679C;SQL&#x8BED;&#x53E5;&#x4E2D;&#x9700;&#x8981;JOIN&#x7684;&#x6570;&#x636E;&#x8868;&#x5206;&#x522B;&#x6765;&#x81EA;&#x4E0D;&#x540C;&#x7684;&#x6570;&#x636E;&#x8282;&#x70B9;&#xFF0C;PolarDB-X&#x4F1A;&#x4F18;&#x5148;&#x9009;&#x62E9;&#x5408;&#x5E76;&#x6392;&#x5E8F;&#xFF08;Sort-merge Join&#xFF09;&#x7B97;&#x6CD5;&#x3002;&#x8BE5;&#x7B97;&#x6CD5;&#x8981;&#x6C42;JOIN&#x7684;&#x5DE6;&#x8868;&#x4E0E;&#x53F3;&#x8868;&#x5FC5;&#x987B;&#x5305;&#x542B;&#x5B57;&#x6BB5;&#x76F8;&#x7B49;&#x7684;&#x5173;&#x8054;&#x6761;&#x4EF6;&#xFF0C;&#x5426;&#x5219;PolarDB-X&#x5C06;&#x63D0;&#x793A;PXC-4508&#x9519;&#x8BEF;&#x3002;</p>
+<p>&#x5EFA;&#x8BAE;&#x8C03;&#x6574;SQL&#x8BED;&#x53E5;&#xFF0C;&#x5728;JOIN&#x6216;WHERE&#x90E8;&#x5206;&#x6DFB;&#x52A0;&#x76F8;&#x5E94;&#x7684;&#x5173;&#x8054;&#x6761;&#x4EF6;&#x3002;</p>
+</li>
+</ul>
+<h2 id="pxc-4509-erroptimizererrorhint-">PXC-4509 ERR_OPTIMIZER_ERROR_HINT </h2>
+<ul>
+<li><p>&#x63CF;&#x8FF0;&#xFF1A;Hint&#x8BED;&#x6CD5;&#x9519;&#x8BEF;&#x3002;</p>
+</li>
+<li><p>&#x793A;&#x4F8B;&#xFF1A;<code>ERR-CODE: [PXC-4509][ERR_OPTIMIZER_ERROR_HINT] Hint Syntax Error: unexpected operation: *****.</code></p>
+</li>
+<li><p>&#x8BF4;&#x660E;&#xFF1A;&#x8BE5;&#x9519;&#x8BEF;&#x8868;&#x793A;SQL&#x8BED;&#x53E5;&#x4E2D;&#x7684;Hint&#x8BED;&#x6CD5;&#x65E0;&#x6CD5;&#x88AB;PolarDB-X&#x89E3;&#x6790;&#x3002;&#x66F4;&#x591A;&#x5173;&#x4E8E;Hint&#x8BED;&#x6CD5;&#x4FE1;&#x606F;&#xFF0C;&#x8BF7;&#x53C2;&#x89C1;<a href="hint-faq.html">&#x81EA;&#x5B9A;&#x4E49;HINT&#x7B80;&#x4ECB;</a></p>
+</li>
+</ul>
+<h2 id="pxc-4510-errcontainsnoshardingkey-">PXC-4510 ERR_CONTAINS_NO_SHARDING_KEY </h2>
+<ul>
+<li><p>&#x63CF;&#x8FF0;&#xFF1A;&#x7F3A;&#x5C11;&#x62C6;&#x5206;&#x952E;&#xFF08;sharding key&#xFF09;&#x6761;&#x4EF6;&#x3002;</p>
+</li>
+<li><p>&#x793A;&#x4F8B;&#xFF1A;<code>ERR-CODE: [PXC-4510][ERR_CONTAINS_NO_SHARDING_KEY] Your SQL contains NO SHARDING KEY &apos;*****&apos; for table &apos;*****&apos;, which is not allowed in DEFAULT.</code></p>
+</li>
+<li><p>&#x8BF4;&#x660E;&#xFF1A;&#x7981;&#x6B62;&#x5168;&#x8868;&#x626B;&#x63CF;&#xFF08;full-table scan&#xFF09;&#x529F;&#x80FD;&#xFF0C;PolarDB-X&#x5728;&#x5EFA;&#x8868;&#x65F6;&#x9ED8;&#x8BA4;&#x5F00;&#x542F;&#x5168;&#x8868;&#x626B;&#x63CF;&#x529F;&#x80FD;&#x3002;&#x5982;&#x679C;&#x624B;&#x52A8;&#x5173;&#x95ED;&#x5168;&#x8868;&#x626B;&#x63CF;&#xFF0C;&#x5EFA;&#x8BAE;&#x786E;&#x8BA4;&#x4E0E;&#x8BE5;&#x8868;&#x6709;&#x5173;&#x7684;SQL&#x8BED;&#x53E5;&#x90FD;&#x5DF2;&#x6DFB;&#x52A0;&#x62C6;&#x5206;&#x952E;&#x6761;&#x4EF6;&#x3002;</p>
+</li>
+</ul>
+<h2 id="pxc-4511-errinsertcontainsnoshardingkey-">PXC-4511 ERR_INSERT_CONTAINS_NO_SHARDING_KEY </h2>
+<ul>
+<li><p>&#x63CF;&#x8FF0;&#xFF1A;INSERT&#x8BED;&#x53E5;&#x7F3A;&#x5C11;&#x62C6;&#x5206;&#x952E; (sharding key&#xFF09;&#x3002;</p>
+</li>
+<li><p>&#x793A;&#x4F8B;&#xFF1A;<code>ERR-CODE: [PXC-4511][ERR_INSERT_CONTAINS_NO_SHARDING_KEY] Your INSERT SQL contains NO SHARDING KEY &apos;*****&apos; for table &apos;*****&apos;.</code></p>
+</li>
+<li><p>&#x8BF4;&#x660E;&#xFF1A;&#x5F53;INSERT&#x8BED;&#x53E5;&#x7684;&#x76EE;&#x6807;&#x662F;&#x4E00;&#x5F20;PolarDB-X&#x62C6;&#x5206;&#x8868;&#x65F6;&#xFF0C;&#x5FC5;&#x987B;&#x5728;&#x63D2;&#x5165;&#x6570;&#x636E;&#x4E2D;&#x5305;&#x542B;&#x62C6;&#x5206;&#x952E;&#x7684;&#x503C;&#xFF08;&#x62C6;&#x5206;&#x952E;&#x662F;&#x81EA;&#x589E;&#x4E3B;&#x952E;&#x4F8B;&#x5916;&#xFF09;&#x3002;&#x5426;&#x5219;&#xFF0C;PolarDB-X&#x5C06;&#x63D0;&#x793A;PXC-4511&#x9519;&#x8BEF;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x9047;&#x5230;&#x8BE5;&#x9519;&#x8BEF;&#xFF0C;&#x5EFA;&#x8BAE;&#x4FEE;&#x6539;INSERT&#x8BED;&#x53E5;&#x8865;&#x5145;&#x7F3A;&#x5C11;&#x7684;&#x62C6;&#x5206;&#x952E;&#x503C;&#x3002;</p>
+</li>
+</ul>
+<h2 id="pxc-4515-errconnectioncharsetnotmatch-">PXC-4515 ERR_CONNECTION_CHARSET_NOT_MATCH </h2>
+<ul>
+<li><p>&#x63CF;&#x8FF0;&#xFF1A;&#x8F93;&#x5165;&#x5B57;&#x7B26;&#x96C6;&#x4E0D;&#x5339;&#x914D;&#x3002;</p>
+</li>
+<li><p>&#x793A;&#x4F8B;&#xFF1A;<code>ERR-CODE: [PXC-4515][ERR_CONNECTION_CHARSET_NOT_MATCH] Caused by MySQL&apos;s character_set_connection doesn&apos;t match your input charset. Partition DDL can only take ASCII or chinese column name. If you want use chinese table or column name, Make sure MySQL connection&apos;s charset support chinese character. Use &quot;set names xxx&quot; to set correct charset.</code></p>
+</li>
+<li><p>&#x8BF4;&#x660E;&#xFF1A;PolarDB-X&#x652F;&#x6301;&#x7528;&#x4E2D;&#x6587;&#x5B57;&#x7B26;&#x547D;&#x540D;&#x8868;&#x540D;&#x53CA;&#x5B57;&#x6BB5;&#x540D;&#x3002;&#x5728;&#x6267;&#x884C;&#x542B;&#x6709;&#x4E2D;&#x6587;&#x5B57;&#x7B26;&#x7684;SQL&#x8BED;&#x53E5;&#x65F6;&#xFF0C;&#x5982;&#x679C;&#x6570;&#x636E;&#x5E93;&#x8FDE;&#x63A5;&#x7684;&#x5B57;&#x7B26;&#x96C6;&#x8BBE;&#x7F6E;&#xFF08;character_set_connection&#xFF09;&#x4E0D;&#x652F;&#x6301;&#x4E2D;&#x6587;&#xFF08;&#x5982; latin1&#xFF09;&#xFF0C;&#x4F1A;&#x63D0;&#x793A;PXC-4515&#x9519;&#x8BEF;&#x3002;</p>
+<p>&#x60A8;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<code>SHOW VARIABLES LIKE &apos;character_set_connection&apos;</code>&#x67E5;&#x8BE2;MySQL&#x5BA2;&#x6237;&#x7AEF;&#x5F53;&#x524D;&#x7684;&#x8FDE;&#x63A5;&#x5B57;&#x7B26;&#x96C6;&#xFF0C;&#x4F7F;&#x7528;<code>SET NAMES</code>&#x547D;&#x4EE4;&#x4FEE;&#x6539;&#x5F53;&#x524D;&#x8FDE;&#x63A5;&#x5B57;&#x7B26;&#x96C6;&#x3002;&#x5982;&#x679C;&#x662F;Java&#x7A0B;&#x5E8F;JDBC&#x65B9;&#x5F0F;&#x8FDE;&#x63A5;PolarDB-X&#xFF0C;&#x8BF7;&#x8BBE;&#x7F6E;&#x6570;&#x636E;&#x5E93;&#x8FDE;&#x63A5;&#x53C2;&#x6570;characterEncoding&#x3002;</p>
+</li>
+</ul>
+<h2 id="pxc-4517-errmodifysystemtable-">PXC-4517 ERR_MODIFY_SYSTEM_TABLE </h2>
+<ul>
+<li><p>&#x63CF;&#x8FF0;&#xFF1A;&#x7981;&#x6B62;&#x4FEE;&#x6539;&#x7CFB;&#x7EDF;&#x8868;&#x3002;</p>
+</li>
+<li><p>&#x793A;&#x4F8B;&#xFF1A;<code>ERR-CODE: [PXC-4617][ERR_MODIFY_SYSTEM_TABLE] Table &apos;*****&apos; is PolarDB-XSYSTEM TABLE, which is forbidden to be modified.</code></p>
+</li>
+<li><p>&#x8BF4;&#x660E;&#xFF1A;PolarDB-X&#x5185;&#x90E8;&#x7EF4;&#x62A4;&#x4E86;&#x4E00;&#x4E9B;&#x7CFB;&#x7EDF;&#x8868;&#xFF0C;&#x4F7F;&#x7528;SQL&#x8BED;&#x53E5;&#x66F4;&#x65B0;&#x5176;&#x4E2D;&#x7684;&#x6570;&#x636E;&#x4F1A;&#x63D0;&#x793A;PXC-4517&#x9519;&#x8BEF;&#x3002;&#x9650;&#x5236;&#x7684;&#x7CFB;&#x7EDF;&#x8868;&#x5305;&#x62EC;sequence&#x3001;sequence_opt&#x3001;txc_undo_log&#x7B49;&#xFF0C;&#x8BF7;&#x907F;&#x514D;&#x5728;&#x4E1A;&#x52A1;&#x6216;&#x6570;&#x636E;&#x5E93;&#x8BBE;&#x8BA1;&#x4E2D;&#x4F7F;&#x7528;&#x8FD9;&#x4E9B;&#x8868;&#x540D;&#x3002;</p>
+</li>
+</ul>
+<h2 id="pxc-4520-errdmlwithsubquery-">PXC-4520 ERR_DML_WITH_SUBQUERY </h2>
+<ul>
+<li><p>&#x63CF;&#x8FF0;&#xFF1A;&#x4E0D;&#x652F;&#x6301;&#x5728;DML&#x4F7F;&#x7528;&#x5B50;&#x67E5;&#x8BE2;&#x8BED;&#x53E5;&#x3002;</p>
+</li>
+<li><p>&#x793A;&#x4F8B;&#xFF1A;<code>ERR-CODE: [PXC-4520][ERR_DML_WITH_SUBQUERY] DO NOT support UPDATE/DELETE with subQuery</code></p>
+</li>
+<li><p>&#x8BF4;&#x660E;&#xFF1A;&#x76EE;&#x524D;PolarDB-X&#x4E2D;&#x7981;&#x6B62;&#x5728;DML&#x8BED;&#x53E5;&#x4E2D;&#x5305;&#x542B;&#x5B50;&#x67E5;&#x8BE2;&#x8BED;&#x53E5;&#xFF0C;&#x9047;&#x5230;&#x6B64;&#x7C7B;&#x95EE;&#x9898;&#x5EFA;&#x8BAE;&#x5148;&#x4ECE;&#x4E1A;&#x52A1;&#x4E0A;&#x6539;&#x5199;SQL&#xFF0C;&#x907F;&#x514D;&#x4F7F;&#x7528;&#x5B50;&#x67E5;&#x8BE2;&#x3002;</p>
+</li>
+</ul>
+<h2 id="pxc-4521-errinsertshard-">PXC-4521 ERR_INSERT_SHARD </h2>
+<ul>
+<li><p>&#x63CF;&#x8FF0;&#xFF1A;Insert&#x8FC7;&#x7A0B;&#x4E2D;&#x4E00;&#x6761;&#x8BB0;&#x5F55;&#x88AB;&#x8DEF;&#x7531;&#x5230;&#x4E86;&#x591A;&#x4E2A;&#x5206;&#x7247;&#x3002;</p>
+</li>
+<li><p>&#x793A;&#x4F8B;&#xFF1A;<code>ERR-CODE: [PXC-4521][ERR_INSERT_SHARD] Cannot decide which group to insert</code></p>
+</li>
+<li><p>&#x8BF4;&#x660E;&#xFF1A;Insert&#x8FC7;&#x7A0B;&#x4E2D;&#x4E00;&#x6761;&#x8BB0;&#x5F55;&#x88AB;&#x8DEF;&#x7531;&#x5230;&#x4E86;&#x591A;&#x4E2A;&#x5206;&#x7247;&#xFF0C;&#x5BFC;&#x81F4;&#x4E0D;&#x77E5;&#x9053;&#x8FD9;&#x6761;&#x8BB0;&#x5F55;&#x88AB;&#x63D2;&#x5165;&#x5230;&#x54EA;&#x4E2A;&#x5206;&#x7247;&#xFF0C;&#x51FA;&#x73B0;&#x8FD9;&#x7C7B;&#x95EE;&#x9898;&#xFF0C;&#x8BF7;&#x8054;&#x7CFB;&#x6280;&#x672F;&#x652F;&#x6301;&#x3002;</p>
+</li>
+</ul>
+<h2 id="pxc-4523-errtodnflimitexceed-">PXC-4523 ERR_TODNF_LIMIT_EXCEED </h2>
+<ul>
+<li><p>&#x63CF;&#x8FF0;&#xFF1A;where&#x540E;&#x9762;&#x7684;&#x8FC7;&#x6EE4;&#x6761;&#x4EF6;&#x592A;&#x591A;&#x3002;</p>
+</li>
+<li><p>&#x793A;&#x4F8B;&#xFF1A;<code>ERR-CODE: [PXC-4523][ERR_TODNF_LIMIT_EXCEED] toDnf has exceed the limit size</code></p>
+</li>
+<li><p>&#x8BF4;&#x660E;&#xFF1A;PolarDB-X&#x4F1A;&#x5BF9;&#x7528;&#x6237;SQL&#x7684;&#x67E5;&#x8BE2;&#x6761;&#x4EF6;&#xFF08;&#x5373;where&#x5B50;&#x53E5;&#xFF09;&#x8FDB;&#x884C;CNF/DNF&#x7684;&#x6761;&#x4EF6;&#x8303;&#x5F0F;&#x8F6C;&#x6362;&#xFF0C;&#x5E76;&#x8FDB;&#x884C;&#x6761;&#x4EF6;&#x63A8;&#x5BFC;&#x4E0E;&#x4F18;&#x5316;&#xFF0C;&#x4E3A;&#x4E86;&#x4F18;&#x5316;&#x7A33;&#x5B9A;&#x6027;&#xFF0C;&#x9650;&#x5236;&#x4E86;&#x6761;&#x4EF6;&#x6570;2000&#x3002;&#x7528;&#x6237;&#x53EF;&#x4EE5;&#x5C06;DNF_REX_NODE_LIMIT&#x53C2;&#x6570;&#x8C03;&#x6574;&#x5927;&#x3002;</p>
+</li>
+</ul>
+<h2 id="pxc-4524-errtocnflimitexceed-">PXC-4524 ERR_TOCNF_LIMIT_EXCEED </h2>
+<ul>
+<li><p>&#x63CF;&#x8FF0;&#xFF1A;where&#x540E;&#x9762;&#x7684;&#x8FC7;&#x6EE4;&#x6761;&#x4EF6;&#x592A;&#x591A;&#x3002;</p>
+</li>
+<li><p>&#x793A;&#x4F8B;&#xFF1A;<code>ERR-CODE: [PXC-4524][ERR_TODNF_LIMIT_EXCEED] toCnf has exceed the limit size</code></p>
+</li>
+<li><p>&#x8BF4;&#x660E;&#xFF1A;PolarDB-X&#x4F1A;&#x5BF9;&#x7528;&#x6237;SQL&#x7684;&#x67E5;&#x8BE2;&#x6761;&#x4EF6;&#xFF08;&#x5373;where&#x5B50;&#x53E5;&#xFF09;&#x8FDB;&#x884C;CNF/DNF&#x7684;&#x6761;&#x4EF6;&#x8303;&#x5F0F;&#x8F6C;&#x6362;&#xFF0C;&#x5E76;&#x8FDB;&#x884C;&#x6761;&#x4EF6;&#x63A8;&#x5BFC;&#x4E0E;&#x4F18;&#x5316;&#xFF0C;&#x4E3A;&#x4E86;&#x4F18;&#x5316;&#x7A33;&#x5B9A;&#x6027;&#xFF0C;&#x9650;&#x5236;&#x4E86;&#x6761;&#x4EF6;&#x6570;2000&#x3002;&#x7528;&#x6237;&#x53EF;&#x4EE5;&#x5C06;CNF_REX_NODE_LIMIT&#x53C2;&#x6570;&#x8C03;&#x6574;&#x5927;&#x3002;</p>
+</li>
+</ul>
+<h2 id="pxc-4526-errfunctionnotfound-">PXC-4526 ERR_FUNCTION_NOT_FOUND </h2>
+<ul>
+<li><p>&#x63CF;&#x8FF0;&#xFF1A;&#x8BE5;&#x51FD;&#x6570;&#x4E0D;&#x652F;&#x6301;&#x8C03;&#x7528;&#x3002;</p>
+</li>
+<li><p>&#x793A;&#x4F8B;&#xFF1A;<code>ERR-CODE: [PXC-4526][ERR_FUNCTION_NOT_FOUND] No match found for function signature</code></p>
+</li>
+<li><p>&#x8BF4;&#x660E;&#xFF1A;&#x8BE5;&#x9519;&#x8BEF;&#x8868;&#x660E;&#x5728;SQL&#x8BED;&#x53E5;&#x4E2D;&#x4F7F;&#x7528;&#x4E86;&#x9519;&#x8BEF;&#x7684;&#x8BED;&#x6CD5;&#x6216;&#x4E0D;&#x652F;&#x6301;&#x7684;&#x51FD;&#x6570;&#x3002;&#x5EFA;&#x8BAE;&#x4ED4;&#x7EC6;&#x68C0;&#x67E5;SQL&#x8BED;&#x53E5;&#x4E2D;&#x7684;&#x51FD;&#x6570;&#x8C03;&#x7528;&#x90E8;&#x5206;&#xFF0C;&#x4F7F;&#x7528;&#x6B63;&#x786E;&#x7684;&#x53C2;&#x6570;&#x4E2A;&#x6570;&#x548C;&#x7C7B;&#x578B;&#x8C03;&#x7528;&#x51FD;&#x6570;&#x3002;</p>
+</li>
+</ul>
+<h2 id="pxc-4527-errmodifyshardcolumnontablewithoutpk-">PXC-4527 ERR_MODIFY_SHARD_COLUMN_ON_TABLE_WITHOUT_PK </h2>
+<ul>
+<li><p>&#x63CF;&#x8FF0;&#xFF1A;&#x4E0D;&#x5141;&#x8BB8;&#x5728;&#x65E0;&#x4E3B;&#x952E;&#x7684;&#x8868;&#x4E0A;&#x4FEE;&#x6539;&#x5206;&#x5E93;&#x952E;&#x3002;</p>
+</li>
+<li><p>&#x793A;&#x4F8B;&#xFF1A;<code>ERR-CODE: [PXC-4527][ERR_MODIFY_SHARD_COLUMN_ON_TABLE_WITHOUT_PK]</code></p>
+</li>
+<li><p>&#x8BF4;&#x660E;&#xFF1A;PolarDB-X&#x76EE;&#x524D;&#x4E0D;&#x5141;&#x8BB8;&#x5728;&#x65E0;&#x4E3B;&#x952E;&#x7684;&#x8868;&#x4E0A;&#x4FEE;&#x6539;&#x5206;&#x5E93;&#x952E;&#x3002;</p>
+</li>
+</ul>
+<h2 id="pxc-4595-errunknowntz-">PXC-4595 ERR_UNKNOWN_TZ </h2>
+<ul>
+<li><p>&#x63CF;&#x8FF0;&#xFF1A;&#x8BBE;&#x7F6E;&#x9519;&#x8BEF;&#x7684;&#x65F6;&#x533A;&#x3002;</p>
+</li>
+<li><p>&#x793A;&#x4F8B;&#xFF1A;<code>ERR-CODE: [PXC-4595][ERR_UNKNOWN_TZ]</code></p>
+</li>
+<li><p>&#x8BF4;&#x660E;&#xFF1A;&#x5EFA;&#x8BAE;&#x68C0;&#x67E5;&#x65F6;&#x95F4;&#x7684;&#x8BED;&#x6CD5;&#x548C;&#x683C;&#x5F0F;&#x662F;&#x5426;&#x8BBE;&#x7F6E;&#x6B63;&#x786E;&#x3002;</p>
+</li>
+</ul>
+<h2 id="pxc-4600-errfunction-">PXC-4600 ERR_FUNCTION </h2>
+<ul>
+<li><p>&#x63CF;&#x8FF0;&#xFF1A;&#x9519;&#x8BEF;&#x7684;&#x51FD;&#x6570;&#x8C03;&#x7528;&#x3002;</p>
+</li>
+<li><p>&#x793A;&#x4F8B;&#xFF1A;<code>ERR-CODE: [PXC-4600][ERR_FUNCTION] function compute error by Incorrect parameter count in the call to native function &apos;*****&apos;</code></p>
+</li>
+<li><p>&#x8BF4;&#x660E;&#xFF1A;&#x8BE5;&#x9519;&#x8BEF;&#x8868;&#x660E;&#x5728;SQL&#x8BED;&#x53E5;&#x4E2D;&#x4F7F;&#x7528;&#x4E86;&#x9519;&#x8BEF;&#x7684;&#x8BED;&#x6CD5;&#x6216;&#x53C2;&#x6570;&#x8C03;&#x7528;&#x51FD;&#x6570;&#x3002;&#x5EFA;&#x8BAE;&#x4ED4;&#x7EC6;&#x68C0;&#x67E5;SQL&#x8BED;&#x53E5;&#x4E2D;&#x7684;&#x51FD;&#x6570;&#x8C03;&#x7528;&#x90E8;&#x5206;&#xFF0C;&#x4F7F;&#x7528;&#x6B63;&#x786E;&#x7684;&#x53C2;&#x6570;&#x4E2A;&#x6570;&#x548C;&#x7C7B;&#x578B;&#x8C03;&#x7528;&#x51FD;&#x6570;&#x3002;</p>
+</li>
+</ul>
+<h2 id="pxc-4602-errconvertor-">PXC-4602 ERR_CONVERTOR </h2>
+<ul>
+<li><p>&#x63CF;&#x8FF0;&#xFF1A;&#x9519;&#x8BEF;&#x7684;&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#x3002;</p>
+</li>
+<li><p>&#x793A;&#x4F8B;&#xFF1A;<code>ERR-CODE: [PXC-4602][ERR_CONVERTOR] convertor error by Unsupported convert: [*****]</code></p>
+</li>
+<li><p>&#x8BF4;&#x660E;&#xFF1A;&#x8BE5;&#x9519;&#x8BEF;&#x8868;&#x660E;PolarDB-X&#x5728;&#x6267;&#x884C;SQL&#x65F6;&#x8FDB;&#x884C;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#x5931;&#x8D25;&#x3002;&#x8BF7;&#x68C0;&#x67E5;SQL&#x8BED;&#x53E5;&#x4E2D;&#x662F;&#x5426;&#x5B58;&#x5728;&#x9700;&#x8981;&#x9690;&#x5F0F;&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x5E76;&#x4E14;&#x5C3D;&#x91CF;&#x4F7F;&#x7528;&#x76F8;&#x540C;&#x7C7B;&#x578B;&#x8FDB;&#x884C;&#x6BD4;&#x8F83;&#x548C;&#x8BA1;&#x7B97;&#x3002;</p>
+</li>
+</ul>
+<h2 id="pxc-4603-erraccrossdbtransaction-">PXC-4603 ERR_ACCROSS_DB_TRANSACTION </h2>
+<ul>
+<li><p>&#x63CF;&#x8FF0;&#xFF1A;&#x9519;&#x8BEF;&#x7684;&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#x3002;</p>
+</li>
+<li><p>&#x793A;&#x4F8B;&#xFF1A;<code>ERR-CODE: [PXC-4602][ERR_CONVERTOR] convertor error by Unsupported convert: [*****]</code></p>
+</li>
+<li><p>&#x8BF4;&#x660E;&#xFF1A;&#x8BE5;&#x9519;&#x8BEF;&#x8868;&#x660E;PolarDB-X&#x5728;&#x6267;&#x884C;SQL&#x65F6;&#x8FDB;&#x884C;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#x5931;&#x8D25;&#x3002;&#x8BF7;&#x68C0;&#x67E5;SQL&#x8BED;&#x53E5;&#x4E2D;&#x662F;&#x5426;&#x5B58;&#x5728;&#x9700;&#x8981;&#x9690;&#x5F0F;&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x5E76;&#x4E14;&#x5C3D;&#x91CF;&#x4F7F;&#x7528;&#x76F8;&#x540C;&#x7C7B;&#x578B;&#x8FDB;&#x884C;&#x6BD4;&#x8F83;&#x548C;&#x8BA1;&#x7B97;&#x3002;</p>
+</li>
+</ul>
+<h2 id="pxc-4604-errconcurrenttransaction-">PXC-4604 ERR_CONCURRENT_TRANSACTION </h2>
+<ul>
+<li><p>&#x63CF;&#x8FF0;&#xFF1A;&#x5D4C;&#x5957;&#x4E8B;&#x52A1;&#x5931;&#x8D25;&#x3002;</p>
+</li>
+<li><p>&#x793A;&#x4F8B;&#xFF1A;<code>ERR-CODE: [PXC-4604][ERR_CONCURRENT_TRANSACTION] Concurrent query is not supported on transaction group, transaction group is: {0}.</code></p>
+</li>
+<li><p>&#x8BF4;&#x660E;&#xFF1A;PolarDB-X&#x4E0D;&#x652F;&#x6301;&#x5D4C;&#x5957;&#x4E8B;&#x52A1;&#xFF0C;&#x5982;&#x679C;&#x5728;&#x540C;&#x4E00;&#x4E2A;&#x6570;&#x636E;&#x5E93;&#x8FDE;&#x63A5;&#x91CC;&#x5C1D;&#x8BD5;&#x540C;&#x65F6;&#x5F00;&#x542F;2&#x4E2A;&#x4EE5;&#x4E0A;&#x4E8B;&#x52A1;&#xFF0C;&#x5C06;&#x63D0;&#x793A;PXC-4604&#x9519;&#x8BEF;&#x3002;</p>
+<p>&#x5EFA;&#x8BAE;&#x5728;&#x5E94;&#x7528;&#x5F00;&#x53D1;&#x65F6;&#x907F;&#x514D;&#x4F7F;&#x7528;&#x5D4C;&#x5957;&#x4E8B;&#x52A1;&#xFF0C;&#x6216;&#x8005;&#x4F7F;&#x7528;&#x5E94;&#x7528;&#x5C42;&#x7684;&#x4E8B;&#x52A1;&#x6846;&#x67B6;&#x9632;&#x6B62;&#x4EA7;&#x751F;&#x5D4C;&#x5957;&#x4E8B;&#x52A1;&#x3002;</p>
+</li>
+</ul>
+<h2 id="pxc-4606-errquerycancled-">PXC-4606 ERR_QUERY_CANCLED </h2>
+<ul>
+<li><p>&#x63CF;&#x8FF0;&#xFF1A;&#x5F53;&#x524D;&#x6267;&#x884C;&#x7684;SQL&#x88AB;&#x53D6;&#x6D88;&#x3002;</p>
+</li>
+<li><p>&#x793A;&#x4F8B;&#xFF1A;<code>ERR-CODE: [PXC-4606][ERR_QUERY_CANCLED] Getting connection is not allowed when query has been cancled, group is *****</code></p>
+</li>
+<li><p>&#x8BF4;&#x660E;&#xFF1A;&#x4F7F;&#x7528;<code>KILL</code>&#x53D6;&#x6D88;&#x67D0;&#x6761;SQL&#x8BED;&#x53E5;&#x7684;&#x6267;&#x884C;&#x65F6;&#xFF0C;&#x88AB;&#x53D6;&#x6D88;&#x7684;SQL&#x8BED;&#x53E5;&#x4F1A;&#x8FD4;&#x56DE;&#x8BE5;&#x9519;&#x8BEF;&#x3002;&#x5982;&#x679C;&#x7ECF;&#x5E38;&#x51FA;&#x73B0;&#x8FD9;&#x4E00;&#x60C5;&#x51B5;&#xFF0C;&#x8BF7;&#x6392;&#x67E5;&#x662F;&#x5426;&#x6709;&#x5BA2;&#x6237;&#x7AEF;&#x6216;&#x7A0B;&#x5E8F;&#x5728;&#x6267;&#x884C;KILL&#x547D;&#x4EE4;&#x3002;</p>
+</li>
+</ul>
+<h2 id="pxc-4610-errconnectionclosed-">PXC-4610 ERR_CONNECTION_CLOSED </h2>
+<ul>
+<li><p>&#x63CF;&#x8FF0;&#xFF1A;&#x8FDE;&#x63A5;&#x5DF2;&#x7ECF;&#x5173;&#x95ED;&#x3002;</p>
+</li>
+<li><p>&#x793A;&#x4F8B;&#xFF1A;<code>ERR-CODE: [PXC-4610][ERR_CONNECTION_CLOSED] connection has been closed</code></p>
+</li>
+<li><p>&#x8BF4;&#x660E;&#xFF1A;&#x5F53;&#x4E8B;&#x52A1;&#x4E2D;&#x7684;SQL&#x8BED;&#x53E5;&#x6267;&#x884C;&#x51FA;&#x9519;&#xFF0C;&#x6216;&#x8005;&#x88AB;<code>KILL</code>&#x547D;&#x4EE4;&#x53D6;&#x6D88;&#x540E;&#xFF0C;&#x91CD;&#x590D;&#x4F7F;&#x7528;&#x540C;&#x4E00;&#x4E2A;&#x6570;&#x636E;&#x5E93;&#x8FDE;&#x63A5;&#x6267;&#x884C;&#x5176;&#x4ED6;SQL&#x8BED;&#x53E5;&#x4F1A;&#x63D0;&#x793A;PXC-4610&#x9519;&#x8BEF;&#x3002;</p>
+<p>&#x5EFA;&#x8BAE;&#x5728;&#x8BE5;&#x60C5;&#x51B5;&#x4E0B;&#x5173;&#x95ED;&#x8FDE;&#x63A5;&#xFF0C;&#x91CD;&#x65B0;&#x83B7;&#x53D6;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x6570;&#x636E;&#x5E93;&#x8FDE;&#x63A5;&#x3002;</p>
+</li>
+</ul>
+<h2 id="pxc-4612-errchecksqlpriv-">PXC-4612 ERR_CHECK_SQL_PRIV </h2>
+<ul>
+<li><p>&#x63CF;&#x8FF0;&#xFF1A;&#x7531;&#x4E8E;&#x6743;&#x9650;&#x4E0D;&#x591F;&#xFF0C;SQL&#x8BED;&#x53E5;&#x65E0;&#x6CD5;&#x6267;&#x884C;&#x3002;</p>
+</li>
+<li><p>&#x793A;&#x4F8B;&#xFF1A;<code>ERR-CODE: [PXC-4612][ERR_CHECK_SQL_PRIV] check user ***** on db ***** sql privileges failed.</code></p>
+</li>
+<li><p>&#x8BF4;&#x660E;&#xFF1A;PolarDB-X&#x7684;&#x65B0;&#x7248;&#x672C;&#x652F;&#x6301;&#x8D26;&#x53F7;&#x548C;&#x6388;&#x6743;&#xFF0C;&#x7C7B;&#x4F3C;MySQL&#x8D26;&#x53F7;&#x6743;&#x9650;&#x4F53;&#x7CFB;&#xFF0C;&#x53EA;&#x6709;&#x62E5;&#x6709;&#x5BF9;&#x5E94;&#x7C7B;&#x578B;&#x6743;&#x9650;&#x7684;&#x8D26;&#x53F7;&#x624D;&#x80FD;&#x6267;&#x884C;&#x8BE5;SQL&#x8BED;&#x53E5;&#x3002;&#x5982;&#x679C;&#x8D26;&#x53F7;&#x6743;&#x9650;&#x4E0D;&#x8DB3;&#xFF0C;PolarDB-X&#x5C06;&#x63D0;&#x793A;PXC-4612&#x9519;&#x8BEF;&#x3002;</p>
+<p>&#x5EFA;&#x8BAE;&#x68C0;&#x67E5;&#x7528;&#x6237;&#x62E5;&#x6709;&#x7684;PolarDB-X&#x6743;&#x9650;&#x3002;&#x5982;&#x679C;&#x6743;&#x9650;&#x4E0D;&#x8DB3;&#xFF0C;&#x8BF7;&#x5728;PolarDB-X&#x63A7;&#x5236;&#x53F0;&#x8BBE;&#x7F6E;&#x3002;&#x5173;&#x4E8E;PolarDB-X&#x8D26;&#x53F7;&#x4E0E;&#x6743;&#x9650;&#x8BBE;&#x7F6E;&#xFF0C;&#x8BF7;&#x53C2;&#x89C1;<a href="permissions.html">PolarDB-X&#x8D26;&#x53F7;&#x548C;&#x6743;&#x9650;&#x7CFB;&#x7EDF;</a></p>
+</li>
+</ul>
+<h2 id="pxc-4614-errexecuteonmysql-">PXC-4614 ERR_EXECUTE_ON_MYSQL </h2>
+<ul>
+<li><p>&#x63CF;&#x8FF0;&#xFF1A;SQL&#x8BED;&#x53E5;&#x5728;DN&#x4E0A;&#x6267;&#x884C;&#x62A5;&#x9519;&#x3002;</p>
+</li>
+<li><p>&#x793A;&#x4F8B;&#xFF1A;</p>
+<pre><code class="lang-text">ERR-CODE: [PXC-4614][ERR_EXECUTE_ON_MYSQL] Error occurs when execute on  GROUP &apos;*****&apos;: Duplicate entry &apos;*****&apos; for key &apos;PRIMARY&apos;
+PolarDB-X&#x5728;&#x540E;&#x7AEF;&#x6570;&#x636E;&#x8282;&#x70B9;&#x6570;&#x636E;&#x5E93;&#x4E0A;&#x6267;&#x884C;SQL&#x8BED;&#x53E5;&#x62A5;&#x9519;&#xFF0C;&#x672B;&#x5C3E;&#x5305;&#x542B;&#x4E86;&#x4ECE;&#x6570;&#x636E;&#x8282;&#x70B9;&#x8FD4;&#x56DE;&#x7684;&#x539F;&#x59CB;&#x9519;&#x8BEF;&#x4FE1;&#x606F;&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;
+Duplicate entry &apos;*****&apos; for key &apos;PRIMARY&apos;
+&#x8868;&#x793A;&#x5199;&#x5165;&#x6570;&#x636E;&#x8282;&#x70B9;&#x6570;&#x636E;&#x8868;&#x53D1;&#x751F;&#x4E86;&#x4E3B;&#x952E;&#x51B2;&#x7A81;&#x3002;
+The table &apos;*****&apos; is full
+&#x8868;&#x793A;&#x6570;&#x636E;&#x8282;&#x70B9;&#x4F7F;&#x7528;&#x7684;&#x4E34;&#x65F6;&#x8868;&#x5DF2;&#x6EE1;&#xFF0C;&#x9700;&#x8981;&#x8C03;&#x6574;&#x4E34;&#x65F6;&#x8868;&#x7A7A;&#x95F4;&#x6216;&#x4F18;&#x5316;SQL&#x8BED;&#x53E5;&#x3002;
+Deadlock found when trying to get lock;
+&#x8868;&#x793A;&#x5728;&#x6570;&#x636E;&#x8282;&#x70B9;&#x4E2D;&#x51FA;&#x73B0;&#x4E86;&#x6B7B;&#x9501;&#xFF0C;&#x901A;&#x5E38;&#x662F;&#x6570;&#x636E;&#x5199;&#x5165;&#x5B58;&#x5728;&#x8F83;&#x591A;&#x4E8B;&#x52A1;&#x51B2;&#x7A81;&#x5BFC;&#x81F4;&#x7684;&#x3002;
+</code></pre>
+</li>
+</ul>
+<ul>
+<li>&#x8BF4;&#x660E;&#xFF1A;&#x5EFA;&#x8BAE;&#x53C2;&#x89C1;PXC-4614&#x63D0;&#x4F9B;&#x7684;&#x539F;&#x59CB;&#x9519;&#x8BEF;&#x4FE1;&#x606F;&#x6392;&#x67E5;&#x95EE;&#x9898;&#x3002;&#x66F4;&#x591A;&#x5173;&#x4E8E;SQL&#x8BED;&#x53E5;&#x9519;&#x8BEF;&#x4FE1;&#x606F;&#x8BF7;&#x53C2;&#x89C1;<a href="https://dev.mysql.com/doc/refman/5.6/en/error-handling.html" target="_blank">MySQL 5.6&#x6587;&#x6863;</a> &#x3002;&#x5982;&#x679C;&#x6392;&#x9664;&#x5E94;&#x7528;&#x6216;&#x6570;&#x636E;&#x8282;&#x70B9;&#x95EE;&#x9898;&#x540E;&#x4ECD;&#x7136;&#x53D1;&#x751F;PXC-4614&#x9519;&#x8BEF;&#xFF0C;&#x8BF7;&#x8054;&#x7CFB;&#x6280;&#x672F;&#x652F;&#x6301;&#x3002;</li>
+</ul>
+<h2 id="pxc-4616-errunknowndatabase-">PXC-4616 ERR_UNKNOWN_DATABASE </h2>
+<ul>
+<li><p>&#x63CF;&#x8FF0;&#xFF1A;&#x9519;&#x8BEF;&#x7684;&#x6570;&#x636E;&#x5E93;&#x3002;</p>
+</li>
+<li><p>&#x793A;&#x4F8B;&#xFF1A;<code>ERR-CODE: [PXC-4616][ERR_UNKNOWN_DATABASE] Unknown database &apos;*****&apos;</code></p>
+</li>
+<li><p>&#x8BF4;&#x660E;&#xFF1A;PolarDB-X&#x5141;&#x8BB8;&#x5728;DDL&#x8BED;&#x53E5;&#x4E2D;&#x6307;&#x5B9A;&#x6570;&#x636E;&#x5E93;&#x540D;&#x79F0;&#x3002;&#x5982;&#x679C;&#x6307;&#x5B9A;&#x7684;&#x6570;&#x636E;&#x5E93;&#x540D;&#x79F0;&#x4E0E;PolarDB-X&#x63D0;&#x4F9B;&#x7684;&#x6570;&#x636E;&#x5E93;&#x540D;&#x79F0;&#x4E0D;&#x4E00;&#x81F4;&#xFF0C;&#x5C06;&#x8FD4;&#x56DE;PXC-4616&#x9519;&#x8BEF;&#x3002;</p>
+<p>&#x5EFA;&#x8BAE;&#x4FEE;&#x6539;DDL&#x8BED;&#x53E5;&#x4E2D;&#x7684;&#x6570;&#x636E;&#x5E93;&#x540D;&#x79F0;&#xFF0C;&#x786E;&#x4FDD;&#x4E0E;PolarDB-X&#x6570;&#x636E;&#x5E93;&#x540D;&#x79F0;&#x4E00;&#x81F4;&#x3002;</p>
+</li>
+</ul>
+<h2 id="pxc-4620-errforbidexecutedmlall-">PXC-4620 ERR_FORBID_EXECUTE_DML_ALL </h2>
+<p>&#x8BF4;&#x660E;&#xFF1A;PolarDB-X&#x7981;&#x6B62;&#x4E0D;&#x5E26;where&#x6761;&#x4EF6;&#x6267;&#x884C;delete&#x548C;update&#x64CD;&#x4F5C;&#x3002;</p>
+<h2 id="pxc-4633-errdbstatusreadonly-">PXC-4633 ERR_DB_STATUS_READ_ONLY </h2>
+<ul>
+<li><p>&#x793A;&#x4F8B;&#xFF1A;<code>ERR-CODE: [PXC-4633][ERR_DB_STATUS_READ_ONLY] Database is read-only, only read sql are supported</code></p>
+</li>
+<li><p>&#x8BF4;&#x660E;&#xFF1A;&#x8BE5;&#x9519;&#x8BEF;&#x7801;&#x8868;&#x793A;&#x6570;&#x636E;&#x5E93;&#x53EA;&#x6709;&#x8BFB;&#x6743;&#x9650;&#xFF0C;&#x8BF7;&#x68C0;&#x67E5;&#x4E0B;&#x5F53;&#x524D;&#x8D26;&#x53F7;&#x7684;&#x6743;&#x9650;&#x662F;&#x5426;&#x53D7;&#x9650;&#x3002;</p>
+</li>
+</ul>
+<h2 id="pxc-4707-erroutofmemory-">PXC-4707 ERR_OUT_OF_MEMORY </h2>
+<ul>
+<li><p>&#x63CF;&#x8FF0;&#xFF1A;&#x4E34;&#x65F6;&#x8868;&#x4F7F;&#x7528;&#x5185;&#x5B58;&#x8D85;&#x9650;&#x3002;</p>
+</li>
+<li><p>&#x793A;&#x4F8B;&#xFF1A;<code>ERR-CODE: [PXC-4707][ERR_OUT_OF_MEMORY]</code></p>
+</li>
+<li><p>&#x8BF4;&#x660E;&#xFF1A;&#x4E3A;&#x4E86;&#x4FDD;&#x8BC1;&#x6570;&#x636E;&#x5E93;&#x7A33;&#x5B9A;&#x6027;&#xFF0C;PolarDB-X&#x9650;&#x5236;&#x4E86;&#x6BCF;&#x6761;&#x67E5;&#x8BE2;&#x7684;&#x4E34;&#x65F6;&#x8868;&#x4F7F;&#x7528;&#x5185;&#x5B58;&#x91CF;&#xFF0C;&#x8BF4;&#x660E;&#x7528;&#x6237;&#x5F53;&#x524D;&#x7684;&#x67E5;&#x8BE2;&#x6D89;&#x53CA;&#x5230;&#x7684;&#x6570;&#x636E;&#x6BD4;&#x8F83;&#x591A;&#xFF0C;&#x53EF;&#x4EE5;&#x6253;&#x5F00;SPILL&#x6216;&#x8005;&#x8C03;&#x5927;&#x5F53;&#x524D;&#x67E5;&#x8BE2;&#x4E34;&#x65F6;&#x8868;&#x5185;&#x5B58;&#x9650;&#x5236;&#x3002;</p>
+</li>
+</ul>
+<h2 id="pxc-4709-erriventoryhintnotsupportcrossshard-">PXC-4709 ERR_IVENTORY_HINT_NOT_SUPPORT_CROSS_SHARD </h2>
+<ul>
+<li><p>&#x793A;&#x4F8B;&#xFF1A;<code>ERR-CODE: [PXC-4709][ERR_IVENTORY_HINT_NOT_SUPPORT_CROSS_SHARD]</code></p>
+</li>
+<li><p>&#x8BF4;&#x660E;&#xFF1A;&#x70ED;&#x70B9;&#x79D2;&#x6740;&#x529F;&#x80FD;&#x8981;&#x6C42;&#x662F;&#x5355;&#x5206;&#x7247;&#x4E8B;&#x52A1;&#xFF0C;&#x5982;&#x679C;&#x6D89;&#x53CA;&#x5230;&#x591A;&#x5206;&#x7247;&#x4E8B;&#x52A1;&#xFF0C;&#x4F1A;&#x51FA;&#x73B0;&#x8BE5;&#x9519;&#x8BEF;&#x3002;&#x8BF7;&#x8C03;&#x6574;&#x4E1A;&#x52A1;&#x903B;&#x8F91;&#xFF0C;&#x786E;&#x4FDD;&#x5728;&#x5355;&#x5206;&#x7247;&#x4E8B;&#x52A1;&#x4E0B;&#x4F7F;&#x7528;&#x70ED;&#x70B9;&#x529F;&#x80FD;&#x3002;</p>
+</li>
+</ul>
+<h2 id="pxc-4994-errflowcontrol-">PXC-4994 ERR_FLOW_CONTROL </h2>
+<ul>
+<li><p>&#x63CF;&#x8FF0;&#xFF1A;&#x6D41;&#x91CF;&#x5DF2;&#x8FBE;&#x4E0A;&#x9650;&#x3002;</p>
+</li>
+<li><p>&#x793A;&#x4F8B;&#xFF1A;<code>ERR-CODE: [PXC-4994][ERR_FLOW_CONTROL] [*****] flow control by *****</code></p>
+</li>
+<li><p>&#x8BF4;&#x660E;&#xFF1A;&#x8BE5;&#x9519;&#x8BEF;&#x4EE3;&#x8868;PolarDB-X&#x5904;&#x7406;SQL&#x8BF7;&#x6C42;&#x5DF2;&#x8FBE;&#x5230;&#x5185;&#x90E8;&#x6D41;&#x91CF;&#x4E0A;&#x9650;&#xFF0C;&#x5F53;&#x524D;&#x8BF7;&#x6C42;&#x88AB;&#x62D2;&#x7EDD;&#x3002;&#x5EFA;&#x8BAE;&#x68C0;&#x67E5;SQL&#x8BF7;&#x6C42;&#x91CF;&#x662F;&#x5426;&#x5B58;&#x5728;&#x5F02;&#x5E38;&#x5CF0;&#x503C;&#x3002;&#x5982;&#x679C;&#x89C2;&#x5BDF;&#x5230;SQL&#x8BF7;&#x6C42;&#x91CF;&#x4E0B;&#x964D;&#x540E;&#xFF0C;&#x4ECD;&#x7136;&#x5927;&#x91CF;&#x63D0;&#x793A;PXC-4994&#x9519;&#x8BEF;&#xFF0C;&#x8BF7;&#x8054;&#x7CFB;&#x6280;&#x672F;&#x652F;&#x6301;&#x3002;</p>
+</li>
+</ul>
+<h2 id="pxc-4998-errnotsupport-">PXC-4998 ERR_NOT_SUPPORT </h2>
+<ul>
+<li><p>&#x63CF;&#x8FF0;&#xFF1A;&#x4E0D;&#x652F;&#x6301;&#x7684;&#x7279;&#x6027;&#x3002;</p>
+</li>
+<li><p>&#x793A;&#x4F8B;&#xFF1A;<code>ERR-CODE: [PXC-4998][ERR_NOT_SUPPORT] ***** not support yet!</code></p>
+</li>
+<li><p>&#x8BF4;&#x660E;&#xFF1A;&#x8BE5;&#x9519;&#x8BEF;&#x4EE3;&#x8868;&#x4F7F;&#x7528;&#x7684;SQL&#x8BED;&#x6CD5;&#x6216;&#x8005;&#x529F;&#x80FD;PolarDB-X&#x5C1A;&#x4E0D;&#x652F;&#x6301;&#x3002;&#x5982;&#x679C;&#x8FD9;&#x4E9B;SQL&#x8BED;&#x6CD5;&#x6216;&#x8005;&#x529F;&#x80FD;&#x5BF9;&#x60A8;&#x5341;&#x5206;&#x91CD;&#x8981;&#xFF0C;&#x8BF7;&#x8054;&#x7CFB;&#x6280;&#x672F;&#x652F;&#x6301;&#x3002;</p>
+</li>
+</ul>
+<h2 id="pxc-5001-errtrans-">PXC-5001 ERR_TRANS </h2>
+<ul>
+<li><p>&#x63CF;&#x8FF0;&#xFF1A;&#x4E00;&#x822C;&#x6027;&#x7684;&#x4E8B;&#x52A1;&#x9519;&#x8BEF;&#x3002;</p>
+</li>
+<li><p>&#x793A;&#x4F8B;&#xFF1A;<code>ERR-CODE: [PXC-5001][ERR_TRANS] Too many lines updated in statement.</code></p>
+</li>
+<li><p>&#x8BF4;&#x660E;&#xFF1A;&#x8BF7;&#x53C2;&#x89C1;&#x9519;&#x8BEF;&#x4FE1;&#x606F;&#x5904;&#x7406;&#x3002;</p>
+<ul>
+<li><p><code>Too many lines updated in statement</code></p>
+<p>&#x4E8B;&#x52A1;&#x4E2D;&#x7684;UPDATE&#x8BED;&#x53E5;&#x66F4;&#x65B0;&#x884C;&#x6570;&#x8D85;&#x51FA;&#x9650;&#x5236;&#xFF08;1000&#xFF09;&#xFF0C;&#x5EFA;&#x8BAE;&#x68C0;&#x67E5;UPDATE&#x8BED;&#x53E5;&#x7684;WHERE&#x6761;&#x4EF6;&#x3002;&#x5982;&#x679C;&#x9700;&#x8981;&#x5728;&#x4E8B;&#x52A1;&#x4E2D;&#x6267;&#x884C;&#x5927;&#x6279;&#x91CF;&#x6570;&#x636E;&#x66F4;&#x65B0;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;PolarDB-X<code>Hint/*TDDL:UNDO_LOG_LIMIT={number}*/</code>&#x8C03;&#x6574;&#x9650;&#x5236;&#x503C;&#x3002;</p>
+</li>
+<li><p><code>Deferred execution is only supported in Flexible or XA Transaction</code></p>
+<p>&#x540E;&#x7F6E;&#x6267;&#x884C;&#x529F;&#x80FD;&#x4EC5;&#x4EC5;&#x5728;&#x67D4;&#x6027;&#x4E8B;&#x52A1;&#x4E0E;XA&#x4E8B;&#x52A1;&#x7B56;&#x7565;&#x4E0B;&#x53EF;&#x7528;&#x3002;&#x5728;&#x7528;PolarDB-X&#x7684;<code>Hint/*TDDL:DEFER*/</code>&#x8BED;&#x53E5;&#x63D0;&#x4EA4;&#x540E;&#x7F6E;&#x6267;&#x884C;&#x529F;&#x80FD;&#x4E4B;&#x524D;&#xFF0C;&#x8BF7;&#x5148;&#x7528;<code>SET drds_transaction_policy = ***</code>&#x547D;&#x4EE4;&#x66F4;&#x6539;PolarDB-X&#x4E8B;&#x52A1;&#x7B56;&#x7565;&#x3002;</p>
+</li>
+<li><p>&#x5176;&#x4ED6;&#x9519;&#x8BEF;&#x4FE1;&#x606F;&#xFF0C;&#x8BF7;&#x8054;&#x7CFB;&#x6280;&#x672F;&#x652F;&#x6301;&#x3002;</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="pxc-5002-errtransunsupported-">PXC-5002 ERR_TRANS_UNSUPPORTED </h2>
+<ul>
+<li><p>&#x63CF;&#x8FF0;&#xFF1A;&#x4E8B;&#x52A1;&#x4E2D;&#x7684;&#x8BED;&#x6CD5;&#x6216;&#x529F;&#x80FD;&#x5C1A;&#x4E0D;&#x652F;&#x6301;&#x3002;</p>
+</li>
+<li><p>&#x793A;&#x4F8B;&#xFF1A;<code>ERR-CODE: [PXC-5002][ERR_TRANS_UNSUPPORTED] Table without primary keys is not supported.</code></p>
+</li>
+<li><p>&#x8BF4;&#x660E;&#xFF1A;&#x8BE5;&#x529F;&#x80FD;&#x5728;PolarDB-X&#x4E8B;&#x52A1;&#x4E2D;&#x5C1A;&#x4E0D;&#x652F;&#x6301;&#x3002;&#x5982;&#x679C;&#x6B64;&#x529F;&#x80FD;&#x5F88;&#x91CD;&#x8981;&#xFF0C;&#x8BF7;&#x8054;&#x7CFB;&#x6280;&#x672F;&#x652F;&#x6301;&#x3002;</p>
+</li>
+</ul>
+<h2 id="pxc-5003-errtranslog-">PXC-5003 ERR_TRANS_LOG </h2>
+<ul>
+<li><p>&#x63CF;&#x8FF0;&#xFF1A;&#x65E0;&#x6CD5;&#x8BBF;&#x95EE;&#x4E8B;&#x52A1;&#x65E5;&#x5FD7;&#x3002;</p>
+</li>
+<li><p>&#x793A;&#x4F8B;&#xFF1A;<code>ERR-CODE: [PXC-5003][ERR_TRANS_LOG] Failed to update transaction state: *****</code></p>
+</li>
+<li><p>&#x8BF4;&#x660E;&#xFF1A;&#x4E3A;&#x4FDD;&#x8BC1;&#x5206;&#x5E03;&#x5F0F;&#x4E8B;&#x52A1;&#x7684;&#x539F;&#x5B50;&#x6027;&#xFF0C;PolarDB-X&#x5728;&#x4E8B;&#x52A1;&#x4E2D;&#x4F1A;&#x8BBF;&#x95EE;&#x540E;&#x7AEF;&#x6570;&#x636E;&#x8282;&#x70B9;&#x4E0A;&#x7684;&#x4E8B;&#x52A1;&#x65E5;&#x5FD7;&#x3002;&#x5982;&#x679C;PolarDB-X&#x5728;&#x8BFB;&#x5199;&#x4E8B;&#x52A1;&#x65E5;&#x5FD7;&#x65F6;&#x51FA;&#x9519;&#xFF0C;&#x5C06;&#x8FD4;&#x56DE;PXC-5003&#x9519;&#x8BEF;&#x3002;</p>
+<p>&#x4EA7;&#x751F;PXC-5003&#x9519;&#x8BEF;&#x7684;&#x539F;&#x56E0;&#x901A;&#x5E38;&#x6765;&#x81EA;&#x540E;&#x7AEF;&#x7684;&#x6570;&#x636E;&#x8282;&#x70B9;&#x6545;&#x969C;&#x3002;&#x5EFA;&#x8BAE;&#x68C0;&#x67E5;PolarDB-X&#x540E;&#x7AEF;&#x6570;&#x636E;&#x8282;&#x70B9;&#x72B6;&#x6001;&#x548C;&#x8BBF;&#x95EE;&#x538B;&#x529B;&#x3002;&#x5982;&#x679C;&#x6392;&#x9664;&#x6570;&#x636E;&#x8282;&#x70B9;&#x95EE;&#x9898;&#x540E;&#x4ECD;&#x7136;&#x4EA7;&#x751F;PXC-5003&#x9519;&#x8BEF;&#xFF0C;&#x8BF7;&#x8054;&#x7CFB;&#x6280;&#x672F;&#x652F;&#x6301;&#x3002;</p>
+</li>
+</ul>
+<h2 id="pxc-5006-errtranscommit-">PXC-5006 ERR_TRANS_COMMIT </h2>
+<ul>
+<li><p>&#x63CF;&#x8FF0;&#xFF1A;&#x4E8B;&#x52A1;&#x63D0;&#x4EA4;&#x8FC7;&#x7A0B;&#x4E2D;&#x51FA;&#x9519;&#x3002;</p>
+</li>
+<li><p>&#x793A;&#x4F8B;&#xFF1A;<code>ERR-CODE: [PXC-5006][ERR_TRANS_COMMIT] Failed to commit primary group *****: *****, TRANS_ID = *****</code></p>
+</li>
+<li><p>&#x8BF4;&#x660E;&#xFF1A;PolarDB-X&#x5728;&#x63D0;&#x4EA4;&#x4E8B;&#x52A1;&#x5206;&#x652F;&#x8FC7;&#x7A0B;&#x4E2D;&#x51FA;&#x9519;&#xFF0C;TRANS_ID&#x5BF9;&#x5E94;&#x7684;&#x4E8B;&#x52A1;&#x5C06;&#x88AB;&#x81EA;&#x52A8;&#x56DE;&#x6EDA;&#x3002;&#x4EA7;&#x751F;PXC-5006&#x9519;&#x8BEF;&#x7684;&#x539F;&#x56E0;&#x901A;&#x5E38;&#x6765;&#x81EA;&#x540E;&#x7AEF;&#x7684;&#x6570;&#x636E;&#x8282;&#x70B9;&#x6545;&#x969C;&#x3002;&#x5EFA;&#x8BAE;&#x68C0;&#x67E5;PolarDB-X&#x540E;&#x7AEF;&#x6570;&#x636E;&#x8282;&#x70B9;&#x72B6;&#x6001;&#x548C;&#x8BBF;&#x95EE;&#x538B;&#x529B;&#x3002;&#x5982;&#x679C;&#x6392;&#x9664;&#x6570;&#x636E;&#x8282;&#x70B9;&#x95EE;&#x9898;&#x540E;&#x4ECD;&#x7136;&#x4EA7;&#x751F;PXC-5006&#x9519;&#x8BEF;&#xFF0C;&#x8BF7;&#x8054;&#x7CFB;&#x6280;&#x672F;&#x652F;&#x6301;&#x3002;</p>
+</li>
+</ul>
+<h2 id="pxc-5008-errtransterminated-">PXC-5008 ERR_TRANS_TERMINATED </h2>
+<ul>
+<li><p>&#x63CF;&#x8FF0;&#xFF1A;&#x4E8B;&#x52A1;&#x5DF2;&#x88AB;Kill&#x6216;&#x8D85;&#x65F6;&#x4E2D;&#x6B62;&#x3002;</p>
+</li>
+<li><p>&#x793A;&#x4F8B;&#xFF1A;<code>ERR-CODE: [PXC-5008][ERR_TRANS_TERMINATED] Current transaction was killed or timeout. You may need to set a longer timeout value.</code></p>
+</li>
+<li><p>&#x8BF4;&#x660E;&#xFF1A;&#x5982;&#x679C;PolarDB-X&#x4E8B;&#x52A1;&#x5728;&#x6267;&#x884C;&#x4E2D;&#x88AB;Kill&#x6216;&#x8005;&#x8D85;&#x65F6;&#xFF08;&#x6267;&#x884C;&#x65F6;&#x95F4;&#x8D85;&#x51FA;drds_transaction_timeout&#x503C;&#xFF09;&#xFF0C;&#x5219;&#x51FA;&#x73B0;&#x8BE5;&#x9519;&#x8BEF;&#x3002;&#x5982;&#x679C;&#x662F;&#x4E8B;&#x52A1;&#x8D85;&#x65F6;&#x5BFC;&#x81F4;&#x62A5;&#x9519;&#xFF0C;&#x5EFA;&#x8BAE;&#x4F7F;&#x7528;<code>SET drds_transaction_timeout = ***</code>&#x547D;&#x4EE4;&#x4FEE;&#x6539;PolarDB-X&#x4E8B;&#x52A1;&#x7684;&#x6267;&#x884C;&#x65F6;&#x95F4;&#x4E0A;&#x9650;&#xFF0C;&#x5355;&#x4F4D;&#x662F;&#x6BEB;&#x79D2;&#x3002;</p>
+</li>
+</ul>
+<h2 id="pxc-5010-errtranscontinueafterwritefail-">PXC-5010 ERR_TRANS_CONTINUE_AFTER_WRITE_FAIL </h2>
+<ul>
+<li><p>&#x63CF;&#x8FF0;&#xFF1A;&#x5199;&#x5165;&#x5931;&#x8D25;&#x540E;&#xFF0C;&#x4E0D;&#x5141;&#x8BB8;&#x7EE7;&#x7EED;&#x8FDB;&#x884C;&#x4E8B;&#x52A1;&#x64CD;&#x4F5C;&#x3002;</p>
+</li>
+<li><p>&#x793A;&#x4F8B;&#xFF1A;<code>ERR-CODE: [PXC-5010][ERR_TRANS_CONTINUE_AFTER_WRITE_FAIL] Cannot continue or commit transaction after writing failed</code></p>
+</li>
+<li><p>&#x8BF4;&#x660E;&#xFF1A;&#x5982;&#x679C;PolarDB-X&#x4E8B;&#x52A1;&#x4E2D;&#x6D89;&#x53CA;&#x5230;&#x5206;&#x5E03;&#x5F0F;&#x4E8B;&#x52A1;&#xFF0C;&#x6267;&#x884C;&#x5931;&#x8D25;&#x540E;&#xFF0C;&#x4E0D;&#x5141;&#x8BB8;&#x7EE7;&#x7EED;&#x8FDB;&#x884C;&#x4E8B;&#x52A1;&#xFF0C;&#x8FD9;&#x4E2A;&#x65F6;&#x5019;&#x9700;&#x8981;&#x524D;&#x7AEF;&#x4E3B;&#x52A8;&#x6267;&#x884C;rollback&#xFF0C;&#x91CD;&#x8BD5;&#x4E8B;&#x52A1;&#x64CD;&#x4F5C;&#x3002;</p>
+</li>
+</ul>
+<h2 id="pxc-5108-errcheckprivilegefailedontable-">PXC-5108 ERR_CHECK_PRIVILEGE_FAILED_ON_TABLE </h2>
+<p>&#x8BF4;&#x660E;&#xFF1A;&#x5F53;&#x524D;&#x8D26;&#x53F7;&#x6CA1;&#x6709;&#x5BF9;&#x5F53;&#x524D;&#x8868;&#x7684;&#x64CD;&#x4F5C;&#x6743;&#x9650;&#xFF0C;&#x8BF7;&#x68C0;&#x67E5;&#x6743;&#x9650;&#x3002;</p>
+<h2 id="pxc-5119-errfilecannotbecreate-">PXC-5119 ERR_FILE_CANNOT_BE_CREATE </h2>
+<p>&#x8BF4;&#x660E;&#xFF1A;PolarDB-X&#x9ED8;&#x8BA4;&#x5173;&#x95ED;&#x5BF9;<code>select outfile</code>&#x8BED;&#x53E5;&#x7684;&#x652F;&#x6301;&#xFF0C;&#x5982;&#x6709;&#x9700;&#x8981;&#x8BF7;&#x8054;&#x7CFB;&#x6280;&#x672F;&#x652F;&#x6301;&#x3002;</p>
+<h2 id="pxc-5302-errglobalsecondaryindexunsupported-">PXC-5302 ERR_GLOBAL_SECONDARY_INDEX_UNSUPPORTED </h2>
+<p>&#x8BF4;&#x660E;&#xFF1A;&#x5F53;&#x524D;&#x8868;&#x4E0D;&#x652F;&#x6301;&#x521B;&#x5EFA;&#x5168;&#x5C40;&#x4E8C;&#x7EA7;&#x7D22;&#x5F15;&#x3002;&#x53EF;&#x80FD;&#x662F;&#x5982;&#x4E0B;&#x539F;&#x56E0;&#x5BFC;&#x81F4;&#x7684;&#xFF1A;1. &#x5F53;&#x524D;&#x8868;&#x662F;&#x5355;&#x8868;&#x6216;&#x8005;&#x5E7F;&#x64AD;&#x8868;&#xFF1B;2. &#x5168;&#x5C40;&#x4E8C;&#x7EA7;&#x7D22;&#x5F15;&#x7684;&#x5217;&#x4E0D;&#x5305;&#x542B;&#x5206;&#x533A;&#x952E;&#x3002;&#x5176;&#x4ED6;&#x60C5;&#x51B5;&#x8BF7;&#x8054;&#x7CFB;&#x6280;&#x672F;&#x652F;&#x6301;&#x3002;</p>
+<h2 id="pxc-5306-errglobalsecondaryindexinsertduplicatevalues-">PXC-5306 ERR_GLOBAL_SECONDARY_INDEX_INSERT_DUPLICATE_VALUES </h2>
+<p>&#x8BF4;&#x660E;&#xFF1A;&#x5728;&#x6570;&#x636E;&#x5199;&#x5165;&#x5230;&#x5168;&#x5C40;&#x4E8C;&#x7EA7;&#x7D22;&#x5F15;&#x8868;&#x8FC7;&#x7A0B;&#x4E2D;&#x5B58;&#x5728;&#x4E3B;&#x952E;&#x51B2;&#x7A81;&#xFF0C;&#x8BF7;&#x6839;&#x636E;&#x62A5;&#x9519;&#x4FE1;&#x606F;&#x63D0;&#x793A;&#x7684;&#x8BB0;&#x5F55;&#x503C;&#xFF0C;&#x786E;&#x8BA4;&#x662F;&#x5426;&#x5B58;&#x5728;&#x4E3B;&#x952E;&#x51B2;&#x7A81;&#x3002;</p>
+<h2 id="pxc-5308-errglobalsecondaryindexmodifyuniquekey-">PXC-5308 ERR_GLOBAL_SECONDARY_INDEX_MODIFY_UNIQUE_KEY </h2>
+<p>&#x8BF4;&#x660E;&#xFF1A;&#x5728;&#x6267;&#x884C;DML&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x5168;&#x5C40;&#x4E8C;&#x7EA7;&#x7D22;&#x5F15;&#x8868;&#x5B58;&#x5728;&#x552F;&#x4E00;&#x952E;&#x51B2;&#x7A81;&#xFF0C;&#x8BF7;&#x6839;&#x636E;&#x62A5;&#x9519;&#x4FE1;&#x606F;&#x63D0;&#x793A;&#x7684;&#x8BB0;&#x5F55;&#x503C;&#xFF0C;&#x786E;&#x8BA4;&#x662F;&#x5426;&#x5B58;&#x5728;&#x552F;&#x4E00;&#x952E;&#x51B2;&#x7A81;&#x3002;</p>
+<h2 id="pxc-5310-errglobalsecondaryindexonlysupportxa-">PXC-5310 ERR_GLOBAL_SECONDARY_INDEX_ONLY_SUPPORT_XA </h2>
+<p>&#x8BF4;&#x660E;&#xFF1A;PolarDB-X&#x53EA;&#x6709;&#x5728;XA/TSO&#x5206;&#x5E03;&#x5F0F;&#x4E8B;&#x52A1;&#x4E0B;&#xFF0C;&#x624D;&#x652F;&#x6301;&#x5168;&#x5C40;&#x4E8C;&#x7EA7;&#x7D22;&#x5F15;&#xFF0C;&#x5982;&#x679C;&#x4EA7;&#x751F;&#x6B64;&#x62A5;&#x9519;&#xFF0C;&#x53EF;&#x80FD;&#x4E1A;&#x52A1;&#x4E4B;&#x524D;&#x8C03;&#x6574;&#x8FC7;&#x9ED8;&#x8BA4;&#x4E8B;&#x52A1;&#x7B56;&#x7565;&#xFF0C;&#x8BF7;&#x8C03;&#x6574;&#x56DE;XA/TSO&#x5206;&#x5E03;&#x5F0F;&#x4E8B;&#x52A1;&#xFF0C;&#x518D;&#x521B;&#x5EFA;&#x5168;&#x5C40;&#x4E8C;&#x7EA7;&#x7D22;&#x5F15;&#x3002;</p>
+<h2 id="pxc-5313-errglobalsecondaryindexmodifygsitablewithddl-">PXC-5313 ERR_GLOBAL_SECONDARY_INDEX_MODIFY_GSI_TABLE_WITH_DDL </h2>
+<p>&#x8BF4;&#x660E;&#xFF1A;PolarDB-X&#x9ED8;&#x8BA4;&#x4E0D;&#x652F;&#x6301;&#x5BF9;&#x5168;&#x5C40;&#x4E8C;&#x7EA7;&#x7D22;&#x5F15;&#x8868;&#x505A;DDL&#x64CD;&#x4F5C;&#xFF0C;&#x5982;&#x6709;&#x9700;&#x8981;&#x8BF7;&#x8054;&#x7CFB;&#x6280;&#x672F;&#x652F;&#x6301;&#x3002;</p>
+<h2 id="pxc-5316-errglobalsecondaryindexindexandshardingcolumnsnotmatch-">PXC-5316 ERR_GLOBAL_SECONDARY_INDEX_INDEX_AND_SHARDING_COLUMNS_NOT_MATCH </h2>
+<p>&#x8BF4;&#x660E;&#xFF1A;PolarDB-X&#x5728;&#x521B;&#x5EFA;&#x5168;&#x5C40;&#x4E8C;&#x7EA7;&#x7D22;&#x5F15;&#x65F6;&#xFF0C;&#x8981;&#x6C42;&#x7D22;&#x5F15;&#x8868;&#x5B57;&#x6BB5;&#x5FC5;&#x987B;&#x5305;&#x542B;&#x4E3B;&#x8868;&#x5206;&#x533A;&#x952E;&#xFF0C;&#x56E0;&#x4E3A;&#x5728;&#x56DE;&#x8868;&#x8FC7;&#x7A0B;&#x4E2D;&#x9700;&#x8981;&#x6839;&#x636E;&#x5206;&#x533A;&#x952E;&#x5B9A;&#x4F4D;&#x5230;&#x5177;&#x4F53;&#x7684;&#x5206;&#x7247;&#x548C;&#x5177;&#x4F53;&#x8BB0;&#x5F55;&#x3002;&#x5982;&#x679C;&#x4EA7;&#x751F;&#x6B64;&#x62A5;&#x9519;&#xFF0C;&#x8BF7;&#x68C0;&#x67E5;DDL&#x8BED;&#x53E5;&#x4E2D;&#x7D22;&#x5F15;&#x8868;&#x5B57;&#x6BB5;&#x662F;&#x5426;&#x5305;&#x542B;&#x4E86;&#x5206;&#x533A;&#x952E;&#x3002;</p>
+<h2 id="pxc-5317-errglobalsecondaryindexcontinueafterwritefail-">PXC-5317 ERR_GLOBAL_SECONDARY_INDEX_CONTINUE_AFTER_WRITE_FAIL </h2>
+<ul>
+<li><p>&#x793A;&#x4F8B;&#xFF1A;<code>ERR-CODE: [PXC-5317][ERR_GLOBAL_SECONDARY_INDEX_CONTINUE_AFTER_WRITE_FAIL] Cannot continue or commit transaction after writing global secondary index failed</code></p>
+</li>
+<li><p>&#x8BF4;&#x660E;&#xFF1A;&#x5728;&#x5305;&#x542B;GSI&#x7684;&#x8868;&#x4E0A;&#x6267;&#x884C;DML&#x8BED;&#x53E5;&#x65F6;&#xFF0C;&#x5982;&#x679C;&#x4EA7;&#x751F;&#x6B64;&#x62A5;&#x9519;&#xFF0C;&#x5219;&#x4E0D;&#x5141;&#x8BB8;&#x7EE7;&#x7EED;&#x63D0;&#x4EA4;&#x5305;&#x542B;&#x8BE5;&#x5931;&#x8D25;DML&#x8BED;&#x53E5;&#x7684;&#x4E8B;&#x52A1;&#x3002;&#x9700;&#x8981;&#x4FEE;&#x6539;&#x4E1A;&#x52A1;&#x4EE3;&#x7801;&#xFF0C;DML&#x62A5;&#x9519;&#x540E;&#x9700;&#x8981;&#x56DE;&#x6EDA;&#x4E8B;&#x52A1;&#x4E4B;&#x540E;&#x91CD;&#x8BD5;&#x3002;</p>
+</li>
+</ul>
+<h2 id="pxc-5321-errglobalsecondaryindexbackfillduplicateentry-">PXC-5321 ERR_GLOBAL_SECONDARY_INDEX_BACKFILL_DUPLICATE_ENTRY </h2>
+<p>&#x8BF4;&#x660E;&#xFF1A;&#x5728;&#x521B;&#x5EFA;&#x5168;&#x5C40;&#x4E8C;&#x7EA7;&#x7D22;&#x5F15;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x6570;&#x636E;&#x56DE;&#x586B;&#x51FA;&#x73B0;&#x4E86;&#x7D22;&#x5F15;&#x8868;&#x4E3B;&#x952E;&#x51B2;&#x7A81;&#xFF0C;&#x8BF7;&#x786E;&#x8BA4;&#x7D22;&#x5F15;&#x8868;&#x7684;&#x4E3B;&#x952E;&#x662F;&#x5426;&#x5B58;&#x5728;&#x76F8;&#x540C;&#x503C;&#x3002;</p>
+<h2 id="pxc-8007-errabandonedtask-">PXC-8007 ERR_ABANDONED_TASK </h2>
+<p>&#x8BF4;&#x660E;&#xFF1A;&#x67E5;&#x8BE2;&#x8FC7;&#x6162;&#x6216;&#x8005;&#x7531;&#x4E8E;&#x4E0D;&#x660E;&#x539F;&#x56E0;&#x5361;&#x4F4F;&#x8D85;&#x8FC7;2&#x5C0F;&#x65F6;&#xFF0C;&#x6570;&#x636E;&#x5E93;&#x7CFB;&#x7EDF;&#x4F1A;&#x7EC8;&#x6B62;&#x67E5;&#x8BE2;&#xFF0C;&#x51FA;&#x73B0;&#x8BE5;&#x5F02;&#x5E38;&#x3002;&#x8BF7;&#x5148;&#x4F18;&#x5316;&#x67E5;&#x8BE2;&#xFF0C;&#x786E;&#x4FDD;&#x4E0D;&#x4F1A;&#x51FA;&#x73B0;&#x8D85;&#x6162;&#x67E5;&#x8BE2;&#xFF0C;&#x82E5;&#x65E0;&#x6CD5;&#x89E3;&#x51B3;&#xFF0C;&#x8BF7;&#x8054;&#x7CFB;&#x6280;&#x672F;&#x652F;&#x6301;&#x3002;</p>
+<h2 id="pxc-8008-errexecutespill-">PXC-8008 ERR_EXECUTE_SPILL </h2>
+<p>&#x8BF4;&#x660E;&#xFF1A;&#x67E5;&#x8BE2;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x6570;&#x636E;&#x8FC7;&#x5927;&#x4F1A;&#x89E6;&#x53D1;&#x4E34;&#x65F6;&#x8868;&#x843D;&#x76D8;&#xFF0C;&#x8FD9;&#x4E2A;&#x9519;&#x8BEF;&#x662F;&#x5728;&#x6570;&#x636E;&#x843D;&#x76D8;&#x8FC7;&#x7A0B;&#x4E2D;&#x51FA;&#x73B0;&#x7684;&#x5F02;&#x5E38;&#xFF0C;&#x8BF7;&#x8054;&#x7CFB;&#x6280;&#x672F;&#x652F;&#x6301;&#x3002;</p>
+<h2 id="pxc-8011-erroutofspillspace-">PXC-8011 ERR_OUT_OF_SPILL_SPACE </h2>
+<p>&#x8BF4;&#x660E;&#xFF1A;&#x67E5;&#x8BE2;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x6570;&#x636E;&#x8FC7;&#x5927;&#x4F1A;&#x89E6;&#x53D1;&#x4E34;&#x65F6;&#x8868;&#x843D;&#x76D8;&#xFF0C;&#x5982;&#x679C;&#x4E34;&#x65F6;&#x8868;&#x751F;&#x4EA7;&#x7684;&#x6587;&#x4EF6;&#x8FC7;&#x591A;&#xFF0C;&#x8D85;&#x8FC7;&#x4E86;&#x7CFB;&#x7EDF;&#x5141;&#x8BB8;&#x7684;&#x53EF;&#x843D;&#x76D8;&#x7684;&#x6700;&#x5927;&#x78C1;&#x76D8;&#x7A7A;&#x95F4;&#x5C31;&#x4F1A;&#x51FA;&#x73B0;&#x6B64;&#x9519;&#x8BEF;&#x3002;&#x8BF7;&#x5148;&#x4F18;&#x5316;&#x67E5;&#x8BE2;&#xFF0C;&#x51CF;&#x5C11;&#x8BA1;&#x7B97;&#x8FC7;&#x7A0B;&#x4E2D;&#x5BF9;&#x4E34;&#x65F6;&#x8868;&#x7684;&#x4F9D;&#x8D56;&#x3002;&#x82E5;&#x65E0;&#x6CD5;&#x89E3;&#x51B3;&#x8BF7;&#x8054;&#x7CFB;&#x6280;&#x672F;&#x652F;&#x6301;&#x3002;</p>
+<h2 id="pxc-8012-erroutofspillfd-">PXC-8012 ERR_OUT_OF_SPILL_FD </h2>
+<p>&#x8BF4;&#x660E;&#xFF1A;&#x67E5;&#x8BE2;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x6570;&#x636E;&#x8FC7;&#x5927;&#x4F1A;&#x89E6;&#x53D1;&#x4E34;&#x65F6;&#x8868;&#x843D;&#x76D8;&#xFF0C;&#x5982;&#x679C;&#x4E34;&#x65F6;&#x8868;&#x751F;&#x4EA7;&#x7684;&#x6587;&#x4EF6;&#x8FC7;&#x591A;&#xFF0C;&#x8D85;&#x8FC7;&#x4E86;&#x7CFB;&#x7EDF;&#x5141;&#x8BB8;&#x7684;&#x6587;&#x4EF6;&#x53E5;&#x67C4;&#x4E2A;&#x6570;&#x5C31;&#x4F1A;&#x51FA;&#x73B0;&#x6B64;&#x9519;&#x8BEF;&#x3002;&#x8BF7;&#x8054;&#x7CFB;&#x6280;&#x672F;&#x652F;&#x6301;&#xFF0C;&#x786E;&#x4FDD;&#x662F;&#x5426;&#x5B58;&#x5728;&#x6587;&#x4EF6;&#x53E5;&#x67C4;&#x6CC4;&#x6F0F;&#xFF0C;&#x82E5;&#x6CA1;&#x6709;&#x6CC4;&#x6F0F;&#xFF0C;&#x53EF;&#x4EE5;&#x9002;&#x5F53;&#x8C03;&#x5927;&#x6587;&#x4EF6;&#x53E5;&#x67C4;&#x4E2A;&#x6570;&#x9650;&#x5236;&#x3002;</p>
+<h2 id="pxc-8102-errpagetoolarge-">PXC-8102 ERR_PAGE_TOO_LARGE </h2>
+<p>&#x8BF4;&#x660E;&#xFF1A;&#x5728;MPP&#x5E76;&#x8BA1;&#x7B97;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x6570;&#x636E;&#x662F;&#x6309;&#x6279;&#x5728;&#x591A;&#x4E2A;&#x8BA1;&#x7B97;&#x8282;&#x70B9;&#x7F51;&#x7EDC;&#x4EA4;&#x4E92;&#xFF0C;&#x5982;&#x679C;&#x4E00;&#x4E2A;&#x6279;&#x7684;&#x6570;&#x636E;&#x8FC7;&#x5927;&#x8D85;&#x8FC7;RPC&#x9650;&#x5236;&#x6700;&#x5927;&#x503C;&#xFF0C;&#x5C31;&#x4F1A;&#x51FA;&#x73B0;&#x6B64;&#x9519;&#x8BEF;&#xFF0C;&#x53EF;&#x4EE5;&#x5C1D;&#x8BD5;&#x8C03;&#x5C0F;&#x9ED8;&#x8BA4;CHUNK_SIZE&#x503C;&#x3002;</p>
+<h2 id="pxc-8103-errnonodesavailable-">PXC-8103 ERR_NO_NODES_AVAILABLE </h2>
+<p>&#x8BF4;&#x660E;&#xFF1A;&#x5728;MPP&#x5E76;&#x884C;&#x8BA1;&#x7B97;&#x8FC7;&#x7A0B;&#x4E2D;&#x53EF;&#x80FD;&#x6709;&#x8BA1;&#x7B97;&#x8282;&#x70B9;&#x51FA;&#x73B0;&#x6545;&#x969C;&#xFF0C;&#x5BFC;&#x81F4;&#x6267;&#x884C;&#x8C03;&#x5EA6;&#x4E4B;&#x521D;&#x6CA1;&#x6709;&#x8BA1;&#x7B97;&#x8282;&#x70B9;&#x53EF;&#x8C03;&#x5EA6;&#xFF0C;&#x8BF7;&#x786E;&#x8BA4;&#x8BA1;&#x7B97;&#x8282;&#x70B9;&#x670D;&#x52A1;&#x662F;&#x5426;&#x6B63;&#x5E38;&#xFF0C;&#x5982;&#x679C;&#x8BA1;&#x7B97;&#x8282;&#x70B9;&#x670D;&#x52A1;&#x90FD;&#x6B63;&#x5E38;&#x4ECD;&#x7136;&#x51FA;&#x73B0;&#x62A5;&#x6B64;&#x7C7B;&#x9519;&#x8BEF;&#xFF0C;&#x8BF7;&#x8054;&#x7CFB;&#x6280;&#x672F;&#x652F;&#x6301;&#x3002;</p>
+<h2 id="pxc-9301-errduplicatedpartitionname-">PXC-9301 ERR_DUPLICATED_PARTITION_NAME </h2>
+<p>&#x8BF4;&#x660E;&#xFF1A;&#x5728;&#x6267;&#x884C;&#x5206;&#x533A;&#x8868;&#x76F8;&#x5173;&#x7684;DDL&#x64CD;&#x4F5C;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x4F7F;&#x7528;&#x4E86;&#x76F8;&#x540C;&#x7684;&#x5206;&#x533A;&#x8868;&#x540D;&#x3002;</p>
+<h2 id="pxc-9305-errpartitionnamenotexists-">PXC-9305 ERR_PARTITION_NAME_NOT_EXISTS </h2>
+<p>&#x8BF4;&#x660E;&#xFF1A;&#x5728;&#x6267;&#x884C;&#x5206;&#x533A;&#x8868;&#x76F8;&#x5173;&#x7684;DDL&#x64CD;&#x4F5C;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x63D0;&#x793A;&#x5206;&#x533A;&#x8868;&#x540D;&#x4E0D;&#x5B58;&#x5728;&#x3002;&#x8BF7;&#x68C0;&#x67E5;&#x4E0B;&#x5206;&#x8868;&#x540D;&#x662F;&#x5426;&#x62FC;&#x5199;&#x6B63;&#x5E38;&#xFF0C;&#x4F7F;&#x7528;<code>show create table</code>&#x548C; <code>check table</code>&#x68C0;&#x67E5;&#x8868;&#x5143;&#x6570;&#x636E;&#x662F;&#x5426;&#x4E00;&#x81F4;&#xFF0C;&#x5982;&#x679C;&#x4E0D;&#x4E00;&#x81F4;&#xFF0C;&#x53EF;&#x80FD;&#x662F;&#x5143;&#x6570;&#x636E;&#x7EF4;&#x62A4;&#x4FE1;&#x606F;&#x4E0D;&#x4E00;&#x81F4;&#x5BFC;&#x81F4;&#x3002;&#x8BF7;&#x8054;&#x7CFB;&#x6280;&#x672F;&#x652F;&#x6301;&#x3002;</p>
+<h2 id="pxc-10004-errxprotocolresult-">PXC-10004 ERR_X_PROTOCOL_RESULT </h2>
+<ul>
+<li><p>&#x793A;&#x4F8B;&#xFF1A;<code>ERR-CODE: [PXC-10004][ERR_X_PROTOCOL_RESULT] Should use chunk2chunk to fetch data</code></p>
+</li>
+<li><p>&#x8BF4;&#x660E;&#xFF1A;PolarDB-X&#x8BA1;&#x7B97;&#x8282;&#x70B9;&#x548C;&#x6570;&#x636E;&#x8282;&#x70B9;&#x91C7;&#x7528;&#x7684;&#x662F;&#x79C1;&#x6709;RPC&#x901A;&#x4FE1;&#xFF0C;&#x51FA;&#x73B0;&#x8FD9;&#x7C7B;&#x5F02;&#x5E38;&#x4E3B;&#x8981;&#x662F;&#x8BA1;&#x7B97;&#x8282;&#x70B9;&#x548C;&#x6570;&#x636E;&#x8282;&#x70B9;&#x5EFA;&#x7ACB;&#x7684;&#x8FDE;&#x63A5;&#x5F02;&#x5E38;&#xFF0C;&#x5177;&#x4F53;&#x539F;&#x56E0;&#x6709;&#x5F88;&#x591A;&#x79CD;&#xFF0C;&#x9700;&#x8981;&#x67E5;&#x770B;&#x5F02;&#x5E38;&#x4FE1;&#x606F;&#xFF0C;&#x5982;&#x679C;&#x65E0;&#x6CD5;&#x5B9A;&#x4F4D;&#x5177;&#x4F53;&#x95EE;&#x9898;&#xFF0C;&#x8BF7;&#x8054;&#x7CFB;&#x6280;&#x672F;&#x652F;&#x6301;&#x3002;</p>
+</li>
+</ul>
+
+                                
+                                </section>
+                            
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../../best-practice/topics/htap-practice.html" class="navigation navigation-prev " aria-label="Previous page: 混合负载HTAP的实践和优化">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../../online-lab/OnlineLab01.html" class="navigation navigation-next " aria-label="Next page: 在线实验体验">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"错误码","level":"1.7","depth":1,"next":{"title":"在线实验体验","level":"2.1","depth":1,"path":"online-lab/OnlineLab01.md","ref":"online-lab/OnlineLab01.md","articles":[]},"previous":{"title":"混合负载HTAP的实践和优化","level":"1.6.16","depth":2,"path":"best-practice/topics/htap-practice.md","ref":"best-practice/topics/htap-practice.md","articles":[]},"dir":"ltr"},"config":{"plugins":["hide-element","back-to-top-button","code","expandable-chapters-small","page-toc-button","-sharing","-font-settings","-search","-lunr","auto-scroll-table@git+https://github.com/ideamean/gitbook-plugin-auto-scroll-table.git","splitter","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"splitter":{},"auto-scroll-table":{},"code":{"copyButtons":true},"hide-element":{"elements":[".toggle-dropdown",".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"page-toc-button":{"maxTocDepth":2,"minTocSize":2},"back-to-top-button":{},"expandable-chapters-small":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"PolarDB-X","gitbook":"*"},"file":{"path":"dev-guide/topics/error-code.md","mtime":"2022-03-26T13:36:07.049Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-07-01T03:13:26.922Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-hide-element/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-page-toc-button/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-auto-scroll-table/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

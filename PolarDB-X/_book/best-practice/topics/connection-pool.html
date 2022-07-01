@@ -1,0 +1,3439 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>如何选择应用端链接池 · PolarDB-X</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-page-toc-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-auto-scroll-table/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="problem-solving.html" />
+    
+    
+    <link rel="prev" href="best-practices.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    关于PolarDB-X
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="../../Introduction.html">
+            
+                <a href="../../Introduction.html">
+            
+                    
+                    PolarDB-X简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="../../architecture.html">
+            
+                <a href="../../architecture.html">
+            
+                    
+                    产品架构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3" data-path="../../features/topics/core-features.html">
+            
+                <a href="../../features/topics/core-features.html">
+            
+                    
+                    核心特性
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.3.1" data-path="../../features/topics/HA-and-Disaster-Recovery.html">
+            
+                <a href="../../features/topics/HA-and-Disaster-Recovery.html">
+            
+                    
+                    高可用和容灾
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3.2" data-path="../../features/topics/distributed-transaction.html">
+            
+                <a href="../../features/topics/distributed-transaction.html">
+            
+                    
+                    分布式事务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3.3" data-path="../../features/topics/Horizontal-Scaling.html">
+            
+                <a href="../../features/topics/Horizontal-Scaling.html">
+            
+                    
+                    水平扩展
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3.4" data-path="../../features/topics/gsi.html">
+            
+                <a href="../../features/topics/gsi.html">
+            
+                    
+                    全局二级索引
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3.5" data-path="../../features/topics/HTAP.html">
+            
+                <a href="../../features/topics/HTAP.html">
+            
+                    
+                    混合负载HTAP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3.6" data-path="../../features/topics/global-binlog.html">
+            
+                <a href="../../features/topics/global-binlog.html">
+            
+                    
+                    全局变更日志CDC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3.7" data-path="../../features/topics/MySQL-Compatibility.html">
+            
+                <a href="../../features/topics/MySQL-Compatibility.html">
+            
+                    
+                    MySQL生态兼容
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../quickstart/topics/Quick-Start.html">
+            
+                <a href="../../quickstart/topics/Quick-Start.html">
+            
+                    
+                    快速入门
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../../quickstart/topics/quickstart.html">
+            
+                <a href="../../quickstart/topics/quickstart.html">
+            
+                    
+                    通过PXD部署本地实例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../../quickstart/topics/quickstart-pxd-cluster.html">
+            
+                <a href="../../quickstart/topics/quickstart-pxd-cluster.html">
+            
+                    
+                    通过PXD部署集群
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../../quickstart/topics/quickstart-k8s.html">
+            
+                <a href="../../quickstart/topics/quickstart-k8s.html">
+            
+                    
+                    通过Kubernetes部署集群
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../../quickstart/topics/quickstart-development.html">
+            
+                <a href="../../quickstart/topics/quickstart-development.html">
+            
+                    
+                    通过编译源码安装部署
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../../dev-guide/topics/connect-to-polardb-x.html">
+            
+                <a href="../../dev-guide/topics/connect-to-polardb-x.html">
+            
+                    
+                    连接数据库
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../user-guide/topics/user-guide.html">
+            
+                <a href="../../user-guide/topics/user-guide.html">
+            
+                    
+                    用户指南
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../../maintance/topics/account-and-permission.html">
+            
+                <a href="../../maintance/topics/account-and-permission.html">
+            
+                    
+                    账号与权限
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.1" data-path="../../maintance/topics/account.html">
+            
+                <a href="../../maintance/topics/account.html">
+            
+                    
+                    账号管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2" data-path="../../maintance/topics/role.html">
+            
+                <a href="../../maintance/topics/role.html">
+            
+                    
+                    角色管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.3" data-path="../../maintance/topics/triple-authority-introduction.html">
+            
+                <a href="../../maintance/topics/triple-authority-introduction.html">
+            
+                    
+                    三权分立
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../../maintance/topics/data-import-and-export.html">
+            
+                <a href="../../maintance/topics/data-import-and-export.html">
+            
+                    
+                    数据导入和导出
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.2.1" data-path="../../maintance/topics/mysqldump.html">
+            
+                <a href="../../maintance/topics/mysqldump.html">
+            
+                    
+                    使用 mysqldump 导入和导出数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.2" data-path="../../maintance/topics/import-by-coding.html">
+            
+                <a href="../../maintance/topics/import-by-coding.html">
+            
+                    
+                    使用程序导入数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.3" data-path="../../maintance/topics/batch-tool-maintenance.html">
+            
+                <a href="../../maintance/topics/batch-tool-maintenance.html">
+            
+                    
+                    使用 Batch Tool 工具导入和导出数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.4" data-path="../../maintance/topics/subscribe.html">
+            
+                <a href="../../maintance/topics/subscribe.html">
+            
+                    
+                    PolarDB-X CDC数据订阅
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.2.4.1" data-path="../../maintance/topics/subscribe-flink.html">
+            
+                <a href="../../maintance/topics/subscribe-flink.html">
+            
+                    
+                    使用Flink订阅PolarDB-X
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.4.2" data-path="../../maintance/topics/subscribe-kafka.html">
+            
+                <a href="../../maintance/topics/subscribe-kafka.html">
+            
+                    
+                    使用Kafka订阅PolarDB-X
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.4.3" data-path="../../maintance/topics/subscribe-elasticsearch.html">
+            
+                <a href="../../maintance/topics/subscribe-elasticsearch.html">
+            
+                    
+                    使用Elasticsearch订阅PolarDB-X
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../../maintance/topics/monitor.html">
+            
+                <a href="../../maintance/topics/monitor.html">
+            
+                    
+                    数据库监控
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../../maintance/topics/variables-setting.html">
+            
+                <a href="../../maintance/topics/variables-setting.html">
+            
+                    
+                    参数设置
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.4.1" data-path="../../maintance/topics/cn-variables.html">
+            
+                <a href="../../maintance/topics/cn-variables.html">
+            
+                    
+                    计算节点参数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.2" data-path="../../maintance/topics/dn-variables.html">
+            
+                <a href="../../maintance/topics/dn-variables.html">
+            
+                    
+                    存储节点参数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.3" data-path="../../maintance/topics/set-parameters.html">
+            
+                <a href="../../maintance/topics/set-parameters.html">
+            
+                    
+                    参数设置
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../../dev-guide/topics/developer-guide.html">
+            
+                <a href="../../dev-guide/topics/developer-guide.html">
+            
+                    
+                    开发指南
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../../dev-guide/topics/sql-overview.html">
+            
+                <a href="../../dev-guide/topics/sql-overview.html">
+            
+                    
+                    SQL概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../../dev-guide/topics/limitation.html">
+            
+                <a href="../../dev-guide/topics/limitation.html">
+            
+                    
+                    开发限制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../../dev-guide/topics/metadata.html">
+            
+                <a href="../../dev-guide/topics/metadata.html">
+            
+                    
+                    元数据库和数据字典
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../../dev-guide/topics/data-type.html">
+            
+                <a href="../../dev-guide/topics/data-type.html">
+            
+                    
+                    数据类型
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.4.1" data-path="../../dev-guide/topics/numeric.html">
+            
+                <a href="../../dev-guide/topics/numeric.html">
+            
+                    
+                    数值类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4.2" data-path="../../dev-guide/topics/string.html">
+            
+                <a href="../../dev-guide/topics/string.html">
+            
+                    
+                    字符串类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4.3" data-path="../../dev-guide/topics/collation.html">
+            
+                <a href="../../dev-guide/topics/collation.html">
+            
+                    
+                    Collation类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4.4" data-path="../../dev-guide/topics/datetime.html">
+            
+                <a href="../../dev-guide/topics/datetime.html">
+            
+                    
+                    日期和时间类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4.5" data-path="../../dev-guide/topics/json.html">
+            
+                <a href="../../dev-guide/topics/json.html">
+            
+                    
+                    JSON类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../../dev-guide/topics/operator.html">
+            
+                <a href="../../dev-guide/topics/operator.html">
+            
+                    
+                    运算符
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.5.1" data-path="../../dev-guide/topics/logical.html">
+            
+                <a href="../../dev-guide/topics/logical.html">
+            
+                    
+                    逻辑运算符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5.2" data-path="../../dev-guide/topics/arithmetic.html">
+            
+                <a href="../../dev-guide/topics/arithmetic.html">
+            
+                    
+                    算术运算符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5.3" data-path="../../dev-guide/topics/comparison.html">
+            
+                <a href="../../dev-guide/topics/comparison.html">
+            
+                    
+                    比较运算符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5.4" data-path="../../dev-guide/topics/bit.html">
+            
+                <a href="../../dev-guide/topics/bit.html">
+            
+                    
+                    位运算符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5.5" data-path="../../dev-guide/topics/assign.html">
+            
+                <a href="../../dev-guide/topics/assign.html">
+            
+                    
+                    赋值运算符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5.6" data-path="../../dev-guide/topics/priority.html">
+            
+                <a href="../../dev-guide/topics/priority.html">
+            
+                    
+                    运算符优先级
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../../dev-guide/topics/functions.html">
+            
+                <a href="../../dev-guide/topics/functions.html">
+            
+                    
+                    函数
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.6.1" data-path="../../dev-guide/topics/sharding-functions.html">
+            
+                <a href="../../dev-guide/topics/sharding-functions.html">
+            
+                    
+                    拆分函数
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.6.1.1" data-path="../../dev-guide/topics/hash.html">
+            
+                <a href="../../dev-guide/topics/hash.html">
+            
+                    
+                    HASH
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.1.2" data-path="../../dev-guide/topics/str-hash.html">
+            
+                <a href="../../dev-guide/topics/str-hash.html">
+            
+                    
+                    STR_HASH
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.1.3" data-path="../../dev-guide/topics/uni-hash.html">
+            
+                <a href="../../dev-guide/topics/uni-hash.html">
+            
+                    
+                    UNI_HASH
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.1.4" data-path="../../dev-guide/topics/range-hash.html">
+            
+                <a href="../../dev-guide/topics/range-hash.html">
+            
+                    
+                    RANGE_HASH
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.1.5" data-path="../../dev-guide/topics/right-shift.html">
+            
+                <a href="../../dev-guide/topics/right-shift.html">
+            
+                    
+                    RIGHT_SHIFT
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.1.6" data-path="../../dev-guide/topics/mm.html">
+            
+                <a href="../../dev-guide/topics/mm.html">
+            
+                    
+                    MM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.1.7" data-path="../../dev-guide/topics/dd.html">
+            
+                <a href="../../dev-guide/topics/dd.html">
+            
+                    
+                    DD
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.1.8" data-path="../../dev-guide/topics/yyyydd.html">
+            
+                <a href="../../dev-guide/topics/yyyydd.html">
+            
+                    
+                    YYYYDD
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.1.9" data-path="../../dev-guide/topics/week.html">
+            
+                <a href="../../dev-guide/topics/week.html">
+            
+                    
+                    WEEK
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.1.10" data-path="../../dev-guide/topics/mmdd.html">
+            
+                <a href="../../dev-guide/topics/mmdd.html">
+            
+                    
+                    MMDD
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.1.11" data-path="../../dev-guide/topics/yyyymm.html">
+            
+                <a href="../../dev-guide/topics/yyyymm.html">
+            
+                    
+                    YYYYMM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.1.12" data-path="../../dev-guide/topics/yyyyweek.html">
+            
+                <a href="../../dev-guide/topics/yyyyweek.html">
+            
+                    
+                    YYYYWEEK
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.2" data-path="../../dev-guide/topics/datetime-functions.html">
+            
+                <a href="../../dev-guide/topics/datetime-functions.html">
+            
+                    
+                    日期时间函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.3" data-path="../../dev-guide/topics/string-function.html">
+            
+                <a href="../../dev-guide/topics/string-function.html">
+            
+                    
+                    字符串函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.4" data-path="../../dev-guide/topics/transformation.html">
+            
+                <a href="../../dev-guide/topics/transformation.html">
+            
+                    
+                    转换函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.5" data-path="../../dev-guide/topics/agg.html">
+            
+                <a href="../../dev-guide/topics/agg.html">
+            
+                    
+                    聚合函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.6" data-path="../../dev-guide/topics/math.html">
+            
+                <a href="../../dev-guide/topics/math.html">
+            
+                    
+                    数学函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.7" data-path="../../dev-guide/topics/comparison-function.html">
+            
+                <a href="../../dev-guide/topics/comparison-function.html">
+            
+                    
+                    比较函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.8" data-path="../../dev-guide/topics/bit-function.html">
+            
+                <a href="../../dev-guide/topics/bit-function.html">
+            
+                    
+                    位函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.9" data-path="../../dev-guide/topics/control-function.html">
+            
+                <a href="../../dev-guide/topics/control-function.html">
+            
+                    
+                    流程控制函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.10" data-path="../../dev-guide/topics/information.html">
+            
+                <a href="../../dev-guide/topics/information.html">
+            
+                    
+                    信息函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.11" data-path="../../dev-guide/topics/encryption-and-compression.html">
+            
+                <a href="../../dev-guide/topics/encryption-and-compression.html">
+            
+                    
+                    加密和压缩函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.12" data-path="../../dev-guide/topics/window.html">
+            
+                <a href="../../dev-guide/topics/window.html">
+            
+                    
+                    窗口函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.13" data-path="../../dev-guide/topics/json-function.html">
+            
+                <a href="../../dev-guide/topics/json-function.html">
+            
+                    
+                    JSON函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.14" data-path="../../dev-guide/topics/other-function.html">
+            
+                <a href="../../dev-guide/topics/other-function.html">
+            
+                    
+                    其他函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../../dev-guide/topics/ddl.html">
+            
+                <a href="../../dev-guide/topics/ddl.html">
+            
+                    
+                    DDL语句
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.7.1" data-path="../../dev-guide/topics/sharding-syntax.html">
+            
+                <a href="../../dev-guide/topics/sharding-syntax.html">
+            
+                    
+                    分库分表语法
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.7.1.1" data-path="../../dev-guide/topics/create-database.html">
+            
+                <a href="../../dev-guide/topics/create-database.html">
+            
+                    
+                    CREATE DATABASE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7.1.2" data-path="../../dev-guide/topics/drop-database.html">
+            
+                <a href="../../dev-guide/topics/drop-database.html">
+            
+                    
+                    DROP DATABASE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7.1.3" data-path="../../dev-guide/topics/create-table.html">
+            
+                <a href="../../dev-guide/topics/create-table.html">
+            
+                    
+                    CREATE TABLE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7.1.4" data-path="../../dev-guide/topics/drop-table.html">
+            
+                <a href="../../dev-guide/topics/drop-table.html">
+            
+                    
+                    DROP TABLE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7.1.5" data-path="../../dev-guide/topics/alter-table.html">
+            
+                <a href="../../dev-guide/topics/alter-table.html">
+            
+                    
+                    ALTER TABLE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7.1.6" data-path="../../dev-guide/topics/truncate-table.html">
+            
+                <a href="../../dev-guide/topics/truncate-table.html">
+            
+                    
+                    TRUNCATE TABLE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7.1.7" data-path="../../dev-guide/topics/rename-table.html">
+            
+                <a href="../../dev-guide/topics/rename-table.html">
+            
+                    
+                    RENAME TABLE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7.1.8" data-path="../../dev-guide/topics/create-index.html">
+            
+                <a href="../../dev-guide/topics/create-index.html">
+            
+                    
+                    CREATE INDEX
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7.1.9" data-path="../../dev-guide/topics/drop-index.html">
+            
+                <a href="../../dev-guide/topics/drop-index.html">
+            
+                    
+                    DROP INDEX
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7.1.10" data-path="../../dev-guide/topics/create-view.html">
+            
+                <a href="../../dev-guide/topics/create-view.html">
+            
+                    
+                    CREATE VIEW
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7.1.11" data-path="../../dev-guide/topics/drop-view.html">
+            
+                <a href="../../dev-guide/topics/drop-view.html">
+            
+                    
+                    DROP VIEW
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7.2" data-path="../../dev-guide/topics/partition-syntax.html">
+            
+                <a href="../../dev-guide/topics/partition-syntax.html">
+            
+                    
+                    分区表语法
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.7.2.1" data-path="../../dev-guide/topics/create-database2.html">
+            
+                <a href="../../dev-guide/topics/create-database2.html">
+            
+                    
+                    CREATE DATABASE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7.2.2" data-path="../../dev-guide/topics/drop-database2.html">
+            
+                <a href="../../dev-guide/topics/drop-database2.html">
+            
+                    
+                    DROP DATABASE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7.2.3" data-path="../../dev-guide/topics/create-tablegroup.html">
+            
+                <a href="../../dev-guide/topics/create-tablegroup.html">
+            
+                    
+                    CREATE TABLEGROUP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7.2.4" data-path="../../dev-guide/topics/drop-tablegroup.html">
+            
+                <a href="../../dev-guide/topics/drop-tablegroup.html">
+            
+                    
+                    DROP TABLEGROUP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7.2.5" data-path="../../dev-guide/topics/alter-tablegroup.html">
+            
+                <a href="../../dev-guide/topics/alter-tablegroup.html">
+            
+                    
+                    ALTER TABLEGROUP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7.2.6" data-path="../../dev-guide/topics/create-table2.html">
+            
+                <a href="../../dev-guide/topics/create-table2.html">
+            
+                    
+                    CREATE TABLE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7.2.7" data-path="../../dev-guide/topics/drop-table2.html">
+            
+                <a href="../../dev-guide/topics/drop-table2.html">
+            
+                    
+                    DROP TABLE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7.2.8" data-path="../../dev-guide/topics/alter-table2.html">
+            
+                <a href="../../dev-guide/topics/alter-table2.html">
+            
+                    
+                    ALTER TABLE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7.2.9" data-path="../../dev-guide/topics/truncate-table.html">
+            
+                <a href="../../dev-guide/topics/truncate-table.html">
+            
+                    
+                    TRUNCATE TABLE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7.2.10" data-path="../../dev-guide/topics/rename-table.html">
+            
+                <a href="../../dev-guide/topics/rename-table.html">
+            
+                    
+                    RENAME TABLE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7.2.11" data-path="../../dev-guide/topics/create-index2.html">
+            
+                <a href="../../dev-guide/topics/create-index2.html">
+            
+                    
+                    CREATE INDEX
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7.2.12" data-path="../../dev-guide/topics/drop-index.html">
+            
+                <a href="../../dev-guide/topics/drop-index.html">
+            
+                    
+                    DROP INDEX
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7.2.13" data-path="../../dev-guide/topics/create-view.html">
+            
+                <a href="../../dev-guide/topics/create-view.html">
+            
+                    
+                    CREATE VIEW
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7.2.14" data-path="../../dev-guide/topics/drop-view.html">
+            
+                <a href="../../dev-guide/topics/drop-view.html">
+            
+                    
+                    DROP VIEW
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="../../dev-guide/topics/dml.html">
+            
+                <a href="../../dev-guide/topics/dml.html">
+            
+                    
+                    DML语句
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.8.1" data-path="../../dev-guide/topics/insert.html">
+            
+                <a href="../../dev-guide/topics/insert.html">
+            
+                    
+                    INSERT
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8.2" data-path="../../dev-guide/topics/replace.html">
+            
+                <a href="../../dev-guide/topics/replace.html">
+            
+                    
+                    REPLACE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8.3" data-path="../../dev-guide/topics/update.html">
+            
+                <a href="../../dev-guide/topics/update.html">
+            
+                    
+                    UPDATE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8.4" data-path="../../dev-guide/topics/delete.html">
+            
+                <a href="../../dev-guide/topics/delete.html">
+            
+                    
+                    DELETE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8.5" data-path="../../dev-guide/topics/source.html">
+            
+                <a href="../../dev-guide/topics/source.html">
+            
+                    
+                    SOURCE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8.6" data-path="../../dev-guide/topics/export.html">
+            
+                <a href="../../dev-guide/topics/export.html">
+            
+                    
+                    EXPORT
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8.7" data-path="../../dev-guide/topics/load-data.html">
+            
+                <a href="../../dev-guide/topics/load-data.html">
+            
+                    
+                    LOAD DATA
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="../../dev-guide/topics/dql.html">
+            
+                <a href="../../dev-guide/topics/dql.html">
+            
+                    
+                    DQL语句
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.9.1" data-path="../../dev-guide/topics/select.html">
+            
+                <a href="../../dev-guide/topics/select.html">
+            
+                    
+                    SELECT
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9.2" data-path="../../dev-guide/topics/subquery.html">
+            
+                <a href="../../dev-guide/topics/subquery.html">
+            
+                    
+                    子查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9.3" data-path="../../dev-guide/topics/extension.html">
+            
+                <a href="../../dev-guide/topics/extension.html">
+            
+                    
+                    Grouping Sets、Rollup和Cube扩展
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10" data-path="../../dev-guide/topics/tcl.html">
+            
+                <a href="../../dev-guide/topics/tcl.html">
+            
+                    
+                    TCL语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11" data-path="../../dev-guide/topics/dal.html">
+            
+                <a href="../../dev-guide/topics/dal.html">
+            
+                    
+                    DAL语句
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.11.1" data-path="../../dev-guide/topics/ddl-management.html">
+            
+                <a href="../../dev-guide/topics/ddl-management.html">
+            
+                    
+                    DDL管理语句
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.11.1.1" data-path="../../dev-guide/topics/show-ddl.html">
+            
+                <a href="../../dev-guide/topics/show-ddl.html">
+            
+                    
+                    SHOW DDL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11.1.2" data-path="../../dev-guide/topics/show-ddl-result.html">
+            
+                <a href="../../dev-guide/topics/show-ddl-result.html">
+            
+                    
+                    SHOW DDL RESULT
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11.1.3" data-path="../../dev-guide/topics/cancel-ddl.html">
+            
+                <a href="../../dev-guide/topics/cancel-ddl.html">
+            
+                    
+                    CANCEL DDL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11.1.4" data-path="../../dev-guide/topics/pause-ddl.html">
+            
+                <a href="../../dev-guide/topics/pause-ddl.html">
+            
+                    
+                    PAUSE DDL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11.1.5" data-path="../../dev-guide/topics/continue-ddl.html">
+            
+                <a href="../../dev-guide/topics/continue-ddl.html">
+            
+                    
+                    CONTINUE DDL
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11.2" data-path="../../dev-guide/topics/show.html">
+            
+                <a href="../../dev-guide/topics/show.html">
+            
+                    
+                    SHOW
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.11.2.1" data-path="../../dev-guide/topics/show-help.html">
+            
+                <a href="../../dev-guide/topics/show-help.html">
+            
+                    
+                    SHOW HELP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11.2.2" data-path="../../dev-guide/topics/show-topology.html">
+            
+                <a href="../../dev-guide/topics/show-topology.html">
+            
+                    
+                    规则和拓扑查询语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11.2.3" data-path="../../dev-guide/topics/slow-query.html">
+            
+                <a href="../../dev-guide/topics/slow-query.html">
+            
+                    
+                    慢SQL相关
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11.2.4" data-path="../../dev-guide/topics/statistics-query.html">
+            
+                <a href="../../dev-guide/topics/statistics-query.html">
+            
+                    
+                    统计信息查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11.2.5" data-path="../../dev-guide/topics/show-processlist.html">
+            
+                <a href="../../dev-guide/topics/show-processlist.html">
+            
+                    
+                    SHOW PROCESSLIST
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11.2.6" data-path="../../dev-guide/topics/show-global-index.html">
+            
+                <a href="../../dev-guide/topics/show-global-index.html">
+            
+                    
+                    SHOW GLOBAL INDEX
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11.2.7" data-path="../../dev-guide/topics/show-index.html">
+            
+                <a href="../../dev-guide/topics/show-index.html">
+            
+                    
+                    SHOW INDEX
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11.2.8" data-path="../../dev-guide/topics/show-meta-lock.html">
+            
+                <a href="../../dev-guide/topics/show-meta-lock.html">
+            
+                    
+                    SHOW METADATA LOCK
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11.2.9" data-path="../../dev-guide/topics/show-tablegroup.html">
+            
+                <a href="../../dev-guide/topics/show-tablegroup.html">
+            
+                    
+                    SHOW TABLEGROUP
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11.3" data-path="../../dev-guide/topics/set.html">
+            
+                <a href="../../dev-guide/topics/set.html">
+            
+                    
+                    SET
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.11.3.1" data-path="../../dev-guide/topics/set-parameters-devguide.html">
+            
+                <a href="../../dev-guide/topics/set-parameters-devguide.html">
+            
+                    
+                    SET语句变量设置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11.3.2" data-path="../../dev-guide/topics/set-character-set.html">
+            
+                <a href="../../dev-guide/topics/set-character-set.html">
+            
+                    
+                    SET CHARACTER SET
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11.3.3" data-path="../../dev-guide/topics/set-names.html">
+            
+                <a href="../../dev-guide/topics/set-names.html">
+            
+                    
+                    SET NAMES
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11.4" data-path="../../dev-guide/topics/check-table.html">
+            
+                <a href="../../dev-guide/topics/check-table.html">
+            
+                    
+                    CHECK TABLE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11.5" data-path="../../dev-guide/topics/check-global-index.html">
+            
+                <a href="../../dev-guide/topics/check-global-index.html">
+            
+                    
+                    CHECK GLOBAL INDEX
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11.6" data-path="../../dev-guide/topics/kill.html">
+            
+                <a href="../../dev-guide/topics/kill.html">
+            
+                    
+                    KILL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11.7" data-path="../../dev-guide/topics/use.html">
+            
+                <a href="../../dev-guide/topics/use.html">
+            
+                    
+                    USE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11.8" data-path="../../dev-guide/topics/explain.html">
+            
+                <a href="../../dev-guide/topics/explain.html">
+            
+                    
+                    EXPLAIN
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11.9" data-path="../../dev-guide/topics/sql-concurrency-control-devguide.html">
+            
+                <a href="../../dev-guide/topics/sql-concurrency-control-devguide.html">
+            
+                    
+                    SQL限流
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.12" data-path="../../dev-guide/topics/prepared.html">
+            
+                <a href="../../dev-guide/topics/prepared.html">
+            
+                    
+                    Prepared语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.13" data-path="../../dev-guide/topics/permissions.html">
+            
+                <a href="../../dev-guide/topics/permissions.html">
+            
+                    
+                    权限管理
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.13.1" data-path="../../dev-guide/topics/account-devguide.html">
+            
+                <a href="../../dev-guide/topics/account-devguide.html">
+            
+                    
+                    账号权限管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.13.2" data-path="../../dev-guide/topics/role-devguide.html">
+            
+                <a href="../../dev-guide/topics/role-devguide.html">
+            
+                    
+                    角色权限管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.13.3" data-path="../../dev-guide/topics/triple-authority.html">
+            
+                <a href="../../dev-guide/topics/triple-authority.html">
+            
+                    
+                    三权分立下的权限管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.14" data-path="../../dev-guide/topics/replication-devguide.html">
+            
+                <a href="../../dev-guide/topics/replication-devguide.html">
+            
+                    
+                    Replication
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.15" data-path="../../dev-guide/topics/sequence.html">
+            
+                <a href="../../dev-guide/topics/sequence.html">
+            
+                    
+                    Sequence
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.15.1" data-path="../../dev-guide/topics/overview.html">
+            
+                <a href="../../dev-guide/topics/overview.html">
+            
+                    
+                    概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.15.2" data-path="../../dev-guide/topics/sequence-limitation.html">
+            
+                <a href="../../dev-guide/topics/sequence-limitation.html">
+            
+                    
+                    使用限制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.15.3" data-path="../../dev-guide/topics/explict-usage.html">
+            
+                <a href="../../dev-guide/topics/explict-usage.html">
+            
+                    
+                    显式用法
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.15.3.1" data-path="../../dev-guide/topics/create-sequence.html">
+            
+                <a href="../../dev-guide/topics/create-sequence.html">
+            
+                    
+                    创建Sequence
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.15.3.2" data-path="../../dev-guide/topics/alter-sequence.html">
+            
+                <a href="../../dev-guide/topics/alter-sequence.html">
+            
+                    
+                    修改Sequence
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.15.3.3" data-path="../../dev-guide/topics/query-sequence.html">
+            
+                <a href="../../dev-guide/topics/query-sequence.html">
+            
+                    
+                    查询与获取Sequence
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.15.3.4" data-path="../../dev-guide/topics/drop-sequence.html">
+            
+                <a href="../../dev-guide/topics/drop-sequence.html">
+            
+                    
+                    删除Sequence
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.15.4" data-path="../../dev-guide/topics/implict-usage.html">
+            
+                <a href="../../dev-guide/topics/implict-usage.html">
+            
+                    
+                    隐式用法
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.15.4.1" data-path="../../dev-guide/topics/sequence-in-create-table.html">
+            
+                <a href="../../dev-guide/topics/sequence-in-create-table.html">
+            
+                    
+                    CREATE TABLE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.15.4.2" data-path="../../dev-guide/topics/sequence-in-alter-table.html">
+            
+                <a href="../../dev-guide/topics/sequence-in-alter-table.html">
+            
+                    
+                    ALTER TABLE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.15.4.3" data-path="../../dev-guide/topics/query-table-and-sequence.html">
+            
+                <a href="../../dev-guide/topics/query-table-and-sequence.html">
+            
+                    
+                    查看表信息及相关Sequence类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.16" data-path="../../dev-guide/topics/variables.html">
+            
+                <a href="../../dev-guide/topics/variables.html">
+            
+                    
+                    变量
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.16.1" data-path="../../dev-guide/topics/cn-variables-devguide.html">
+            
+                <a href="../../dev-guide/topics/cn-variables-devguide.html">
+            
+                    
+                    计算层变量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.16.2" data-path="../../dev-guide/topics/dn-variables-devguide.html">
+            
+                <a href="../../dev-guide/topics/dn-variables-devguide.html">
+            
+                    
+                    存储层变量
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.17" data-path="../../dev-guide/topics/transparent-shard.html">
+            
+                <a href="../../dev-guide/topics/transparent-shard.html">
+            
+                    
+                    透明分布式
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.17.1" data-path="../../dev-guide/topics/sharding-by-pk.html">
+            
+                <a href="../../dev-guide/topics/sharding-by-pk.html">
+            
+                    
+                    主键拆分
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.17.2" data-path="../../dev-guide/topics/clustered-index.html">
+            
+                <a href="../../dev-guide/topics/clustered-index.html">
+            
+                    
+                    聚簇索引
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.17.3" data-path="../../dev-guide/topics/alter-sharding-rule.html">
+            
+                <a href="../../dev-guide/topics/alter-sharding-rule.html">
+            
+                    
+                    变更表类型及拆分规则（分库分表）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.17.4" data-path="../../dev-guide/topics/alter-partition.html">
+            
+                <a href="../../dev-guide/topics/alter-partition.html">
+            
+                    
+                    变更表类型及分区策略（分区表）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.18" data-path="../../dev-guide/topics/faq.html">
+            
+                <a href="../../dev-guide/topics/faq.html">
+            
+                    
+                    常见问题
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.18.1" data-path="../../dev-guide/topics/ddl-faq.html">
+            
+                <a href="../../dev-guide/topics/ddl-faq.html">
+            
+                    
+                    DDL常见问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.18.2" data-path="../../dev-guide/topics/gsi-faq.html">
+            
+                <a href="../../dev-guide/topics/gsi-faq.html">
+            
+                    
+                    如何使用全局二级索引
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.18.3" data-path="../../dev-guide/topics/hint-faq.html">
+            
+                <a href="../../dev-guide/topics/hint-faq.html">
+            
+                    
+                    如何使用HINT
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.18.4" data-path="../../dev-guide/topics/sql-timeout.html">
+            
+                <a href="../../dev-guide/topics/sql-timeout.html">
+            
+                    
+                    如何自定义SQL超时时间
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.18.5" data-path="../../dev-guide/topics/execute-sql-on-shard.html">
+            
+                <a href="../../dev-guide/topics/execute-sql-on-shard.html">
+            
+                    
+                    指定分库执行SQL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.18.6" data-path="../../dev-guide/topics/scan.html">
+            
+                <a href="../../dev-guide/topics/scan.html">
+            
+                    
+                    扫描全部/部分分库分表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.18.7" data-path="../../dev-guide/topics/index-hint.html">
+            
+                <a href="../../dev-guide/topics/index-hint.html">
+            
+                    
+                    INDEX HINT
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../sql-tunning/topics/sql-tuning-guide.html">
+            
+                <a href="../../sql-tunning/topics/sql-tuning-guide.html">
+            
+                    
+                    SQL调优指南
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../../sql-tunning/topics/concepts.html">
+            
+                <a href="../../sql-tunning/topics/concepts.html">
+            
+                    
+                    调优基本概念
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../../sql-tunning/topics/sql-plan.html">
+            
+                <a href="../../sql-tunning/topics/sql-plan.html">
+            
+                    
+                    执行计划介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../../sql-tunning/topics/sql-tunning-advanced.html">
+            
+                <a href="../../sql-tunning/topics/sql-tunning-advanced.html">
+            
+                    
+                    SQL调优进阶
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.3.1" data-path="../../sql-tunning/topics/cbo.html">
+            
+                <a href="../../sql-tunning/topics/cbo.html">
+            
+                    
+                    查询优化器介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3.2" data-path="../../sql-tunning/topics/query-rewriting.html">
+            
+                <a href="../../sql-tunning/topics/query-rewriting.html">
+            
+                    
+                    查询改写与下推
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3.3" data-path="../../sql-tunning/topics/executor.html">
+            
+                <a href="../../sql-tunning/topics/executor.html">
+            
+                    
+                    查询执行器介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3.4" data-path="../../sql-tunning/topics/join-optimizing.html">
+            
+                <a href="../../sql-tunning/topics/join-optimizing.html">
+            
+                    
+                    JOIN优化和执行
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3.5" data-path="../../sql-tunning/topics/subquery-optimizing.html">
+            
+                <a href="../../sql-tunning/topics/subquery-optimizing.html">
+            
+                    
+                    子查询优化和执行
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3.6" data-path="../../sql-tunning/topics/agg-optimizing.html">
+            
+                <a href="../../sql-tunning/topics/agg-optimizing.html">
+            
+                    
+                    聚合优化和执行
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3.7" data-path="../../sql-tunning/topics/sort-optimizing.html">
+            
+                <a href="../../sql-tunning/topics/sort-optimizing.html">
+            
+                    
+                    排序优化和执行
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../../sql-tunning/topics/sql-advisor.html">
+            
+                <a href="../../sql-tunning/topics/sql-advisor.html">
+            
+                    
+                    索引推荐
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../../sql-tunning/topics/spm.html">
+            
+                <a href="../../sql-tunning/topics/spm.html">
+            
+                    
+                    执行计划管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="../../sql-tunning/topics/tunning-methodology.html">
+            
+                <a href="../../sql-tunning/topics/tunning-methodology.html">
+            
+                    
+                    调优方法论
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="best-practices.html">
+            
+                <a href="best-practices.html">
+            
+                    
+                    最佳实践
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.6.1" data-path="connection-pool.html">
+            
+                <a href="connection-pool.html">
+            
+                    
+                    如何选择应用端链接池
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="problem-solving.html">
+            
+                <a href="problem-solving.html">
+            
+                    
+                    如何快速定位及解决数据库问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="ddl-exception.html">
+            
+                <a href="ddl-exception.html">
+            
+                    
+                    如何正确处理DDL异常
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="slow-query-tuning.html">
+            
+                <a href="slow-query-tuning.html">
+            
+                    
+                    如何分析及优化慢SQL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="slow-query-control.html">
+            
+                <a href="slow-query-control.html">
+            
+                    
+                    如何限流慢SQL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="async-drop-table.html">
+            
+                <a href="async-drop-table.html">
+            
+                    
+                    如何异步删除大表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.7" data-path="update-hot-data.html">
+            
+                <a href="update-hot-data.html">
+            
+                    
+                    如何支持热点更新场景
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.8" data-path="data-distribution-rebalance.html">
+            
+                <a href="data-distribution-rebalance.html">
+            
+                    
+                    如何分析数据分布不均衡
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.9" data-path="efficiency-in.html">
+            
+                <a href="efficiency-in.html">
+            
+                    
+                    如何高效使用IN查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.10" data-path="batch-insert.html">
+            
+                <a href="batch-insert.html">
+            
+                    
+                    如何优化Batch Insert
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.11" data-path="data-import-export.html">
+            
+                <a href="data-import-export.html">
+            
+                    
+                    如何优化数据导入导出
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.12" data-path="data-etl.html">
+            
+                <a href="data-etl.html">
+            
+                    
+                    如何优化数据全量抽取
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.13" data-path="blob.html">
+            
+                <a href="blob.html">
+            
+                    
+                    如何使用Blob对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.14" data-path="high-concurrency-scenarios.html">
+            
+                <a href="high-concurrency-scenarios.html">
+            
+                    
+                    偏高并发场景的实践和优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.15" data-path="analytical-scenarios.html">
+            
+                <a href="analytical-scenarios.html">
+            
+                    
+                    偏分析场景的实践和优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.16" data-path="htap-practice.html">
+            
+                <a href="htap-practice.html">
+            
+                    
+                    混合负载HTAP的实践和优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../../dev-guide/topics/error-code.html">
+            
+                <a href="../../dev-guide/topics/error-code.html">
+            
+                    
+                    错误码
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../../online-lab/OnlineLab01.html">
+            
+                <a href="../../online-lab/OnlineLab01.html">
+            
+                    
+                    在线实验体验
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../../Contributing/Contribute-to-Community.html">
+            
+                <a href="../../Contributing/Contribute-to-Community.html">
+            
+                    
+                    社区贡献
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1" data-path="../../Contributing/Code-of-Conduct.html">
+            
+                <a href="../../Contributing/Code-of-Conduct.html">
+            
+                    
+                    贡献者盟约行为守则
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2" data-path="../../Contributing/How-to-Contribute.html">
+            
+                <a href="../../Contributing/How-to-Contribute.html">
+            
+                    
+                    如何贡献
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.3" data-path="../../Contributing/Style.html">
+            
+                <a href="../../Contributing/Style.html">
+            
+                    
+                    编码风格
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4" data-path="../../Contributing/Contact-Us.html">
+            
+                <a href="../../Contributing/Contact-Us.html">
+            
+                    
+                    联系我们
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../../Contributing/Software-License.html">
+            
+                <a href="../../Contributing/Software-License.html">
+            
+                    
+                    软件许可说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="../../Contributing/Acknowledgments.html">
+            
+                <a href="../../Contributing/Acknowledgments.html">
+            
+                    
+                    致谢
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" >
+            
+                <a target="_blank" href="https://polardbx.com">
+            
+                    
+                    官网首页
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >如何选择应用端链接池</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x5982;&#x4F55;&#x9009;&#x62E9;&#x5E94;&#x7528;&#x7AEF;&#x94FE;&#x63A5;&#x6C60;-">&#x5982;&#x4F55;&#x9009;&#x62E9;&#x5E94;&#x7528;&#x7AEF;&#x94FE;&#x63A5;&#x6C60; </h1>
+<h2 id="&#x80CC;&#x666F;-">&#x80CC;&#x666F; </h2>
+<p>&#x5F53;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x8FDE;&#x63A5;PolarDB-X&#x5B9E;&#x4F8B;&#x6267;&#x884C;&#x64CD;&#x4F5C;&#x65F6;&#xFF0C;&#x4ECE;PolarDB-X&#x5B9E;&#x4F8B;&#x7684;&#x89D2;&#x5EA6;&#x770B;&#xFF0C;&#x4F1A;&#x6709;&#x5982;&#x4E0B;&#x4E24;&#x79CD;&#x7C7B;&#x578B;&#x7684;&#x8FDE;&#x63A5;&#xFF1A;</p>
+<ul>
+<li><p>&#x524D;&#x7AEF;&#x8FDE;&#x63A5;&#xFF1A;&#x7531;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x5EFA;&#x7ACB;&#x7684;&#xFF0C;&#x5230;PolarDB-X&#x8BA1;&#x7B97;&#x8282;&#x70B9;&#xFF08;CN&#xFF09;&#x4E2D;&#x903B;&#x8F91;&#x5E93;&#x7684;&#x8FDE;&#x63A5;&#x3002;</p>
+</li>
+<li><p>&#x540E;&#x7AEF;&#x8FDE;&#x63A5;&#xFF1A;&#x7531;PolarDB-X&#x8BA1;&#x7B97;&#x8282;&#x70B9;&#x5EFA;&#x7ACB;&#x7684;&#xFF0C;&#x5230;&#x540E;&#x7AEF;&#x6570;&#x636E;&#x8282;&#x70B9;&#xFF08;DN&#xFF09;&#x4E2D;&#x7269;&#x7406;&#x5E93;&#x7684;&#x8FDE;&#x63A5;&#x3002;</p>
+</li>
+</ul>
+<p><img src="../images/p325195.png" alt="Model"></p>
+<p>&#x5176;&#x4E2D;&#x540E;&#x7AEF;&#x8FDE;&#x63A5;&#x7531;CN&#x7BA1;&#x7406;&#xFF0C;&#x901A;&#x8FC7;&#x79C1;&#x6709;&#x534F;&#x8BAE;&#x5B9E;&#x73B0;TCP&#x8FDE;&#x63A5;&#x4E0E;&#x540E;&#x7AEF;&#x8FDE;&#x63A5;&#x89E3;&#x7ED1;&#xFF0C;&#x5BF9;&#x7528;&#x6237;&#x900F;&#x660E;&#x3002;&#x524D;&#x7AEF;&#x8FDE;&#x63A5;&#x7531;&#x7528;&#x6237;&#x521B;&#x5EFA;&#x548C;&#x7BA1;&#x7406;&#xFF0C;&#x672C;&#x6587;&#x4E3B;&#x8981;&#x8BA8;&#x8BBA;&#x524D;&#x7AEF;&#x8FDE;&#x63A5;&#x7BA1;&#x7406;&#x7684;&#x6700;&#x4F73;&#x5B9E;&#x8DF5;&#x3002;</p>
+<p><strong>&#x8BF4;&#x660E;</strong> &#x4E3A;&#x4E86;&#x7B80;&#x5316;&#x63CF;&#x8FF0;&#xFF0C;&#x4E0B;&#x6587;&#x4E2D;&#x7684; &quot;&#x8FDE;&#x63A5;&quot; &#x5747;&#x4EE3;&#x6307; &quot;&#x524D;&#x7AEF;&#x8FDE;&#x63A5;&quot;&#x3002;</p>
+<h2 id="qpsrt&#x4E0E;&#x8FDE;&#x63A5;&#x6570;&#x7684;&#x5173;&#x7CFB;-">QPS/RT&#x4E0E;&#x8FDE;&#x63A5;&#x6570;&#x7684;&#x5173;&#x7CFB; </h2>
+<p>&#x6BCF;&#x79D2;&#x67E5;&#x8BE2;&#x8BF7;&#x6C42;&#x6570; (Query Per Second&#xFF0C;QPS) &#x548C;&#x54CD;&#x5E94;&#x65F6;&#x95F4; (Response Time&#xFF0C;RT) &#x662F;&#x8861;&#x91CF;&#x5E94;&#x7528;&#x5BF9;&#x6570;&#x636E;&#x5E93;&#x6027;&#x80FD;&#x9700;&#x6C42;&#x7684;&#x57FA;&#x672C;&#x6307;&#x6807;&#xFF0C;QPS&#x4EE3;&#x8868;&#x5E94;&#x7528;&#x5E76;&#x53D1;&#x8BBF;&#x95EE;&#x6570;&#x636E;&#x5E93;&#x7684;&#x9700;&#x6C42;&#xFF0C;RT&#x4EE3;&#x8868;&#x5355;&#x6761;&#x8BED;&#x53E5;&#x7684;&#x5904;&#x7406;&#x6027;&#x80FD;&#x3002;RT&#x7684;&#x9AD8;&#x4F4E;&#x4E0E;&#x6267;&#x884C;&#x7684;SQL&#x662F;&#x5426;&#x590D;&#x6742;&#x548C;&#x626B;&#x63CF;&#x7684;&#x6570;&#x636E;&#x91CF;&#x7D27;&#x5BC6;&#x76F8;&#x5173;&#xFF0C;OLTP&#x7CFB;&#x7EDF;&#x4E2D;&#x67E5;&#x8BE2;RT&#x8F83;&#x4F4E;&#xFF0C;&#x901A;&#x5E38;&#x4EE5;&#x6BEB;&#x79D2;&#x4E3A;&#x5355;&#x4F4D;&#x3002;</p>
+<p>PolarDB-X&#x517C;&#x5BB9;MySQL&#x534F;&#x8BAE;&#xFF0C;&#x8BF7;&#x6C42;&#x5728;&#x5355;&#x4E2A;&#x8FDE;&#x63A5;&#x4E0A;&#x4E32;&#x884C;&#x6267;&#x884C;&#xFF0C;&#x4E0D;&#x540C;&#x8FDE;&#x63A5;&#x4E0A;&#x7684;&#x8BF7;&#x6C42;&#x53EF;&#x4EE5;&#x5E76;&#x884C;&#x6267;&#x884C;&#xFF0C;&#x7531;&#x6B64;&#x5F97;&#x5230;&#x4EE5;&#x4E0B;&#x516C;&#x5F0F;&#xFF1A;</p>
+<ul>
+<li><p>&#x5355;&#x4E2A;&#x8FDE;&#x63A5;&#x7684;QPS&#x4E0A;&#x9650; = 1000/RT</p>
+</li>
+<li><p>&#x5E94;&#x7528;&#x8BBF;&#x95EE;&#x5355;&#x4E2A;CN&#x7684;QPS&#x4E0A;&#x9650; = &#x5355;&#x4E2A;&#x8FDE;&#x63A5;&#x7684;QPS&#x4E0A;&#x9650;&#xD7;&#x8FDE;&#x63A5;&#x6570;</p>
+</li>
+</ul>
+<p>&#x6309;&#x7167;&#x5E73;&#x5747;RT&#x4E3A;5ms&#x8BA1;&#x7B97;&#xFF0C;&#x5355;&#x4E2A;&#x8FDE;&#x63A5;&#x7684;QPS&#x4E0A;&#x9650;&#x4E3A;200&#xFF0C;&#x5047;&#x8BBE;&#x5E94;&#x7528;&#x9884;&#x4F30;&#x9700;&#x8981;&#x7684;QPS&#x4E3A;5000&#xFF0C;&#x5219;&#x81F3;&#x5C11;&#x9700;&#x8981;&#x5EFA;&#x7ACB;25&#x4E2A;&#x8FDE;&#x63A5;&#x3002;</p>
+<h2 id="&#x8FDE;&#x63A5;&#x6570;&#x9650;&#x5236;-">&#x8FDE;&#x63A5;&#x6570;&#x9650;&#x5236; </h2>
+<p>PolarDB-X&#x4E2D;&#x524D;&#x7AEF;&#x8FDE;&#x63A5;&#x4EC5;&#x4E0E;&#x7F51;&#x7EDC;&#x8FDE;&#x63A5;&#x7ED1;&#x5B9A;&#xFF0C;&#x8FDE;&#x63A5;&#x7684;&#x6570;&#x91CF;&#x7406;&#x8BBA;&#x4E0A;&#x4EC5;&#x53D7;&#x9650;&#x4E8E;CN&#x53EF;&#x7528;&#x7684;&#x5185;&#x5B58;&#x5927;&#x5C0F;&#x548C;&#x7F51;&#x7EDC;&#x8FDE;&#x63A5;&#x6570;&#x3002;&#x4F46;&#x5728;&#x5B9E;&#x9645;&#x7684;&#x573A;&#x666F;&#x4E2D;&#xFF0C;&#x5E94;&#x7528;&#x521B;&#x5EFA;&#x8FDE;&#x63A5;&#x662F;&#x4E3A;&#x4E86;&#x6267;&#x884C;&#x67E5;&#x8BE2;&#xFF0C;&#x8FDE;&#x63A5;&#x6570;&#x9700;&#x8981;&#x4E0E;&#x6267;&#x884C;&#x7EBF;&#x7A0B;&#x7684;&#x6570;&#x91CF;&#x76F8;&#x5339;&#x914D;&#x624D;&#x80FD;&#x8FBE;&#x5230;&#x6700;&#x4F73;&#x6027;&#x80FD;&#x3002;</p>
+<p><img src="../images/p325205.png" alt="Limitation"></p>
+<p>&#x5982;&#x4E0A;&#x56FE;&#x6240;&#x793A;&#xFF0C;&#x5E94;&#x7528;&#x53D1;&#x8D77;&#x8FDE;&#x63A5;&#x8BF7;&#x6C42;&#x540E;&#xFF0C;&#x9996;&#x5148;&#x7531;&#x7F51;&#x7EDC;&#x6A21;&#x5757;&#x8FDB;&#x884C;&#x6743;&#x9650;&#x8BA4;&#x8BC1;&#xFF0C;&#x8BA4;&#x8BC1;&#x901A;&#x8FC7;&#x5219;&#x521B;&#x5EFA;&#x8FDE;&#x63A5;&#x5BF9;&#x8C61;&#x3002;&#x4E0E; <a href="https://mariadb.com/kb/en/thread-pool-in-mariadb/" target="_blank">MariaDB</a> &#x76F8;&#x4F3C;&#xFF0C;PolarDB-X&#x8BA1;&#x7B97;&#x8282;&#x70B9;&#x6536;&#x5230;&#x540E;&#x7EED;&#x67E5;&#x8BE2;&#x8BF7;&#x6C42;&#x540E;&#xFF0C;&#x4F1A;&#x5C1D;&#x8BD5;&#x4ECE;&#x7EBF;&#x7A0B;&#x6C60;&#x4E2D;&#x5206;&#x914D;&#x4E00;&#x4E2A;&#x6267;&#x884C;&#x7EBF;&#x7A0B;&#xFF0C;&#x7528;&#x4E8E;&#x5904;&#x7406;&#x67E5;&#x8BE2;&#x8BF7;&#x6C42;&#x3002;&#x5355;&#x4E2A;CN&#x8282;&#x70B9;&#x9ED8;&#x8BA4;&#x7EF4;&#x62A4;&#x4E00;&#x4E2A;1024&#x5927;&#x5C0F;&#x7684;&#x7EBF;&#x7A0B;&#x6C60;&#xFF0C;&#x5982;&#x679C;&#x5E76;&#x53D1;&#x67E5;&#x8BE2;&#x6570;&#x91CF;&#x8D85;&#x8FC7;&#x7EBF;&#x7A0B;&#x6C60;&#x5927;&#x5C0F;&#xFF0C;&#x540E;&#x7EED;&#x8BF7;&#x6C42;&#x4F1A;&#x6392;&#x961F;&#x7B49;&#x5F85;&#x3002;&#x7531;&#x6B64;&#x53EF;&#x4EE5;&#x5F97;&#x5230;&#x4EE5;&#x4E0B;&#x516C;&#x5F0F;&#xFF1A;</p>
+<ul>
+<li><p>&#x5E94;&#x7528;&#x8BBF;&#x95EE;&#x5355;&#x4E2A;CN&#x7684;QPS&#x4E0A;&#x9650; = &#x5355;&#x4E2A;&#x8FDE;&#x63A5;&#x7684;QPS&#x4E0A;&#x9650;&#xD7;MIN&#xFF08;&#x8FDE;&#x63A5;&#x6570;, &#x7EBF;&#x7A0B;&#x6C60;&#x5927;&#x5C0F;&#xFF09;</p>
+</li>
+<li><p>&#x5E94;&#x7528;&#x8BBF;&#x95EE;&#x6570;&#x636E;&#x5E93;&#x7684;QPS&#x4E0A;&#x9650; = &#x5355;&#x4E2A;&#x8FDE;&#x63A5;&#x7684;QPS&#x4E0A;&#x9650;&#xD7;MIN&#xFF08;&#x8FDE;&#x63A5;&#x6570;, &#x7EBF;&#x7A0B;&#x6C60;&#x5927;&#x5C0F;&#xFF09;&#xD7;CN&#x6570;&#x91CF;</p>
+</li>
+</ul>
+<p>&#x6211;&#x4EEC;&#x901A;&#x8FC7;&#x4EE5;&#x4E0B;&#x4E24;&#x4E2A;&#x793A;&#x4F8B;&#x6765;&#x8FDB;&#x884C;&#x516C;&#x5F0F;&#x7684;&#x5B9E;&#x9645;&#x5E94;&#x7528;&#xFF1A;</p>
+<ul>
+<li><p>&#x793A;&#x4F8B;1 </p>
+<p>&#x95EE;&#xFF1A;&#x67E5;&#x8BE2;&#x7684;&#x5E73;&#x5747;RT&#x4E3A;10ms&#xFF0C;&#x7406;&#x60F3;&#x60C5;&#x51B5;&#x4E0B;&#x4E24;&#x8282;&#x70B9;CN&#x80FD;&#x63D0;&#x4F9B;&#x591A;&#x5C11;QPS ?</p>
+<p>&#x7B54;&#xFF1A;&#x5E73;&#x5747;RT&#x4E3A;10ms&#xFF0C;&#x5219;&#x5355;&#x4E2A;&#x8FDE;&#x63A5;&#x7684;QPS&#x4E0A;&#x9650;&#x4E3A;100&#x3002;&#x7406;&#x60F3;&#x60C5;&#x51B5;&#x4E0B;&#xFF08;CPU&#x4E0D;&#x6210;&#x4E3A;&#x74F6;&#x9888;&#xFF09;&#xFF0C;&#x5305;&#x542B;2&#x4E2A;CN&#x8282;&#x70B9;&#x7684;PolarDB-X&#x5B9E;&#x4F8B;&#x9ED8;&#x8BA4;&#x80FD;&#x591F;&#x63D0;&#x4F9B;&#x7684;QPS&#x4E0A;&#x9650;&#x4E3A; 100&#xD7;1024&#xD7;2 = 204800&#x3002;&#x8FD9;&#x91CC;&#x9700;&#x8981;&#x6CE8;&#x610F;&#xFF0C;CN&#x8282;&#x70B9;&#x80FD;&#x591F;&#x540C;&#x65F6;&#x5904;&#x7406;&#x7684;&#x67E5;&#x8BE2;&#x6570;&#x91CF;&#x4E0E;CN&#x89C4;&#x683C;&#x548C;&#x67E5;&#x8BE2;&#x590D;&#x6742;&#x5EA6;&#x6709;&#x5173;&#xFF0C;&#x5B9E;&#x9645;&#x573A;&#x666F;&#x4E0B;&#x901A;&#x5E38;&#x4E0D;&#x80FD;&#x505A;&#x5230;1024&#x4E2A;&#x7EBF;&#x7A0B;&#x5B8C;&#x5168;&#x5E76;&#x884C;&#xFF0C;QPS&#x4E0A;&#x9650;&#x4F1A;&#x4F4E;&#x4E8E;204800&#x3002;</p>
+</li>
+<li><p>&#x793A;&#x4F8B;2</p>
+<p>&#x95EE;&#xFF1A;&#x5728;CN&#x89C4;&#x683C;&#x4E3A;16C&#x7684;PolarDB-X&#x5B9E;&#x4F8B;&#x4E0A;&#x538B;&#x6D4B;&#xFF0C;CPU&#x521A;&#x597D;&#x8DD1;&#x6EE1;&#x65F6;&#xFF0C;&#x67D0;&#x67E5;&#x8BE2;&#x7684;&#x5E73;&#x5747;RT&#x4E3A;5ms&#x3002; &#x4EC5;&#x8003;&#x8651;CN&#x8282;&#x70B9;&#xFF0C;&#x652F;&#x6491;40w&#x7684;QPS&#x5E94;&#x5F53;&#x5982;&#x4F55;&#x9009;&#x62E9;&#x5B9E;&#x4F8B;&#x548C;&#x8BBE;&#x7F6E;&#x5E94;&#x7528;&#x7AEF;&#x8FDE;&#x63A5;&#x6C60;&#xFF1F;</p>
+<p>&#x7B54;&#xFF1A;&#x5E73;&#x5747;RT&#x4E3A;5ms&#xFF0C;&#x5219;&#x5355;&#x4E2A;&#x8FDE;&#x63A5;&#x7684;QPS&#x4E0A;&#x9650;&#x4E3A;200&#x3002;&#x5E94;&#x7528;&#x7AEF;&#x8FDE;&#x63A5;&#x6C60;&#x5927;&#x5C0F;&#x8BBE;&#x7F6E;&#x4E3A;400000/200 = 2000&#x53EF;&#x4EE5;&#x5C06;&#x989D;&#x5916;&#x5F00;&#x9500;&#x964D;&#x5230;&#x6700;&#x4F4E;&#x3002;&#x4FDD;&#x6301;&#x5355;&#x4E2A;CN&#x8282;&#x70B9;&#x4E0A;&#x7684;&#x5E76;&#x884C;&#x5EA6;&#x4E0D;&#x8D85;&#x8FC7;1024&#xFF0C;&#x9700;&#x8981;&#x4E24;&#x4E2A;16C&#x8282;&#x70B9;&#x6784;&#x6210;&#x7684;32C&#x7684; PolarDB-X&#x5B9E;&#x4F8B;&#x3002;</p>
+</li>
+</ul>
+<h2 id="&#x8FDE;&#x63A5;&#x6C60;-">&#x8FDE;&#x63A5;&#x6C60; </h2>
+<p>&#x6570;&#x636E;&#x5E93;&#x8FDE;&#x63A5;&#x6C60;&#x662F;&#x5BF9;&#x6570;&#x636E;&#x5E93;&#x8FDE;&#x63A5;&#x8FDB;&#x884C;&#x7EDF;&#x4E00;&#x7BA1;&#x7406;&#x7684;&#x6280;&#x672F;&#xFF0C;&#x4E3B;&#x8981;&#x76EE;&#x7684;&#x662F;&#x63D0;&#x9AD8;&#x5E94;&#x7528;&#x6027;&#x80FD;&#xFF0C;&#x51CF;&#x8F7B;&#x6570;&#x636E;&#x5E93;&#x8D1F;&#x8F7D;&#x3002;</p>
+<ul>
+<li><p>&#x63D0;&#x9AD8;&#x7CFB;&#x7EDF;&#x54CD;&#x5E94;&#x6548;&#x7387;&#xFF1A;&#x8FDE;&#x63A5;&#x7684;&#x521D;&#x59CB;&#x5316;&#x5DE5;&#x4F5C;&#x5B8C;&#x6210;&#x540E;&#xFF0C;&#x6240;&#x6709;&#x8BF7;&#x6C42;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x5229;&#x7528;&#x73B0;&#x6709;&#x8FDE;&#x63A5;&#xFF0C;&#x907F;&#x514D;&#x4E86;&#x8FDE;&#x63A5;&#x521D;&#x59CB;&#x5316;&#x548C;&#x91CA;&#x653E;&#x7684;&#x5F00;&#x9500;&#xFF0C;&#x63D0;&#x9AD8;&#x4E86;&#x7CFB;&#x7EDF;&#x7684;&#x54CD;&#x5E94;&#x6548;&#x7387;&#x3002;</p>
+</li>
+<li><p>&#x8D44;&#x6E90;&#x590D;&#x7528;&#xFF1A;&#x8FDE;&#x63A5;&#x53EF;&#x4EE5;&#x91CD;&#x590D;&#x5229;&#x7528;&#xFF0C;&#x907F;&#x514D;&#x4E86;&#x9891;&#x7E41;&#x521B;&#x5EFA;&#x3001;&#x91CA;&#x653E;&#x8FDE;&#x63A5;&#x5F15;&#x5165;&#x7684;&#x6027;&#x80FD;&#x5F00;&#x9500;&#x3002;&#x5728;&#x51CF;&#x5C11;&#x7CFB;&#x7EDF;&#x6D88;&#x8017;&#x7684;&#x57FA;&#x7840;&#x4E0A;&#xFF0C;&#x589E;&#x5F3A;&#x4E86;&#x7CFB;&#x7EDF;&#x7684;&#x5E73;&#x7A33;&#x6027;&#x3002;</p>
+</li>
+<li><p>&#x907F;&#x514D;&#x8FDE;&#x63A5;&#x6CC4;&#x6F0F;&#xFF1A;&#x8FDE;&#x63A5;&#x6C60;&#x53EF;&#x6839;&#x636E;&#x9884;&#x8BBE;&#x7684;&#x56DE;&#x6536;&#x7B56;&#x7565;&#xFF0C;&#x5F3A;&#x5236;&#x56DE;&#x6536;&#x8FDE;&#x63A5;&#xFF0C;&#x4ECE;&#x800C;&#x907F;&#x514D;&#x4E86;&#x8FDE;&#x63A5;&#x8D44;&#x6E90;&#x6CC4;&#x6F0F;&#x3002;</p>
+</li>
+</ul>
+<p>&#x5982;&#x679C;&#x662F;Java&#x7A0B;&#x5E8F;&#xFF0C;&#x63A8;&#x8350;&#x4F7F;&#x7528; <a href="https://github.com/alibaba/druid/" target="_blank">Druid &#x8FDE;&#x63A5;&#x6C60;</a> &#xFF0C;&#x7248;&#x672C;&#x8981;&#x6C42;1.1.11&#x53CA;&#x4EE5;&#x4E0A;&#x3002;</p>
+<p>Druid&#x7684;Spring&#x6807;&#x51C6;&#x914D;&#x7F6E;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-xml">    <span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;dataSource&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;com.alibaba.druid.pool.DruidDataSource&quot;</span> <span class="hljs-attr">init-method</span>=<span class="hljs-string">&quot;init&quot;</span> <span class="hljs-attr">destroy-method</span>=<span class="hljs-string">&quot;close&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;driverClassName&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;com.mysql.jdbc.Driver&quot;</span> /&gt;</span>
+        <span class="hljs-comment">&lt;!-- &#x57FA;&#x672C;&#x5C5E;&#x6027; URL&#x3001;user&#x3001;password --&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;url&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;jdbc:mysql://ip:port/db?autoReconnect=true&amp;rewriteBatchedStatements=true&amp;socketTimeout=30000&amp;connectTimeout=3000&quot;</span> /&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;username&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;root&quot;</span> /&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;password&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;123456&quot;</span> /&gt;</span>
+        <span class="hljs-comment">&lt;!-- &#x914D;&#x7F6E;&#x521D;&#x59CB;&#x5316;&#x5927;&#x5C0F;&#x3001;&#x6700;&#x5C0F;&#x3001;&#x6700;&#x5927; --&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;maxActive&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;20&quot;</span> /&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;initialSize&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;3&quot;</span> /&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;minIdle&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;3&quot;</span> /&gt;</span>
+        <span class="hljs-comment">&lt;!-- maxWait &#x83B7;&#x53D6;&#x8FDE;&#x63A5;&#x7B49;&#x5F85;&#x8D85;&#x65F6;&#x7684;&#x65F6;&#x95F4; --&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;maxWait&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;60000&quot;</span> /&gt;</span>
+        <span class="hljs-comment">&lt;!-- timeBetweenEvictionRunsMillis &#x95F4;&#x9694;&#x591A;&#x4E45;&#x624D;&#x8FDB;&#x884C;&#x4E00;&#x6B21;&#x68C0;&#x6D4B;&#xFF0C;&#x68C0;&#x6D4B;&#x9700;&#x8981;&#x5173;&#x95ED;&#x7684;&#x7A7A;&#x95F2;&#x8FDE;&#x63A5;&#xFF0C;&#x5355;&#x4F4D;&#x662F;&#x6BEB;&#x79D2; --&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;timeBetweenEvictionRunsMillis&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;60000&quot;</span> /&gt;</span>
+        <span class="hljs-comment">&lt;!-- minEvictableIdleTimeMillis &#x4E00;&#x4E2A;&#x8FDE;&#x63A5;&#x5728;&#x6C60;&#x4E2D;&#x6700;&#x5C0F;&#x7A7A;&#x95F2;&#x7684;&#x65F6;&#x95F4;&#xFF0C;&#x5355;&#x4F4D;&#x662F;&#x6BEB;&#x79D2;--&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;minEvictableIdleTimeMillis&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;300000&quot;</span> /&gt;</span>
+        <span class="hljs-comment">&lt;!-- &#x68C0;&#x6D4B;&#x8FDE;&#x63A5;&#x662F;&#x5426;&#x53EF;&#x7528;&#x7684; SQL --&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;validationQuery&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;select &apos;z&apos; from dual&quot;</span> /&gt;</span>
+        <span class="hljs-comment">&lt;!-- &#x662F;&#x5426;&#x5F00;&#x542F;&#x7A7A;&#x95F2;&#x8FDE;&#x63A5;&#x68C0;&#x67E5; --&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;testWhileIdle&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;true&quot;</span> /&gt;</span>
+        <span class="hljs-comment">&lt;!-- &#x662F;&#x5426;&#x5728;&#x83B7;&#x53D6;&#x8FDE;&#x63A5;&#x524D;&#x68C0;&#x67E5;&#x8FDE;&#x63A5;&#x72B6;&#x6001; --&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;testOnBorrow&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;false&quot;</span> /&gt;</span>
+        <span class="hljs-comment">&lt;!-- &#x662F;&#x5426;&#x5728;&#x5F52;&#x8FD8;&#x8FDE;&#x63A5;&#x65F6;&#x68C0;&#x67E5;&#x8FDE;&#x63A5;&#x72B6;&#x6001; --&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;testOnReturn&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;false&quot;</span> /&gt;</span>
+        <span class="hljs-comment">&lt;!-- &#x662F;&#x5426;&#x5728;&#x56FA;&#x5B9A;&#x65F6;&#x95F4;&#x5173;&#x95ED;&#x8FDE;&#x63A5;&#x3002;&#x589E;&#x52A0;&#x6B64;&#x53C2;&#x6570;&#x53EF;&#x4EE5;&#x5747;&#x8861;&#x540E;&#x7AEF;&#x670D;&#x52A1;&#x8282;&#x70B9;&#x53C2;&#x6570; --&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;phyTimeoutMillis&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;600000&quot;</span> /&gt;</span>
+        <span class="hljs-comment">&lt;!-- &#x662F;&#x5426;&#x5728;&#x56FA;&#x5B9A;SQL&#x4F7F;&#x7528;&#x6B21;&#x6570;&#x4E4B;&#x540E;&#x5173;&#x95ED;&#x8FDE;&#x63A5;&#xFF0C;&#x589E;&#x52A0;&#x6B64;&#x53C2;&#x6570;&#x53EF;&#x4EE5;&#x5747;&#x8861;&#x540E;&#x7AEF;&#x670D;&#x52A1;&#x8282;&#x70B9;&#x53C2;&#x6570;--&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;phyMaxUseCount&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;10000&quot;</span> /&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">bean</span>&gt;</span>
+</code></pre>
+<h2 id="&#x6CE8;&#x610F;&#x4E8B;&#x9879;-">&#x6CE8;&#x610F;&#x4E8B;&#x9879; </h2>
+<ul>
+<li>&#x8FDE;&#x63A5;&#x6C60;&#x4E0E;&#x8D1F;&#x8F7D;&#x5747;&#x8861;</li>
+</ul>
+<p><img src="../images/p325223.png" alt="Load Balance"></p>
+<p>  &#x8FDE;&#x63A5;&#x6C60;&#x6A21;&#x5F0F;&#xFF08;TCP &#x957F;&#x8FDE;&#x63A5;&#xFF09;&#x6548;&#x7387;&#x66F4;&#x9AD8;&#xFF0C;&#x4F46;&#x90E8;&#x5206;&#x573A;&#x666F;&#x4E0B;&#x5BF9;&#x5206;&#x5E03;&#x5F0F;&#x8D1F;&#x8F7D;&#x5747;&#x8861;&#x4E0D;&#x53CB;&#x597D;&#xFF0C;&#x53EF;&#x80FD;&#x5BFC;&#x81F4;CN&#x8D1F;&#x8F7D;&#x4E0D;&#x5747;&#x5300;</p>
+<ol>
+<li><p>&#x7A81;&#x53D1;&#x521B;&#x5EFA;&#x8FDE;&#x63A5;&#xFF0C;&#x5BFC;&#x81F4;&#x5206;&#x5E03;&#x4E0D;&#x5747;</p>
+<p>&#x5982;&#x679C;&#x5E94;&#x7528;&#x5B58;&#x5728;&#x7A81;&#x53D1;&#x521B;&#x5EFA;&#x5927;&#x91CF;&#x8FDE;&#x63A5;&#x7684;&#x60C5;&#x51B5;&#xFF0C;&#x8D1F;&#x8F7D;&#x5747;&#x8861;&#x8BBE;&#x5907;&#x65E0;&#x6CD5;&#x53CA;&#x65F6;&#x5237;&#x65B0;&#x7EDF;&#x8BA1;&#x4FE1;&#x606F;&#xFF0C;&#x53EF;&#x80FD;&#x51FA;&#x73B0;&#x90E8;&#x5206;CN&#x4E0A;&#x8FDE;&#x63A5;&#x8F83;&#x591A;&#xFF0C;&#x7ED3;&#x5408;&#x8FDE;&#x63A5;&#x6C60;&#x5316;&#xFF0C;&#x6700;&#x7EC8;&#x5BFC;&#x81F4;&#x90E8;&#x5206;CN&#x538B;&#x529B;&#x9AD8;&#x4E8E;&#x5176;&#x4ED6;CN&#xFF0C;&#x5F71;&#x54CD;&#x7CFB;&#x7EDF;&#x603B;&#x4F53;&#x6027;&#x80FD;&#x3002;</p>
+</li>
+</ol>
+<p>&#x200B;     </p>
+<ol>
+<li><p>&#x8D1F;&#x8F7D;&#x5747;&#x8861;&#x63A2;&#x6D3B;&#x5F02;&#x5E38;&#xFF0C;&#x5BFC;&#x81F4;&#x5206;&#x5E03;&#x4E0D;&#x5747;</p>
+<p>&#x8D1F;&#x8F7D;&#x5747;&#x8861;&#x901A;&#x8FC7;&#x4E3B;&#x52A8;&#x63A2;&#x6D3B;&#x6765;&#x5224;&#x65AD;CN&#x8282;&#x70B9;&#x662F;&#x5426;&#x6B63;&#x5E38;&#xFF0C;&#x5F53;&#x63A2;&#x6D3B;&#x51FA;&#x73B0;&#x5076;&#x53D1;&#x5F02;&#x5E38;&#x65F6;&#xFF0C;&#x53EF;&#x80FD;&#x5BFC;&#x81F4;&#x90E8;&#x5206;CN&#x4E0A;&#x8FDE;&#x63A5;&#x8F83;&#x5C11;&#xFF0C;&#x7ED3;&#x5408;&#x8FDE;&#x63A5;&#x6C60;&#x5316;&#xFF0C;&#x6700;&#x7EC8;&#x5BFC;&#x81F4;&#x90E8;&#x5206;CN&#x538B;&#x529B;&#x4F4E;&#x4E8E;&#x5176;&#x4ED6;CN&#xFF0C;&#x5F71;&#x54CD;&#x7CFB;&#x7EDF;&#x603B;&#x63D0;&#x6027;&#x80FD;&#x3002;</p>
+</li>
+</ol>
+<p>  Druid&#x8FDE;&#x63A5;&#x6C60;&#x589E;&#x52A0;&#x4E86;phyTimeoutMillis/phyMaxUseCount&#x53C2;&#x6570;&#xFF0C;&#x5B9A;&#x671F;&#xFF08;&#x4F8B;&#x5982;&#x6267;&#x884C;10000&#x6B21;&#x6216;&#x8005;10&#x5206;&#x949F;&#xFF09;&#x5237;&#x65B0;&#x8FDE;&#x63A5;&#x6C60;&#x4E2D;&#x7684;&#x8FDE;&#x63A5;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x89E3;&#x51B3;&#x4E0A;&#x8FF0;&#x95EE;&#x9898;&#x7684;&#x540C;&#x65F6;&#x4FDD;&#x6301;&#x6027;&#x80FD;&#x57FA;&#x672C;&#x4E0D;&#x53D8;&#xFF0C;&#x5EFA;&#x8BAE;&#x9ED8;&#x8BA4;&#x6DFB;&#x52A0;&#x8FD9;&#x4E24;&#x4E2A;&#x914D;&#x7F6E;&#x3002;</p>
+<ul>
+<li><p>&#x5E94;&#x7528;&#x7EBF;&#x7A0B;&#x6570;&#x4E0E;&#x8FDE;&#x63A5;&#x6C60;</p>
+<p>&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x8BBF;&#x95EE;&#x6570;&#x636E;&#x5E93;&#x7684;&#x4E00;&#x79CD;&#x5E38;&#x89C1;&#x6A21;&#x5F0F;&#xFF0C;&#x662F;&#x5728;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x4E2D;&#x521B;&#x5EFA;&#x591A;&#x4E2A;&#x7EBF;&#x7A0B;&#xFF0C;&#x6BCF;&#x4E2A;&#x7EBF;&#x7A0B;&#x83B7;&#x53D6;&#x4E00;&#x4E2A;&#x5230;&#x6570;&#x636E;&#x5E93;&#x7684;&#x8FDE;&#x63A5;&#x5E76;&#x6267;&#x884C;&#x67E5;&#x8BE2;&#x3002;&#x4E3A;&#x4E86;&#x51CF;&#x5C11;&#x521B;&#x5EFA;/&#x91CA;&#x653E;&#x7EBF;&#x7A0B;&#x7684;&#x5F00;&#x9500;&#xFF0C;&#x901A;&#x5E38;&#x4F1A;&#x4F7F;&#x7528;&quot;&#x7EBF;&#x7A0B;&#x6C60;&quot;&#x6765;&#x7BA1;&#x7406;&#x7EBF;&#x7A0B;&#xFF0C;&#x7EBF;&#x7A0B;&#x6C60;&#x7684;&#x4E00;&#x4E2A;&#x91CD;&#x8981;&#x53C2;&#x6570;&#x662F;&quot;&#x6700;&#x5927;&#x7EBF;&#x7A0B;&#x6570;&quot;&#xFF0C;&#x9700;&#x8981;&#x6839;&#x636E;&#x5B9E;&#x9645;&#x60C5;&#x51B5;&#x8C03;&#x6574;&#x3002;</p>
+<p>&#x7406;&#x60F3;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x67E5;&#x8BE2;&#x7684;RT&#x6CE2;&#x52A8;&#x4E0D;&#x5927;&#xFF0C;&#x53EF;&#x4EE5;&#x5E94;&#x7528;&#x4E0A;&#x6587;&#x4ECB;&#x7ECD;&#x7684;&#x516C;&#x5F0F;&#xFF0C;&#x6839;&#x636E;RT&#x8BA1;&#x7B97;&#x51FA;&#x5408;&#x7406;&#x7684;&#x8FDE;&#x63A5;&#x6C60;&#x5927;&#x5C0F;&#xFF0C;&#x5E76;&#x6309;&#x7167;&quot;&#x6BCF;&#x4E2A;&#x7EBF;&#x7A0B;&#x4E00;&#x4E2A;&#x6570;&#x636E;&#x5E93;&#x8FDE;&#x63A5;&quot;&#x7684;&#x601D;&#x8DEF;&#x786E;&#x5B9A;&#x6700;&#x5927;&#x7EBF;&#x7A0B;&#x6570;&#x3002;&#x5B9E;&#x9645;&#x573A;&#x666F;&#x4E2D;&#xFF0C;&#x67E5;&#x8BE2;RT&#x53D7;&#x5230;&#x70ED;&#x70B9;&#x3001;&#x9501;&#x3001;&#x6570;&#x636E;&#x503E;&#x659C;&#x7B49;&#x591A;&#x79CD;&#x56E0;&#x7D20;&#x7684;&#x5F71;&#x54CD;&#xFF0C;&#x53EF;&#x80FD;&#x51FA;&#x73B0;&#x7A81;&#x53D1;RT&#x589E;&#x957F;&#xFF0C;&#x751A;&#x81F3;&#x90E8;&#x5206;&#x8FDE;&#x63A5;&#x5931;&#x53BB;&#x54CD;&#x5E94;&#x3002;&#x5982;&#x679C;&#x5B8C;&#x5168;&#x6309;&#x7167;&#x7406;&#x60F3;&#x60C5;&#x51B5;&#x8FDE;&#x63A5;&#x6C60;/&#x7EBF;&#x7A0B;&#x6C60;&#xFF0C;&#x53EF;&#x80FD;&#x7531;&#x4E8E;&#x90E8;&#x5206;&#x6162;&#x67E5;&#x8BE2;&#x8017;&#x5C3D;&#x8FDE;&#x63A5;&#x6C60;/&#x7EBF;&#x7A0B;&#x6C60;&#xFF0C;&#x5BFC;&#x81F4;&#x5E94;&#x7528;&#x5931;&#x53BB;&#x54CD;&#x5E94;&#xFF0C;&#x5F71;&#x54CD;&#x5173;&#x8054;&#x7CFB;&#x7EDF;&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x5EFA;&#x8BAE;&#x6309;&#x7167;&quot;&#x7406;&#x60F3;&#x60C5;&#x51B5;&quot;&#x7684;1.5&#x5230;2&#x500D;&#x6765;&#x8BBE;&#x7F6E;&#x6700;&#x5927;&#x8FDE;&#x63A5;&#x6570;/&#x7EBF;&#x7A0B;&#x6570;&#x3002;</p>
+</li>
+</ul>
+
+                                
+                                </section>
+                            
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="best-practices.html" class="navigation navigation-prev " aria-label="Previous page: 最佳实践">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="problem-solving.html" class="navigation navigation-next " aria-label="Next page: 如何快速定位及解决数据库问题">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"如何选择应用端链接池","level":"1.6.1","depth":2,"next":{"title":"如何快速定位及解决数据库问题","level":"1.6.2","depth":2,"path":"best-practice/topics/problem-solving.md","ref":"best-practice/topics/problem-solving.md","articles":[]},"previous":{"title":"最佳实践","level":"1.6","depth":1,"path":"best-practice/topics/best-practices.md","ref":"best-practice/topics/best-practices.md","articles":[{"title":"如何选择应用端链接池","level":"1.6.1","depth":2,"path":"best-practice/topics/connection-pool.md","ref":"best-practice/topics/connection-pool.md","articles":[]},{"title":"如何快速定位及解决数据库问题","level":"1.6.2","depth":2,"path":"best-practice/topics/problem-solving.md","ref":"best-practice/topics/problem-solving.md","articles":[]},{"title":"如何正确处理DDL异常","level":"1.6.3","depth":2,"path":"best-practice/topics/ddl-exception.md","ref":"best-practice/topics/ddl-exception.md","articles":[]},{"title":"如何分析及优化慢SQL","level":"1.6.4","depth":2,"path":"best-practice/topics/slow-query-tuning.md","ref":"best-practice/topics/slow-query-tuning.md","articles":[]},{"title":"如何限流慢SQL","level":"1.6.5","depth":2,"path":"best-practice/topics/slow-query-control.md","ref":"best-practice/topics/slow-query-control.md","articles":[]},{"title":"如何异步删除大表","level":"1.6.6","depth":2,"path":"best-practice/topics/async-drop-table.md","ref":"best-practice/topics/async-drop-table.md","articles":[]},{"title":"如何支持热点更新场景","level":"1.6.7","depth":2,"path":"best-practice/topics/update-hot-data.md","ref":"best-practice/topics/update-hot-data.md","articles":[]},{"title":"如何分析数据分布不均衡","level":"1.6.8","depth":2,"path":"best-practice/topics/data-distribution-rebalance.md","ref":"best-practice/topics/data-distribution-rebalance.md","articles":[]},{"title":"如何高效使用IN查询","level":"1.6.9","depth":2,"path":"best-practice/topics/efficiency-in.md","ref":"best-practice/topics/efficiency-in.md","articles":[]},{"title":"如何优化Batch Insert","level":"1.6.10","depth":2,"path":"best-practice/topics/batch-insert.md","ref":"best-practice/topics/batch-insert.md","articles":[]},{"title":"如何优化数据导入导出","level":"1.6.11","depth":2,"path":"best-practice/topics/data-import-export.md","ref":"best-practice/topics/data-import-export.md","articles":[]},{"title":"如何优化数据全量抽取","level":"1.6.12","depth":2,"path":"best-practice/topics/data-etl.md","ref":"best-practice/topics/data-etl.md","articles":[]},{"title":"如何使用Blob对象","level":"1.6.13","depth":2,"path":"best-practice/topics/blob.md","ref":"best-practice/topics/blob.md","articles":[]},{"title":"偏高并发场景的实践和优化","level":"1.6.14","depth":2,"path":"best-practice/topics/high-concurrency-scenarios.md","ref":"best-practice/topics/high-concurrency-scenarios.md","articles":[]},{"title":"偏分析场景的实践和优化","level":"1.6.15","depth":2,"path":"best-practice/topics/analytical-scenarios.md","ref":"best-practice/topics/analytical-scenarios.md","articles":[]},{"title":"混合负载HTAP的实践和优化","level":"1.6.16","depth":2,"path":"best-practice/topics/htap-practice.md","ref":"best-practice/topics/htap-practice.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["hide-element","back-to-top-button","code","expandable-chapters-small","page-toc-button","-sharing","-font-settings","-search","-lunr","auto-scroll-table@git+https://github.com/ideamean/gitbook-plugin-auto-scroll-table.git","splitter","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"splitter":{},"auto-scroll-table":{},"code":{"copyButtons":true},"hide-element":{"elements":[".toggle-dropdown",".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"page-toc-button":{"maxTocDepth":2,"minTocSize":2},"back-to-top-button":{},"expandable-chapters-small":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"PolarDB-X","gitbook":"*"},"file":{"path":"best-practice/topics/connection-pool.md","mtime":"2022-06-20T06:00:35.651Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-07-01T03:13:26.922Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-hide-element/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-page-toc-button/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-auto-scroll-table/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
